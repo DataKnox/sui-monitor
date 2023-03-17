@@ -12,6 +12,7 @@ HOSTNAME = socket.gethostname()
 
 INTERVAL = 5  # Seconds
 sui_clock = time.time()
+first_run = True
 
 
 def prepare_common_attributes():
@@ -70,7 +71,7 @@ if __name__ == '__main__':
     records = []
 
     while True:
-        first_run = True
+
         current_time = int(time.time() * 1000)
         cpu_utilization = psutil.cpu_percent()
         memory_utilization = psutil.virtual_memory().percent
