@@ -70,7 +70,7 @@ if __name__ == '__main__':
     records = []
 
     while True:
-
+        first_run = True
         current_time = int(time.time() * 1000)
         cpu_utilization = psutil.cpu_percent()
         memory_utilization = psutil.virtual_memory().percent
@@ -91,7 +91,8 @@ if __name__ == '__main__':
         print("records {} - cpu {} - memory {} - swap {} - disk {}".format(
             len(records), cpu_utilization, memory_utilization,
             swap_utilization, disk_utilization))
-        if time.time()-sui_clock > 43200:
+        if (time.time()-sui_clock > 43200) or first_run:
+            first_run = False
             print("sui time elapsed")
             stream = os.popen(
                 "/home/sui/sui/target/debug/sui client active-address")
