@@ -1,0 +1,2200 @@
+# HELP async_batch_verifier_full_batches Number of times batch verifier verifies a full batch
+# TYPE async_batch_verifier_full_batches counter
+async_batch_verifier_full_batches 0
+# HELP async_batch_verifier_partial_batches Number of times batch verifier verifies a partial batch
+# TYPE async_batch_verifier_partial_batches counter
+async_batch_verifier_partial_batches 0
+# HELP async_batch_verifier_timeouts Number of times batch verifier times out and verifies a partial batch
+# TYPE async_batch_verifier_timeouts counter
+async_batch_verifier_timeouts 0
+# HELP async_batch_verifier_total_failed_certs Total number of certs batch verifier has rejected
+# TYPE async_batch_verifier_total_failed_certs counter
+async_batch_verifier_total_failed_certs 0
+# HELP async_batch_verifier_total_verified_certs Total number of certs batch verifier has verified
+# TYPE async_batch_verifier_total_verified_certs counter
+async_batch_verifier_total_verified_certs 0
+# HELP authority_state_commit_certificate_latency Latency of committing certificate execution results
+# TYPE authority_state_commit_certificate_latency histogram
+authority_state_commit_certificate_latency_bucket{le="0.001"} 137046
+authority_state_commit_certificate_latency_bucket{le="0.005"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.01"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.025"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.05"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.1"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.25"} 137049
+authority_state_commit_certificate_latency_bucket{le="0.5"} 137049
+authority_state_commit_certificate_latency_bucket{le="1"} 137049
+authority_state_commit_certificate_latency_bucket{le="2.5"} 137049
+authority_state_commit_certificate_latency_bucket{le="5"} 137049
+authority_state_commit_certificate_latency_bucket{le="10"} 137049
+authority_state_commit_certificate_latency_bucket{le="20"} 137049
+authority_state_commit_certificate_latency_bucket{le="30"} 137049
+authority_state_commit_certificate_latency_bucket{le="60"} 137049
+authority_state_commit_certificate_latency_bucket{le="90"} 137049
+authority_state_commit_certificate_latency_bucket{le="+Inf"} 137049
+authority_state_commit_certificate_latency_sum 19.777955973999983
+authority_state_commit_certificate_latency_count 137049
+# HELP authority_state_execute_certificate_latency Latency of executing certificates, including waiting for inputs
+# TYPE authority_state_execute_certificate_latency histogram
+authority_state_execute_certificate_latency_bucket{le="0.001"} 0
+authority_state_execute_certificate_latency_bucket{le="0.005"} 0
+authority_state_execute_certificate_latency_bucket{le="0.01"} 0
+authority_state_execute_certificate_latency_bucket{le="0.025"} 0
+authority_state_execute_certificate_latency_bucket{le="0.05"} 0
+authority_state_execute_certificate_latency_bucket{le="0.1"} 0
+authority_state_execute_certificate_latency_bucket{le="0.25"} 0
+authority_state_execute_certificate_latency_bucket{le="0.5"} 0
+authority_state_execute_certificate_latency_bucket{le="1"} 0
+authority_state_execute_certificate_latency_bucket{le="2.5"} 0
+authority_state_execute_certificate_latency_bucket{le="5"} 0
+authority_state_execute_certificate_latency_bucket{le="10"} 0
+authority_state_execute_certificate_latency_bucket{le="20"} 0
+authority_state_execute_certificate_latency_bucket{le="30"} 0
+authority_state_execute_certificate_latency_bucket{le="60"} 0
+authority_state_execute_certificate_latency_bucket{le="90"} 0
+authority_state_execute_certificate_latency_bucket{le="+Inf"} 0
+authority_state_execute_certificate_latency_sum 0
+authority_state_execute_certificate_latency_count 0
+# HELP authority_state_execute_certificate_with_effects_latency Latency of executing certificates with effects, including waiting for inputs
+# TYPE authority_state_execute_certificate_with_effects_latency histogram
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.001"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.005"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.01"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.025"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.05"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.1"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.25"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="0.5"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="1"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="2.5"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="5"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="10"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="20"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="30"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="60"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="90"} 0
+authority_state_execute_certificate_with_effects_latency_bucket{le="+Inf"} 0
+authority_state_execute_certificate_with_effects_latency_sum 0
+authority_state_execute_certificate_with_effects_latency_count 0
+# HELP authority_state_handle_transaction_latency Latency of handling transactions
+# TYPE authority_state_handle_transaction_latency histogram
+authority_state_handle_transaction_latency_bucket{le="0.001"} 0
+authority_state_handle_transaction_latency_bucket{le="0.005"} 0
+authority_state_handle_transaction_latency_bucket{le="0.01"} 0
+authority_state_handle_transaction_latency_bucket{le="0.025"} 0
+authority_state_handle_transaction_latency_bucket{le="0.05"} 0
+authority_state_handle_transaction_latency_bucket{le="0.1"} 0
+authority_state_handle_transaction_latency_bucket{le="0.25"} 0
+authority_state_handle_transaction_latency_bucket{le="0.5"} 0
+authority_state_handle_transaction_latency_bucket{le="1"} 0
+authority_state_handle_transaction_latency_bucket{le="2.5"} 0
+authority_state_handle_transaction_latency_bucket{le="5"} 0
+authority_state_handle_transaction_latency_bucket{le="10"} 0
+authority_state_handle_transaction_latency_bucket{le="20"} 0
+authority_state_handle_transaction_latency_bucket{le="30"} 0
+authority_state_handle_transaction_latency_bucket{le="60"} 0
+authority_state_handle_transaction_latency_bucket{le="90"} 0
+authority_state_handle_transaction_latency_bucket{le="+Inf"} 0
+authority_state_handle_transaction_latency_sum 0
+authority_state_handle_transaction_latency_count 0
+# HELP authority_state_internal_execution_latency Latency of actual certificate executions
+# TYPE authority_state_internal_execution_latency histogram
+authority_state_internal_execution_latency_bucket{le="0.001"} 136697
+authority_state_internal_execution_latency_bucket{le="0.005"} 137008
+authority_state_internal_execution_latency_bucket{le="0.01"} 137044
+authority_state_internal_execution_latency_bucket{le="0.025"} 137046
+authority_state_internal_execution_latency_bucket{le="0.05"} 137049
+authority_state_internal_execution_latency_bucket{le="0.1"} 137049
+authority_state_internal_execution_latency_bucket{le="0.25"} 137049
+authority_state_internal_execution_latency_bucket{le="0.5"} 137049
+authority_state_internal_execution_latency_bucket{le="1"} 137049
+authority_state_internal_execution_latency_bucket{le="2.5"} 137049
+authority_state_internal_execution_latency_bucket{le="5"} 137049
+authority_state_internal_execution_latency_bucket{le="10"} 137049
+authority_state_internal_execution_latency_bucket{le="20"} 137049
+authority_state_internal_execution_latency_bucket{le="30"} 137049
+authority_state_internal_execution_latency_bucket{le="60"} 137049
+authority_state_internal_execution_latency_bucket{le="90"} 137049
+authority_state_internal_execution_latency_bucket{le="+Inf"} 137049
+authority_state_internal_execution_latency_sum 62.414893924999575
+authority_state_internal_execution_latency_count 137049
+# HELP authority_state_prepare_certificate_latency Latency of executing certificates, before committing the results
+# TYPE authority_state_prepare_certificate_latency histogram
+authority_state_prepare_certificate_latency_bucket{le="0.001"} 136932
+authority_state_prepare_certificate_latency_bucket{le="0.005"} 137018
+authority_state_prepare_certificate_latency_bucket{le="0.01"} 137044
+authority_state_prepare_certificate_latency_bucket{le="0.025"} 137046
+authority_state_prepare_certificate_latency_bucket{le="0.05"} 137049
+authority_state_prepare_certificate_latency_bucket{le="0.1"} 137049
+authority_state_prepare_certificate_latency_bucket{le="0.25"} 137049
+authority_state_prepare_certificate_latency_bucket{le="0.5"} 137049
+authority_state_prepare_certificate_latency_bucket{le="1"} 137049
+authority_state_prepare_certificate_latency_bucket{le="2.5"} 137049
+authority_state_prepare_certificate_latency_bucket{le="5"} 137049
+authority_state_prepare_certificate_latency_bucket{le="10"} 137049
+authority_state_prepare_certificate_latency_bucket{le="20"} 137049
+authority_state_prepare_certificate_latency_bucket{le="30"} 137049
+authority_state_prepare_certificate_latency_bucket{le="60"} 137049
+authority_state_prepare_certificate_latency_bucket{le="90"} 137049
+authority_state_prepare_certificate_latency_bucket{le="+Inf"} 137049
+authority_state_prepare_certificate_latency_sum 18.747764246999974
+authority_state_prepare_certificate_latency_count 137049
+# HELP batch_size Distribution of size of transaction batch
+# TYPE batch_size histogram
+batch_size_bucket{le="1"} 136585
+batch_size_bucket{le="2"} 136861
+batch_size_bucket{le="5"} 136861
+batch_size_bucket{le="10"} 137049
+batch_size_bucket{le="20"} 137049
+batch_size_bucket{le="50"} 137049
+batch_size_bucket{le="100"} 137049
+batch_size_bucket{le="200"} 137049
+batch_size_bucket{le="500"} 137049
+batch_size_bucket{le="1000"} 137049
+batch_size_bucket{le="2000"} 137049
+batch_size_bucket{le="5000"} 137049
+batch_size_bucket{le="10000"} 137049
+batch_size_bucket{le="20000"} 137049
+batch_size_bucket{le="50000"} 137049
+batch_size_bucket{le="+Inf"} 137049
+batch_size_sum 138265
+batch_size_count 137049
+# HELP block_cache_hit_count Tells us how many times we read data blocks from block cache, and block_read_count tells us how many\n                times we have to read blocks from the file system (either block cache is disabled or it is a cache miss).\n                We can evaluate the block cache efficiency by looking at the two counters over time.
+# TYPE block_cache_hit_count counter
+block_cache_hit_count{cf_name="effects"} 1
+block_cache_hit_count{cf_name="epoch_start_configuration"} 0
+block_cache_hit_count{cf_name="transactions"} 0
+# HELP block_checksum_nanos Total nanos spent on verifying block checksum
+# TYPE block_checksum_nanos counter
+block_checksum_nanos{cf_name="effects"} 0
+block_checksum_nanos{cf_name="epoch_start_configuration"} 0
+block_checksum_nanos{cf_name="transactions"} 0
+# HELP block_decompress_nanos Total nanos spent on decompressing a block
+# TYPE block_decompress_nanos counter
+block_decompress_nanos{cf_name="effects"} 0
+block_decompress_nanos{cf_name="epoch_start_configuration"} 0
+block_decompress_nanos{cf_name="transactions"} 0
+# HELP block_read_byte Tells us how many total bytes we read from the file system. It can tell us whether a slow query can be caused by reading\n                large blocks from the file system. Index and bloom filter blocks are usually large blocks. A large block can also be the result\n                of a very large key or value
+# TYPE block_read_byte counter
+block_read_byte{cf_name="effects"} 0
+block_read_byte{cf_name="epoch_start_configuration"} 0
+block_read_byte{cf_name="transactions"} 0
+# HELP block_read_count Tells us how many times we have to read blocks from the file system (either block cache is disabled or it is a cache miss)
+# TYPE block_read_count counter
+block_read_count{cf_name="effects"} 0
+block_read_count{cf_name="epoch_start_configuration"} 0
+block_read_count{cf_name="transactions"} 0
+# HELP block_read_nanos Total nanos spent on block reads
+# TYPE block_read_nanos counter
+block_read_nanos{cf_name="effects"} 0
+block_read_nanos{cf_name="epoch_start_configuration"} 0
+block_read_nanos{cf_name="transactions"} 0
+# HELP block_seek_nanos Time spent on seeking a key in data/index blocks
+# TYPE block_seek_nanos counter
+block_seek_nanos{cf_name="effects"} 371
+block_seek_nanos{cf_name="epoch_start_configuration"} 0
+block_seek_nanos{cf_name="transactions"} 0
+# HELP bloom_memtable_hit_count Total number of mem table bloom hits
+# TYPE bloom_memtable_hit_count counter
+bloom_memtable_hit_count{cf_name="effects"} 0
+bloom_memtable_hit_count{cf_name="epoch_start_configuration"} 0
+bloom_memtable_hit_count{cf_name="transactions"} 1023
+# HELP bloom_memtable_miss_count Total number of mem table bloom misses
+# TYPE bloom_memtable_miss_count counter
+bloom_memtable_miss_count{cf_name="effects"} 1
+bloom_memtable_miss_count{cf_name="epoch_start_configuration"} 0
+bloom_memtable_miss_count{cf_name="transactions"} 0
+# HELP bloom_sst_hit_count Total number of SST table bloom hits
+# TYPE bloom_sst_hit_count counter
+bloom_sst_hit_count{cf_name="effects"} 1
+bloom_sst_hit_count{cf_name="epoch_start_configuration"} 0
+bloom_sst_hit_count{cf_name="transactions"} 0
+# HELP bloom_sst_miss_count Total number of SST table bloom misses
+# TYPE bloom_sst_miss_count counter
+bloom_sst_miss_count{cf_name="effects"} 0
+bloom_sst_miss_count{cf_name="epoch_start_configuration"} 0
+bloom_sst_miss_count{cf_name="transactions"} 0
+# HELP certificate_signatures_cache_evictions Number of times we evict a pre-existing key were known to be verified because of signature cache.
+# TYPE certificate_signatures_cache_evictions counter
+certificate_signatures_cache_evictions 0
+# HELP certificate_signatures_cache_hits Number of certificates which were known to be verified because of signature cache.
+# TYPE certificate_signatures_cache_hits counter
+certificate_signatures_cache_hits 0
+# HELP checkpoint_contents_age_ms Age of checkpoints when they arrive for execution
+# TYPE checkpoint_contents_age_ms gauge
+checkpoint_contents_age_ms{pct="50"} 3126
+checkpoint_contents_age_ms{pct="95"} 6550
+checkpoint_contents_age_ms{pct="99"} 8149
+# HELP checkpoint_contents_age_ms_count Age of checkpoints when they arrive for execution
+# TYPE checkpoint_contents_age_ms_count counter
+checkpoint_contents_age_ms_count 136194
+# HELP checkpoint_contents_age_ms_sum Age of checkpoints when they arrive for execution
+# TYPE checkpoint_contents_age_ms_sum counter
+checkpoint_contents_age_ms_sum 5402241726060
+# HELP checkpoint_exec_epoch Current epoch number in the checkpoint executor
+# TYPE checkpoint_exec_epoch gauge
+checkpoint_exec_epoch 2
+# HELP checkpoint_exec_errors Checkpoint execution errors count
+# TYPE checkpoint_exec_errors counter
+checkpoint_exec_errors 0
+# HELP checkpoint_exec_sync_tps Checkpoint sync estimated transactions per second
+# TYPE checkpoint_exec_sync_tps gauge
+checkpoint_exec_sync_tps 0
+# HELP checkpoint_summary_age_ms Age of checkpoints summaries when they arrive and are verified.
+# TYPE checkpoint_summary_age_ms gauge
+checkpoint_summary_age_ms{pct="50"} 2992
+checkpoint_summary_age_ms{pct="95"} 6438
+checkpoint_summary_age_ms{pct="99"} 8033
+# HELP checkpoint_summary_age_ms_count Age of checkpoints summaries when they arrive and are verified.
+# TYPE checkpoint_summary_age_ms_count counter
+checkpoint_summary_age_ms_count 136194
+# HELP checkpoint_summary_age_ms_sum Age of checkpoints summaries when they arrive and are verified.
+# TYPE checkpoint_summary_age_ms_sum counter
+checkpoint_summary_age_ms_sum 5397303428159
+# HELP checkpoint_transaction_count Number of transactions in the checkpoint
+# TYPE checkpoint_transaction_count gauge
+checkpoint_transaction_count{pct="50"} 1
+checkpoint_transaction_count{pct="95"} 1
+checkpoint_transaction_count{pct="99"} 1
+# HELP checkpoint_transaction_count_count Number of transactions in the checkpoint
+# TYPE checkpoint_transaction_count_count counter
+checkpoint_transaction_count_count 136195
+# HELP checkpoint_transaction_count_sum Number of transactions in the checkpoint
+# TYPE checkpoint_transaction_count_sum counter
+checkpoint_transaction_count_sum 137014
+# HELP consensus_handler_processed_batches Number of batches processed by consensus_handler
+# TYPE consensus_handler_processed_batches counter
+consensus_handler_processed_batches 0
+# HELP consensus_handler_processed_bytes Number of bytes processed by consensus_handler
+# TYPE consensus_handler_processed_bytes counter
+consensus_handler_processed_bytes 0
+# HELP current_epoch Current epoch ID
+# TYPE current_epoch gauge
+current_epoch 2
+# HELP current_voting_right Current voting right of the validator
+# TYPE current_voting_right gauge
+current_voting_right 0
+# HELP db_checkpoint_latency Latency of checkpointing dbs
+# TYPE db_checkpoint_latency histogram
+db_checkpoint_latency_bucket{le="0.001"} 0
+db_checkpoint_latency_bucket{le="0.005"} 0
+db_checkpoint_latency_bucket{le="0.01"} 0
+db_checkpoint_latency_bucket{le="0.025"} 0
+db_checkpoint_latency_bucket{le="0.05"} 0
+db_checkpoint_latency_bucket{le="0.1"} 0
+db_checkpoint_latency_bucket{le="0.25"} 0
+db_checkpoint_latency_bucket{le="0.5"} 0
+db_checkpoint_latency_bucket{le="1"} 0
+db_checkpoint_latency_bucket{le="2.5"} 0
+db_checkpoint_latency_bucket{le="5"} 0
+db_checkpoint_latency_bucket{le="10"} 0
+db_checkpoint_latency_bucket{le="20"} 0
+db_checkpoint_latency_bucket{le="30"} 0
+db_checkpoint_latency_bucket{le="60"} 0
+db_checkpoint_latency_bucket{le="90"} 0
+db_checkpoint_latency_bucket{le="+Inf"} 0
+db_checkpoint_latency_sum 0
+db_checkpoint_latency_count 0
+# HELP db_condition_wait_nanos Time spent waiting with a condition variable created with DB Mutex.
+# TYPE db_condition_wait_nanos counter
+db_condition_wait_nanos{cf_name="effects"} 0
+db_condition_wait_nanos{cf_name="epoch_start_configuration"} 0
+db_condition_wait_nanos{cf_name="transactions"} 0
+# HELP db_mutex_lock_nanos Time spent on acquiring db mutex
+# TYPE db_mutex_lock_nanos counter
+db_mutex_lock_nanos{cf_name="effects"} 0
+db_mutex_lock_nanos{cf_name="epoch_start_configuration"} 29
+db_mutex_lock_nanos{cf_name="transactions"} 0
+# HELP epoch_checkpoint_count Number of checkpoints in the epoch
+# TYPE epoch_checkpoint_count gauge
+epoch_checkpoint_count 0
+# HELP epoch_end_of_publish_quorum_time_since_epoch_close_ms Time interval from when epoch was closed to when 2f+1 EndOfPublish messages are received
+# TYPE epoch_end_of_publish_quorum_time_since_epoch_close_ms gauge
+epoch_end_of_publish_quorum_time_since_epoch_close_ms 0
+# HELP epoch_first_checkpoint_created_time_since_epoch_begin_ms Time interval from when the epoch opens at new epoch to the first checkpoint is created locally
+# TYPE epoch_first_checkpoint_created_time_since_epoch_begin_ms gauge
+epoch_first_checkpoint_created_time_since_epoch_begin_ms 0
+# HELP epoch_last_checkpoint_created_time_since_epoch_close_ms Time interval from when epoch was closed to when the last checkpoint of the epoch is created
+# TYPE epoch_last_checkpoint_created_time_since_epoch_close_ms gauge
+epoch_last_checkpoint_created_time_since_epoch_close_ms 0
+# HELP epoch_pending_certs_processed_time_since_epoch_close_ms Time interval from when epoch was closed to when all pending certificates are processed
+# TYPE epoch_pending_certs_processed_time_since_epoch_close_ms gauge
+epoch_pending_certs_processed_time_since_epoch_close_ms 0
+# HELP epoch_reconfig_start_time_since_epoch_close_ms Total time duration from when epoch was closed to when we begin to reconfigure the validator
+# TYPE epoch_reconfig_start_time_since_epoch_close_ms gauge
+epoch_reconfig_start_time_since_epoch_close_ms 0
+# HELP epoch_total_duration Total duration of the epoch
+# TYPE epoch_total_duration gauge
+epoch_total_duration 1474137
+# HELP epoch_total_gas_reward Total amount of gas rewards (i.e. computation gas cost) in the epoch
+# TYPE epoch_total_gas_reward gauge
+epoch_total_gas_reward 0
+# HELP epoch_total_votes Total amount of votes among validators in the epoch.
+# TYPE epoch_total_votes gauge
+epoch_total_votes 10000
+# HELP epoch_transaction_count Number of transactions in the epoch
+# TYPE epoch_transaction_count gauge
+epoch_transaction_count 0
+# HELP epoch_validator_halt_duration_ms Total time duration when the validator was halted (i.e. epoch closed)
+# TYPE epoch_validator_halt_duration_ms gauge
+epoch_validator_halt_duration_ms 0
+# HELP execution_driver_executed_transactions Cumulative number of transaction executed by execution driver
+# TYPE execution_driver_executed_transactions counter
+execution_driver_executed_transactions 137048
+# HELP find_table_nanos Time spent on finding or creating a table reader
+# TYPE find_table_nanos counter
+find_table_nanos{cf_name="effects"} 0
+find_table_nanos{cf_name="epoch_start_configuration"} 0
+find_table_nanos{cf_name="transactions"} 0
+# HELP get_from_memtable_count Number of memtables queried
+# TYPE get_from_memtable_count counter
+get_from_memtable_count{cf_name="effects"} 1
+get_from_memtable_count{cf_name="epoch_start_configuration"} 1
+get_from_memtable_count{cf_name="transactions"} 1023
+# HELP get_from_memtable_nanos Time spent on reading data from memtable.
+# TYPE get_from_memtable_nanos counter
+get_from_memtable_nanos{cf_name="effects"} 120
+get_from_memtable_nanos{cf_name="epoch_start_configuration"} 3151
+get_from_memtable_nanos{cf_name="transactions"} 7299608
+# HELP get_from_output_files_nanos Total nanos reading from output files
+# TYPE get_from_output_files_nanos counter
+get_from_output_files_nanos{cf_name="effects"} 1921
+get_from_output_files_nanos{cf_name="epoch_start_configuration"} 0
+get_from_output_files_nanos{cf_name="transactions"} 0
+# HELP get_post_process_nanos Total nanos spent after Get() finds a key
+# TYPE get_post_process_nanos counter
+get_post_process_nanos{cf_name="effects"} 50
+get_post_process_nanos{cf_name="epoch_start_configuration"} 160
+get_post_process_nanos{cf_name="transactions"} 174250
+# HELP get_read_bytes Total bytes for values returned by Get
+# TYPE get_read_bytes counter
+get_read_bytes{cf_name="effects"} 0
+get_read_bytes{cf_name="epoch_start_configuration"} 19721
+get_read_bytes{cf_name="transactions"} 284
+# HELP get_snapshot_nanos Time spent in getting snapshot.
+# TYPE get_snapshot_nanos counter
+get_snapshot_nanos{cf_name="effects"} 560
+get_snapshot_nanos{cf_name="epoch_start_configuration"} 1420
+get_snapshot_nanos{cf_name="transactions"} 2143073
+# HELP highest_known_checkpoint Highest known checkpoint
+# TYPE highest_known_checkpoint gauge
+highest_known_checkpoint 136227
+# HELP highest_synced_checkpoint Highest synced checkpoint
+# TYPE highest_synced_checkpoint gauge
+highest_synced_checkpoint 136227
+# HELP highest_verified_checkpoint Highest verified checkpoint
+# TYPE highest_verified_checkpoint gauge
+highest_verified_checkpoint 136227
+# HELP is_safe_mode Whether we are running in safe mode
+# TYPE is_safe_mode gauge
+is_safe_mode 0
+# HELP key_lock_wait_count Number of times acquiring a lock was blocked by another transaction
+# TYPE key_lock_wait_count counter
+key_lock_wait_count{cf_name="effects"} 0
+key_lock_wait_count{cf_name="epoch_start_configuration"} 0
+key_lock_wait_count{cf_name="transactions"} 0
+# HELP key_lock_wait_time Time spent waiting on key locks in transaction lock manager
+# TYPE key_lock_wait_time counter
+key_lock_wait_time{cf_name="effects"} 0
+key_lock_wait_time{cf_name="epoch_start_configuration"} 0
+key_lock_wait_time{cf_name="transactions"} 0
+# HELP last_executed_checkpoint Last executed checkpoint
+# TYPE last_executed_checkpoint gauge
+last_executed_checkpoint 136227
+# HELP merge_operator_nanos Time spent on merge operator.
+# TYPE merge_operator_nanos counter
+merge_operator_nanos{cf_name="effects"} 0
+merge_operator_nanos{cf_name="epoch_start_configuration"} 0
+merge_operator_nanos{cf_name="transactions"} 0
+# HELP module_cache_size Number of compiled move modules in the authority's cache.
+# TYPE module_cache_size gauge
+module_cache_size 0
+# HELP monitored_scope_duration_ns Total duration in nanosecs where the monitored scope is running
+# TYPE monitored_scope_duration_ns gauge
+monitored_scope_duration_ns{name="AccumulateCheckpoint"} 9665878028
+monitored_scope_duration_ns{name="CheckpointExecutor::accumulate_epoch"} 1017294158
+monitored_scope_duration_ns{name="ObjectsLivePruner"} 130856684
+# HELP monitored_scope_iterations Total number of times where the monitored scope runs
+# TYPE monitored_scope_iterations gauge
+monitored_scope_iterations{name="AccumulateCheckpoint"} 136228
+monitored_scope_iterations{name="CheckpointExecutor::accumulate_epoch"} 2
+monitored_scope_iterations{name="ObjectsLivePruner"} 457
+# HELP monitored_tasks Number of running tasks per callsite.
+# TYPE monitored_tasks gauge
+monitored_tasks{callsite="crates/sui-core/src/authority.rs:1637"} 1
+monitored_tasks{callsite="crates/sui-core/src/checkpoints/checkpoint_executor/mod.rs:309"} 0
+monitored_tasks{callsite="crates/sui-core/src/execution_driver.rs:81"} 0
+monitored_tasks{callsite="crates/sui-core/src/streamer.rs:41"} 1
+monitored_tasks{callsite="crates/sui-node/src/lib.rs:396"} 1
+monitored_tasks{callsite="crates/sui-storage/src/mutex_table.rs:123"} 3
+monitored_tasks{callsite="narwhal/network/src/connectivity.rs:ConnectionMonitor"} 1
+# HELP multiget_read_bytes Total bytes for values returned by MultiGet.
+# TYPE multiget_read_bytes counter
+multiget_read_bytes{cf_name="effects"} 411
+multiget_read_bytes{cf_name="epoch_start_configuration"} 0
+multiget_read_bytes{cf_name="transactions"} 293366
+# HELP new_table_block_iter_nanos Time spent on creating data block iterator
+# TYPE new_table_block_iter_nanos counter
+new_table_block_iter_nanos{cf_name="effects"} 490
+new_table_block_iter_nanos{cf_name="epoch_start_configuration"} 0
+new_table_block_iter_nanos{cf_name="transactions"} 0
+# HELP num_input_objects Distribution of number of input TX objects per TX
+# TYPE num_input_objects histogram
+num_input_objects_bucket{le="1"} 136695
+num_input_objects_bucket{le="2"} 136696
+num_input_objects_bucket{le="5"} 137049
+num_input_objects_bucket{le="10"} 137049
+num_input_objects_bucket{le="20"} 137049
+num_input_objects_bucket{le="50"} 137049
+num_input_objects_bucket{le="100"} 137049
+num_input_objects_bucket{le="200"} 137049
+num_input_objects_bucket{le="500"} 137049
+num_input_objects_bucket{le="1000"} 137049
+num_input_objects_bucket{le="2000"} 137049
+num_input_objects_bucket{le="5000"} 137049
+num_input_objects_bucket{le="10000"} 137049
+num_input_objects_bucket{le="20000"} 137049
+num_input_objects_bucket{le="50000"} 137049
+num_input_objects_bucket{le="+Inf"} 137049
+num_input_objects_sum 138044
+num_input_objects_count 137049
+# HELP num_shared_obj_tx Number of transactions involving shared objects
+# TYPE num_shared_obj_tx counter
+num_shared_obj_tx 136344
+# HELP num_shared_objects Number of shared input objects per TX
+# TYPE num_shared_objects histogram
+num_shared_objects_bucket{le="1"} 137049
+num_shared_objects_bucket{le="2"} 137049
+num_shared_objects_bucket{le="5"} 137049
+num_shared_objects_bucket{le="10"} 137049
+num_shared_objects_bucket{le="20"} 137049
+num_shared_objects_bucket{le="50"} 137049
+num_shared_objects_bucket{le="100"} 137049
+num_shared_objects_bucket{le="200"} 137049
+num_shared_objects_bucket{le="500"} 137049
+num_shared_objects_bucket{le="1000"} 137049
+num_shared_objects_bucket{le="2000"} 137049
+num_shared_objects_bucket{le="5000"} 137049
+num_shared_objects_bucket{le="10000"} 137049
+num_shared_objects_bucket{le="20000"} 137049
+num_shared_objects_bucket{le="50000"} 137049
+num_shared_objects_bucket{le="+Inf"} 137049
+num_shared_objects_sum 136344
+num_shared_objects_count 137049
+# HELP num_tx_already_processed Number of transaction orders already processed previously
+# TYPE num_tx_already_processed counter
+num_tx_already_processed 0
+# HELP pending_notify_read Pending notify read requests
+# TYPE pending_notify_read gauge
+pending_notify_read 0
+# HELP post_processing_total_events_emitted Total number of events emitted in post processing
+# TYPE post_processing_total_events_emitted counter
+post_processing_total_events_emitted 0
+# HELP post_processing_total_tx_had_event_processed Total number of txes finished event processing in post processing
+# TYPE post_processing_total_tx_had_event_processed counter
+post_processing_total_tx_had_event_processed 0
+# HELP post_processing_total_tx_indexed Total number of txes indexed in post processing
+# TYPE post_processing_total_tx_indexed counter
+post_processing_total_tx_indexed 0
+# HELP read_filter_block_nanos Time spent on reading filter block from block cache or SST file
+# TYPE read_filter_block_nanos counter
+read_filter_block_nanos{cf_name="effects"} 0
+read_filter_block_nanos{cf_name="epoch_start_configuration"} 0
+read_filter_block_nanos{cf_name="transactions"} 0
+# HELP read_index_block_nanos Time spent on reading index block from block cache or SST file
+# TYPE read_index_block_nanos counter
+read_index_block_nanos{cf_name="effects"} 0
+read_index_block_nanos{cf_name="epoch_start_configuration"} 0
+read_index_block_nanos{cf_name="transactions"} 0
+# HELP rocksdb_actual_delayed_write_rate The current actual delayed write rate. 0 means no delay
+# TYPE rocksdb_actual_delayed_write_rate gauge
+rocksdb_actual_delayed_write_rate{cf_name="assigned_shared_object_versions"} 0
+rocksdb_actual_delayed_write_rate{cf_name="authority_capabilities"} 0
+rocksdb_actual_delayed_write_rate{cf_name="builder_checkpoint_summary"} 0
+rocksdb_actual_delayed_write_rate{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_actual_delayed_write_rate{cf_name="certified_checkpoints"} 0
+rocksdb_actual_delayed_write_rate{cf_name="checkpoint_boundary"} 0
+rocksdb_actual_delayed_write_rate{cf_name="checkpoint_by_digest"} 0
+rocksdb_actual_delayed_write_rate{cf_name="checkpoint_content"} 0
+rocksdb_actual_delayed_write_rate{cf_name="committee_map"} 0
+rocksdb_actual_delayed_write_rate{cf_name="consensus_message_order"} 0
+rocksdb_actual_delayed_write_rate{cf_name="consensus_message_processed"} 0
+rocksdb_actual_delayed_write_rate{cf_name="effects"} 0
+rocksdb_actual_delayed_write_rate{cf_name="effects_signatures"} 0
+rocksdb_actual_delayed_write_rate{cf_name="end_of_publish"} 0
+rocksdb_actual_delayed_write_rate{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_actual_delayed_write_rate{cf_name="epoch_start_configuration"} 0
+rocksdb_actual_delayed_write_rate{cf_name="events"} 0
+rocksdb_actual_delayed_write_rate{cf_name="executed_effects"} 0
+rocksdb_actual_delayed_write_rate{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_actual_delayed_write_rate{cf_name="final_epoch_checkpoint"} 0
+rocksdb_actual_delayed_write_rate{cf_name="indirect_move_objects"} 0
+rocksdb_actual_delayed_write_rate{cf_name="last_consensus_index"} 0
+rocksdb_actual_delayed_write_rate{cf_name="log"} 0
+rocksdb_actual_delayed_write_rate{cf_name="next_shared_object_versions"} 0
+rocksdb_actual_delayed_write_rate{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_actual_delayed_write_rate{cf_name="objects"} 0
+rocksdb_actual_delayed_write_rate{cf_name="owned_object_transaction_locks"} 0
+rocksdb_actual_delayed_write_rate{cf_name="parent_sync"} 0
+rocksdb_actual_delayed_write_rate{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_actual_delayed_write_rate{cf_name="pending_checkpoints"} 0
+rocksdb_actual_delayed_write_rate{cf_name="pending_consensus_transactions"} 0
+rocksdb_actual_delayed_write_rate{cf_name="pending_execution"} 0
+rocksdb_actual_delayed_write_rate{cf_name="pruned_checkpoint"} 0
+rocksdb_actual_delayed_write_rate{cf_name="reconfig_state"} 0
+rocksdb_actual_delayed_write_rate{cf_name="retry_count"} 0
+rocksdb_actual_delayed_write_rate{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_actual_delayed_write_rate{cf_name="signed_transactions"} 0
+rocksdb_actual_delayed_write_rate{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_actual_delayed_write_rate{cf_name="transaction_cert_signatures"} 0
+rocksdb_actual_delayed_write_rate{cf_name="transactions"} 0
+rocksdb_actual_delayed_write_rate{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_actual_delayed_write_rate{cf_name="watermarks"} 0
+# HELP rocksdb_block_cache_capacity The block cache capacity of the column family.
+# TYPE rocksdb_block_cache_capacity gauge
+rocksdb_block_cache_capacity{cf_name="assigned_shared_object_versions"} 8388608
+rocksdb_block_cache_capacity{cf_name="authority_capabilities"} 8388608
+rocksdb_block_cache_capacity{cf_name="builder_checkpoint_summary"} 8388608
+rocksdb_block_cache_capacity{cf_name="builder_digest_to_checkpoint"} 8388608
+rocksdb_block_cache_capacity{cf_name="certified_checkpoints"} 8388608
+rocksdb_block_cache_capacity{cf_name="checkpoint_boundary"} 8388608
+rocksdb_block_cache_capacity{cf_name="checkpoint_by_digest"} 8388608
+rocksdb_block_cache_capacity{cf_name="checkpoint_content"} 8388608
+rocksdb_block_cache_capacity{cf_name="committee_map"} 67108864
+rocksdb_block_cache_capacity{cf_name="consensus_message_order"} 8388608
+rocksdb_block_cache_capacity{cf_name="consensus_message_processed"} 8388608
+rocksdb_block_cache_capacity{cf_name="effects"} 67108864
+rocksdb_block_cache_capacity{cf_name="effects_signatures"} 8388608
+rocksdb_block_cache_capacity{cf_name="end_of_publish"} 8388608
+rocksdb_block_cache_capacity{cf_name="epoch_last_checkpoint_map"} 8388608
+rocksdb_block_cache_capacity{cf_name="epoch_start_configuration"} 8388608
+rocksdb_block_cache_capacity{cf_name="events"} 8388608
+rocksdb_block_cache_capacity{cf_name="executed_effects"} 8388608
+rocksdb_block_cache_capacity{cf_name="executed_transactions_to_checkpoint"} 8388608
+rocksdb_block_cache_capacity{cf_name="final_epoch_checkpoint"} 8388608
+rocksdb_block_cache_capacity{cf_name="indirect_move_objects"} 67108864
+rocksdb_block_cache_capacity{cf_name="last_consensus_index"} 8388608
+rocksdb_block_cache_capacity{cf_name="log"} 8388608
+rocksdb_block_cache_capacity{cf_name="next_shared_object_versions"} 8388608
+rocksdb_block_cache_capacity{cf_name="num_certified_checkpoint_signatures"} 8388608
+rocksdb_block_cache_capacity{cf_name="objects"} 67108864
+rocksdb_block_cache_capacity{cf_name="owned_object_transaction_locks"} 67108864
+rocksdb_block_cache_capacity{cf_name="parent_sync"} 8388608
+rocksdb_block_cache_capacity{cf_name="pending_checkpoint_signatures"} 8388608
+rocksdb_block_cache_capacity{cf_name="pending_checkpoints"} 8388608
+rocksdb_block_cache_capacity{cf_name="pending_consensus_transactions"} 8388608
+rocksdb_block_cache_capacity{cf_name="pending_execution"} 8388608
+rocksdb_block_cache_capacity{cf_name="pruned_checkpoint"} 8388608
+rocksdb_block_cache_capacity{cf_name="reconfig_state"} 8388608
+rocksdb_block_cache_capacity{cf_name="retry_count"} 8388608
+rocksdb_block_cache_capacity{cf_name="root_state_hash_by_epoch"} 8388608
+rocksdb_block_cache_capacity{cf_name="signed_transactions"} 67108864
+rocksdb_block_cache_capacity{cf_name="state_hash_by_checkpoint"} 8388608
+rocksdb_block_cache_capacity{cf_name="transaction_cert_signatures"} 8388608
+rocksdb_block_cache_capacity{cf_name="transactions"} 67108864
+rocksdb_block_cache_capacity{cf_name="user_signatures_for_checkpoints"} 8388608
+rocksdb_block_cache_capacity{cf_name="watermarks"} 8388608
+# HELP rocksdb_block_cache_pinned_usage The memory size used by the column family in the block cache where entries are pinned
+# TYPE rocksdb_block_cache_pinned_usage gauge
+rocksdb_block_cache_pinned_usage{cf_name="assigned_shared_object_versions"} 87
+rocksdb_block_cache_pinned_usage{cf_name="authority_capabilities"} 87
+rocksdb_block_cache_pinned_usage{cf_name="builder_checkpoint_summary"} 87
+rocksdb_block_cache_pinned_usage{cf_name="builder_digest_to_checkpoint"} 87
+rocksdb_block_cache_pinned_usage{cf_name="certified_checkpoints"} 87
+rocksdb_block_cache_pinned_usage{cf_name="checkpoint_boundary"} 87
+rocksdb_block_cache_pinned_usage{cf_name="checkpoint_by_digest"} 87
+rocksdb_block_cache_pinned_usage{cf_name="checkpoint_content"} 87
+rocksdb_block_cache_pinned_usage{cf_name="committee_map"} 87
+rocksdb_block_cache_pinned_usage{cf_name="consensus_message_order"} 87
+rocksdb_block_cache_pinned_usage{cf_name="consensus_message_processed"} 87
+rocksdb_block_cache_pinned_usage{cf_name="effects"} 87
+rocksdb_block_cache_pinned_usage{cf_name="effects_signatures"} 87
+rocksdb_block_cache_pinned_usage{cf_name="end_of_publish"} 87
+rocksdb_block_cache_pinned_usage{cf_name="epoch_last_checkpoint_map"} 87
+rocksdb_block_cache_pinned_usage{cf_name="epoch_start_configuration"} 87
+rocksdb_block_cache_pinned_usage{cf_name="events"} 87
+rocksdb_block_cache_pinned_usage{cf_name="executed_effects"} 87
+rocksdb_block_cache_pinned_usage{cf_name="executed_transactions_to_checkpoint"} 87
+rocksdb_block_cache_pinned_usage{cf_name="final_epoch_checkpoint"} 87
+rocksdb_block_cache_pinned_usage{cf_name="indirect_move_objects"} 87
+rocksdb_block_cache_pinned_usage{cf_name="last_consensus_index"} 87
+rocksdb_block_cache_pinned_usage{cf_name="log"} 87
+rocksdb_block_cache_pinned_usage{cf_name="next_shared_object_versions"} 87
+rocksdb_block_cache_pinned_usage{cf_name="num_certified_checkpoint_signatures"} 87
+rocksdb_block_cache_pinned_usage{cf_name="objects"} 87
+rocksdb_block_cache_pinned_usage{cf_name="owned_object_transaction_locks"} 87
+rocksdb_block_cache_pinned_usage{cf_name="parent_sync"} 87
+rocksdb_block_cache_pinned_usage{cf_name="pending_checkpoint_signatures"} 87
+rocksdb_block_cache_pinned_usage{cf_name="pending_checkpoints"} 87
+rocksdb_block_cache_pinned_usage{cf_name="pending_consensus_transactions"} 87
+rocksdb_block_cache_pinned_usage{cf_name="pending_execution"} 87
+rocksdb_block_cache_pinned_usage{cf_name="pruned_checkpoint"} 87
+rocksdb_block_cache_pinned_usage{cf_name="reconfig_state"} 87
+rocksdb_block_cache_pinned_usage{cf_name="retry_count"} 87
+rocksdb_block_cache_pinned_usage{cf_name="root_state_hash_by_epoch"} 87
+rocksdb_block_cache_pinned_usage{cf_name="signed_transactions"} 87
+rocksdb_block_cache_pinned_usage{cf_name="state_hash_by_checkpoint"} 87
+rocksdb_block_cache_pinned_usage{cf_name="transaction_cert_signatures"} 87
+rocksdb_block_cache_pinned_usage{cf_name="transactions"} 87
+rocksdb_block_cache_pinned_usage{cf_name="user_signatures_for_checkpoints"} 87
+rocksdb_block_cache_pinned_usage{cf_name="watermarks"} 87
+# HELP rocksdb_block_cache_usage The memory size used by the column family in the block cache.
+# TYPE rocksdb_block_cache_usage gauge
+rocksdb_block_cache_usage{cf_name="assigned_shared_object_versions"} 87
+rocksdb_block_cache_usage{cf_name="authority_capabilities"} 87
+rocksdb_block_cache_usage{cf_name="builder_checkpoint_summary"} 87
+rocksdb_block_cache_usage{cf_name="builder_digest_to_checkpoint"} 87
+rocksdb_block_cache_usage{cf_name="certified_checkpoints"} 87
+rocksdb_block_cache_usage{cf_name="checkpoint_boundary"} 87
+rocksdb_block_cache_usage{cf_name="checkpoint_by_digest"} 87
+rocksdb_block_cache_usage{cf_name="checkpoint_content"} 87
+rocksdb_block_cache_usage{cf_name="committee_map"} 87
+rocksdb_block_cache_usage{cf_name="consensus_message_order"} 87
+rocksdb_block_cache_usage{cf_name="consensus_message_processed"} 87
+rocksdb_block_cache_usage{cf_name="effects"} 30484941
+rocksdb_block_cache_usage{cf_name="effects_signatures"} 87
+rocksdb_block_cache_usage{cf_name="end_of_publish"} 87
+rocksdb_block_cache_usage{cf_name="epoch_last_checkpoint_map"} 87
+rocksdb_block_cache_usage{cf_name="epoch_start_configuration"} 87
+rocksdb_block_cache_usage{cf_name="events"} 87
+rocksdb_block_cache_usage{cf_name="executed_effects"} 87
+rocksdb_block_cache_usage{cf_name="executed_transactions_to_checkpoint"} 87
+rocksdb_block_cache_usage{cf_name="final_epoch_checkpoint"} 87
+rocksdb_block_cache_usage{cf_name="indirect_move_objects"} 87
+rocksdb_block_cache_usage{cf_name="last_consensus_index"} 87
+rocksdb_block_cache_usage{cf_name="log"} 1237225
+rocksdb_block_cache_usage{cf_name="next_shared_object_versions"} 87
+rocksdb_block_cache_usage{cf_name="num_certified_checkpoint_signatures"} 33869
+rocksdb_block_cache_usage{cf_name="objects"} 87
+rocksdb_block_cache_usage{cf_name="owned_object_transaction_locks"} 87
+rocksdb_block_cache_usage{cf_name="parent_sync"} 87
+rocksdb_block_cache_usage{cf_name="pending_checkpoint_signatures"} 87
+rocksdb_block_cache_usage{cf_name="pending_checkpoints"} 87
+rocksdb_block_cache_usage{cf_name="pending_consensus_transactions"} 87
+rocksdb_block_cache_usage{cf_name="pending_execution"} 87
+rocksdb_block_cache_usage{cf_name="pruned_checkpoint"} 87
+rocksdb_block_cache_usage{cf_name="reconfig_state"} 87
+rocksdb_block_cache_usage{cf_name="retry_count"} 87
+rocksdb_block_cache_usage{cf_name="root_state_hash_by_epoch"} 87
+rocksdb_block_cache_usage{cf_name="signed_transactions"} 87
+rocksdb_block_cache_usage{cf_name="state_hash_by_checkpoint"} 87
+rocksdb_block_cache_usage{cf_name="transaction_cert_signatures"} 87
+rocksdb_block_cache_usage{cf_name="transactions"} 193463
+rocksdb_block_cache_usage{cf_name="user_signatures_for_checkpoints"} 87
+rocksdb_block_cache_usage{cf_name="watermarks"} 87
+# HELP rocksdb_estimate_oldest_key_time Estimation of the oldest key timestamp in the DB. Only available\n                for FIFO compaction with compaction_options_fifo.allow_compaction = false.
+# TYPE rocksdb_estimate_oldest_key_time gauge
+rocksdb_estimate_oldest_key_time{cf_name="assigned_shared_object_versions"} 0
+rocksdb_estimate_oldest_key_time{cf_name="authority_capabilities"} 0
+rocksdb_estimate_oldest_key_time{cf_name="builder_checkpoint_summary"} 0
+rocksdb_estimate_oldest_key_time{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_estimate_oldest_key_time{cf_name="certified_checkpoints"} 0
+rocksdb_estimate_oldest_key_time{cf_name="checkpoint_boundary"} 0
+rocksdb_estimate_oldest_key_time{cf_name="checkpoint_by_digest"} 0
+rocksdb_estimate_oldest_key_time{cf_name="checkpoint_content"} 0
+rocksdb_estimate_oldest_key_time{cf_name="committee_map"} 0
+rocksdb_estimate_oldest_key_time{cf_name="consensus_message_order"} 0
+rocksdb_estimate_oldest_key_time{cf_name="consensus_message_processed"} 0
+rocksdb_estimate_oldest_key_time{cf_name="effects"} 0
+rocksdb_estimate_oldest_key_time{cf_name="effects_signatures"} 0
+rocksdb_estimate_oldest_key_time{cf_name="end_of_publish"} 0
+rocksdb_estimate_oldest_key_time{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_estimate_oldest_key_time{cf_name="epoch_start_configuration"} 0
+rocksdb_estimate_oldest_key_time{cf_name="events"} 0
+rocksdb_estimate_oldest_key_time{cf_name="executed_effects"} 0
+rocksdb_estimate_oldest_key_time{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_estimate_oldest_key_time{cf_name="final_epoch_checkpoint"} 0
+rocksdb_estimate_oldest_key_time{cf_name="indirect_move_objects"} 0
+rocksdb_estimate_oldest_key_time{cf_name="last_consensus_index"} 0
+rocksdb_estimate_oldest_key_time{cf_name="log"} 0
+rocksdb_estimate_oldest_key_time{cf_name="next_shared_object_versions"} 0
+rocksdb_estimate_oldest_key_time{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_estimate_oldest_key_time{cf_name="objects"} 0
+rocksdb_estimate_oldest_key_time{cf_name="owned_object_transaction_locks"} 0
+rocksdb_estimate_oldest_key_time{cf_name="parent_sync"} 0
+rocksdb_estimate_oldest_key_time{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_estimate_oldest_key_time{cf_name="pending_checkpoints"} 0
+rocksdb_estimate_oldest_key_time{cf_name="pending_consensus_transactions"} 0
+rocksdb_estimate_oldest_key_time{cf_name="pending_execution"} 0
+rocksdb_estimate_oldest_key_time{cf_name="pruned_checkpoint"} 0
+rocksdb_estimate_oldest_key_time{cf_name="reconfig_state"} 0
+rocksdb_estimate_oldest_key_time{cf_name="retry_count"} 0
+rocksdb_estimate_oldest_key_time{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_estimate_oldest_key_time{cf_name="signed_transactions"} 0
+rocksdb_estimate_oldest_key_time{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_estimate_oldest_key_time{cf_name="transaction_cert_signatures"} 0
+rocksdb_estimate_oldest_key_time{cf_name="transactions"} 0
+rocksdb_estimate_oldest_key_time{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_estimate_oldest_key_time{cf_name="watermarks"} 0
+# HELP rocksdb_estimated_num_keys The estimated number of keys in the table
+# TYPE rocksdb_estimated_num_keys gauge
+rocksdb_estimated_num_keys{cf_name="assigned_shared_object_versions"} 45045
+rocksdb_estimated_num_keys{cf_name="authority_capabilities"} 0
+rocksdb_estimated_num_keys{cf_name="builder_checkpoint_summary"} 0
+rocksdb_estimated_num_keys{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_estimated_num_keys{cf_name="certified_checkpoints"} 136227
+rocksdb_estimated_num_keys{cf_name="checkpoint_boundary"} 0
+rocksdb_estimated_num_keys{cf_name="checkpoint_by_digest"} 136227
+rocksdb_estimated_num_keys{cf_name="checkpoint_content"} 136227
+rocksdb_estimated_num_keys{cf_name="committee_map"} 3
+rocksdb_estimated_num_keys{cf_name="consensus_message_order"} 0
+rocksdb_estimated_num_keys{cf_name="consensus_message_processed"} 0
+rocksdb_estimated_num_keys{cf_name="effects"} 149472
+rocksdb_estimated_num_keys{cf_name="effects_signatures"} 0
+rocksdb_estimated_num_keys{cf_name="end_of_publish"} 0
+rocksdb_estimated_num_keys{cf_name="epoch_last_checkpoint_map"} 2
+rocksdb_estimated_num_keys{cf_name="epoch_start_configuration"} 3
+rocksdb_estimated_num_keys{cf_name="events"} 265
+rocksdb_estimated_num_keys{cf_name="executed_effects"} 137048
+rocksdb_estimated_num_keys{cf_name="executed_transactions_to_checkpoint"} 137048
+rocksdb_estimated_num_keys{cf_name="final_epoch_checkpoint"} 0
+rocksdb_estimated_num_keys{cf_name="indirect_move_objects"} 0
+rocksdb_estimated_num_keys{cf_name="last_consensus_index"} 0
+rocksdb_estimated_num_keys{cf_name="log"} 17536
+rocksdb_estimated_num_keys{cf_name="next_shared_object_versions"} 2
+rocksdb_estimated_num_keys{cf_name="num_certified_checkpoint_signatures"} 179319
+rocksdb_estimated_num_keys{cf_name="objects"} 140206
+rocksdb_estimated_num_keys{cf_name="owned_object_transaction_locks"} 1373
+rocksdb_estimated_num_keys{cf_name="parent_sync"} 139838
+rocksdb_estimated_num_keys{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_estimated_num_keys{cf_name="pending_checkpoints"} 0
+rocksdb_estimated_num_keys{cf_name="pending_consensus_transactions"} 0
+rocksdb_estimated_num_keys{cf_name="pending_execution"} 0
+rocksdb_estimated_num_keys{cf_name="pruned_checkpoint"} 457
+rocksdb_estimated_num_keys{cf_name="reconfig_state"} 0
+rocksdb_estimated_num_keys{cf_name="retry_count"} 0
+rocksdb_estimated_num_keys{cf_name="root_state_hash_by_epoch"} 2
+rocksdb_estimated_num_keys{cf_name="signed_transactions"} 0
+rocksdb_estimated_num_keys{cf_name="state_hash_by_checkpoint"} 44958
+rocksdb_estimated_num_keys{cf_name="transaction_cert_signatures"} 0
+rocksdb_estimated_num_keys{cf_name="transactions"} 187163
+rocksdb_estimated_num_keys{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_estimated_num_keys{cf_name="watermarks"} 408681
+# HELP rocksdb_get_bytes Rocksdb get call returned data size in bytes
+# TYPE rocksdb_get_bytes histogram
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.005"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.01"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.025"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.05"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.1"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.25"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="0.5"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="1"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="2.5"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="5"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="10"} 0
+rocksdb_get_bytes_bucket{cf_name="epoch_start_configuration",le="+Inf"} 1
+rocksdb_get_bytes_sum{cf_name="epoch_start_configuration"} 19721
+rocksdb_get_bytes_count{cf_name="epoch_start_configuration"} 1
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.005"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.01"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.025"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.05"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.1"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.25"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="0.5"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="1"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="2.5"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="5"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="10"} 0
+rocksdb_get_bytes_bucket{cf_name="transactions",le="+Inf"} 1
+rocksdb_get_bytes_sum{cf_name="transactions"} 284
+rocksdb_get_bytes_count{cf_name="transactions"} 1
+# HELP rocksdb_get_latency_seconds Rocksdb get latency in seconds
+# TYPE rocksdb_get_latency_seconds histogram
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000001"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000002"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000004"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000008"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000016"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000032"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000064"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000128"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000256"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.000512"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.001024"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.002048"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.004096"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.008192"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.016384"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.032768"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.065536"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.131072"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.262144"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="0.524288"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="1.048576"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="2.097152"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="4.194304"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="8.388608"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="epoch_start_configuration",le="+Inf"} 1
+rocksdb_get_latency_seconds_sum{cf_name="epoch_start_configuration"} 0.002201007
+rocksdb_get_latency_seconds_count{cf_name="epoch_start_configuration"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000001"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000002"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000004"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000008"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000016"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000032"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000064"} 0
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000128"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000256"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.000512"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.001024"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.002048"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.004096"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.008192"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.016384"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.032768"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.065536"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.131072"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.262144"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="0.524288"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="1.048576"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="2.097152"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="4.194304"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="8.388608"} 1
+rocksdb_get_latency_seconds_bucket{cf_name="transactions",le="+Inf"} 1
+rocksdb_get_latency_seconds_sum{cf_name="transactions"} 0.000064592
+rocksdb_get_latency_seconds_count{cf_name="transactions"} 1
+# HELP rocksdb_is_write_stopped A flag indicating whether writes are stopped on this column family. 1 indicates writes have been stopped.
+# TYPE rocksdb_is_write_stopped gauge
+rocksdb_is_write_stopped{cf_name="assigned_shared_object_versions"} 0
+rocksdb_is_write_stopped{cf_name="authority_capabilities"} 0
+rocksdb_is_write_stopped{cf_name="builder_checkpoint_summary"} 0
+rocksdb_is_write_stopped{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_is_write_stopped{cf_name="certified_checkpoints"} 0
+rocksdb_is_write_stopped{cf_name="checkpoint_boundary"} 0
+rocksdb_is_write_stopped{cf_name="checkpoint_by_digest"} 0
+rocksdb_is_write_stopped{cf_name="checkpoint_content"} 0
+rocksdb_is_write_stopped{cf_name="committee_map"} 0
+rocksdb_is_write_stopped{cf_name="consensus_message_order"} 0
+rocksdb_is_write_stopped{cf_name="consensus_message_processed"} 0
+rocksdb_is_write_stopped{cf_name="effects"} 0
+rocksdb_is_write_stopped{cf_name="effects_signatures"} 0
+rocksdb_is_write_stopped{cf_name="end_of_publish"} 0
+rocksdb_is_write_stopped{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_is_write_stopped{cf_name="epoch_start_configuration"} 0
+rocksdb_is_write_stopped{cf_name="events"} 0
+rocksdb_is_write_stopped{cf_name="executed_effects"} 0
+rocksdb_is_write_stopped{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_is_write_stopped{cf_name="final_epoch_checkpoint"} 0
+rocksdb_is_write_stopped{cf_name="indirect_move_objects"} 0
+rocksdb_is_write_stopped{cf_name="last_consensus_index"} 0
+rocksdb_is_write_stopped{cf_name="log"} 0
+rocksdb_is_write_stopped{cf_name="next_shared_object_versions"} 0
+rocksdb_is_write_stopped{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_is_write_stopped{cf_name="objects"} 0
+rocksdb_is_write_stopped{cf_name="owned_object_transaction_locks"} 0
+rocksdb_is_write_stopped{cf_name="parent_sync"} 0
+rocksdb_is_write_stopped{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_is_write_stopped{cf_name="pending_checkpoints"} 0
+rocksdb_is_write_stopped{cf_name="pending_consensus_transactions"} 0
+rocksdb_is_write_stopped{cf_name="pending_execution"} 0
+rocksdb_is_write_stopped{cf_name="pruned_checkpoint"} 0
+rocksdb_is_write_stopped{cf_name="reconfig_state"} 0
+rocksdb_is_write_stopped{cf_name="retry_count"} 0
+rocksdb_is_write_stopped{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_is_write_stopped{cf_name="signed_transactions"} 0
+rocksdb_is_write_stopped{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_is_write_stopped{cf_name="transaction_cert_signatures"} 0
+rocksdb_is_write_stopped{cf_name="transactions"} 0
+rocksdb_is_write_stopped{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_is_write_stopped{cf_name="watermarks"} 0
+# HELP rocksdb_mem_table_flush_pending A 1 or 0 flag indicating whether a memtable flush is pending.\n                If this number is 1, it means a memtable is waiting for being flushed,\n                but there might be too many L0 files that prevents it from being flushed.
+# TYPE rocksdb_mem_table_flush_pending gauge
+rocksdb_mem_table_flush_pending{cf_name="assigned_shared_object_versions"} 0
+rocksdb_mem_table_flush_pending{cf_name="authority_capabilities"} 0
+rocksdb_mem_table_flush_pending{cf_name="builder_checkpoint_summary"} 0
+rocksdb_mem_table_flush_pending{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_mem_table_flush_pending{cf_name="certified_checkpoints"} 0
+rocksdb_mem_table_flush_pending{cf_name="checkpoint_boundary"} 0
+rocksdb_mem_table_flush_pending{cf_name="checkpoint_by_digest"} 0
+rocksdb_mem_table_flush_pending{cf_name="checkpoint_content"} 0
+rocksdb_mem_table_flush_pending{cf_name="committee_map"} 0
+rocksdb_mem_table_flush_pending{cf_name="consensus_message_order"} 0
+rocksdb_mem_table_flush_pending{cf_name="consensus_message_processed"} 0
+rocksdb_mem_table_flush_pending{cf_name="effects"} 0
+rocksdb_mem_table_flush_pending{cf_name="effects_signatures"} 0
+rocksdb_mem_table_flush_pending{cf_name="end_of_publish"} 0
+rocksdb_mem_table_flush_pending{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_mem_table_flush_pending{cf_name="epoch_start_configuration"} 0
+rocksdb_mem_table_flush_pending{cf_name="events"} 0
+rocksdb_mem_table_flush_pending{cf_name="executed_effects"} 0
+rocksdb_mem_table_flush_pending{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_mem_table_flush_pending{cf_name="final_epoch_checkpoint"} 0
+rocksdb_mem_table_flush_pending{cf_name="indirect_move_objects"} 0
+rocksdb_mem_table_flush_pending{cf_name="last_consensus_index"} 0
+rocksdb_mem_table_flush_pending{cf_name="log"} 0
+rocksdb_mem_table_flush_pending{cf_name="next_shared_object_versions"} 0
+rocksdb_mem_table_flush_pending{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_mem_table_flush_pending{cf_name="objects"} 0
+rocksdb_mem_table_flush_pending{cf_name="owned_object_transaction_locks"} 0
+rocksdb_mem_table_flush_pending{cf_name="parent_sync"} 0
+rocksdb_mem_table_flush_pending{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_mem_table_flush_pending{cf_name="pending_checkpoints"} 0
+rocksdb_mem_table_flush_pending{cf_name="pending_consensus_transactions"} 0
+rocksdb_mem_table_flush_pending{cf_name="pending_execution"} 0
+rocksdb_mem_table_flush_pending{cf_name="pruned_checkpoint"} 0
+rocksdb_mem_table_flush_pending{cf_name="reconfig_state"} 0
+rocksdb_mem_table_flush_pending{cf_name="retry_count"} 0
+rocksdb_mem_table_flush_pending{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_mem_table_flush_pending{cf_name="signed_transactions"} 0
+rocksdb_mem_table_flush_pending{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_mem_table_flush_pending{cf_name="transaction_cert_signatures"} 0
+rocksdb_mem_table_flush_pending{cf_name="transactions"} 0
+rocksdb_mem_table_flush_pending{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_mem_table_flush_pending{cf_name="watermarks"} 0
+# HELP rocksdb_mem_table_usage The estimated memory usage of the all memtables in the db
+# TYPE rocksdb_mem_table_usage gauge
+rocksdb_mem_table_usage{db_name="checkpoints"} 167784448
+rocksdb_mem_table_usage{db_name="epochs"} 2394912
+rocksdb_mem_table_usage{db_name="perpetual"} 153244800
+rocksdb_mem_table_usage{db_name="recovery_log"} 44046336
+# HELP rocksdb_multiget_bytes Rocksdb multiget call returned data size in bytes
+# TYPE rocksdb_multiget_bytes histogram
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.005"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.01"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.025"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.05"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.1"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.25"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="0.5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="1"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="2.5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="10"} 0
+rocksdb_multiget_bytes_bucket{cf_name="effects",le="+Inf"} 1
+rocksdb_multiget_bytes_sum{cf_name="effects"} 411
+rocksdb_multiget_bytes_count{cf_name="effects"} 1
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.005"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.01"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.025"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.05"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.1"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.25"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="0.5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="1"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="2.5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="5"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="10"} 0
+rocksdb_multiget_bytes_bucket{cf_name="transactions",le="+Inf"} 1006
+rocksdb_multiget_bytes_sum{cf_name="transactions"} 293366
+rocksdb_multiget_bytes_count{cf_name="transactions"} 1006
+# HELP rocksdb_multiget_latency_seconds Rocksdb multiget latency in seconds
+# TYPE rocksdb_multiget_latency_seconds histogram
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000001"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000002"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000004"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000008"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000016"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000032"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000064"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000128"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000256"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.000512"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.001024"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.002048"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.004096"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.008192"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.016384"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.032768"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.065536"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.131072"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.262144"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="0.524288"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="1.048576"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="2.097152"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="4.194304"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="8.388608"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="effects",le="+Inf"} 1
+rocksdb_multiget_latency_seconds_sum{cf_name="effects"} 0.000044662
+rocksdb_multiget_latency_seconds_count{cf_name="effects"} 1
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000001"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000002"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000004"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000008"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000016"} 0
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000032"} 12
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000064"} 926
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000128"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000256"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.000512"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.001024"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.002048"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.004096"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.008192"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.016384"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.032768"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.065536"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.131072"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.262144"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="0.524288"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="1.048576"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="2.097152"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="4.194304"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="8.388608"} 1006
+rocksdb_multiget_latency_seconds_bucket{cf_name="transactions",le="+Inf"} 1006
+rocksdb_multiget_latency_seconds_sum{cf_name="transactions"} 0.04935914600000001
+rocksdb_multiget_latency_seconds_count{cf_name="transactions"} 1006
+# HELP rocksdb_num_running_flushes The number of flushes that are currently running for the column family.
+# TYPE rocksdb_num_running_flushes gauge
+rocksdb_num_running_flushes{cf_name="assigned_shared_object_versions"} 0
+rocksdb_num_running_flushes{cf_name="authority_capabilities"} 0
+rocksdb_num_running_flushes{cf_name="builder_checkpoint_summary"} 0
+rocksdb_num_running_flushes{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_num_running_flushes{cf_name="certified_checkpoints"} 0
+rocksdb_num_running_flushes{cf_name="checkpoint_boundary"} 0
+rocksdb_num_running_flushes{cf_name="checkpoint_by_digest"} 0
+rocksdb_num_running_flushes{cf_name="checkpoint_content"} 0
+rocksdb_num_running_flushes{cf_name="committee_map"} 0
+rocksdb_num_running_flushes{cf_name="consensus_message_order"} 0
+rocksdb_num_running_flushes{cf_name="consensus_message_processed"} 0
+rocksdb_num_running_flushes{cf_name="effects"} 0
+rocksdb_num_running_flushes{cf_name="effects_signatures"} 0
+rocksdb_num_running_flushes{cf_name="end_of_publish"} 0
+rocksdb_num_running_flushes{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_num_running_flushes{cf_name="epoch_start_configuration"} 0
+rocksdb_num_running_flushes{cf_name="events"} 0
+rocksdb_num_running_flushes{cf_name="executed_effects"} 0
+rocksdb_num_running_flushes{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_num_running_flushes{cf_name="final_epoch_checkpoint"} 0
+rocksdb_num_running_flushes{cf_name="indirect_move_objects"} 0
+rocksdb_num_running_flushes{cf_name="last_consensus_index"} 0
+rocksdb_num_running_flushes{cf_name="log"} 0
+rocksdb_num_running_flushes{cf_name="next_shared_object_versions"} 0
+rocksdb_num_running_flushes{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_num_running_flushes{cf_name="objects"} 0
+rocksdb_num_running_flushes{cf_name="owned_object_transaction_locks"} 0
+rocksdb_num_running_flushes{cf_name="parent_sync"} 0
+rocksdb_num_running_flushes{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_num_running_flushes{cf_name="pending_checkpoints"} 0
+rocksdb_num_running_flushes{cf_name="pending_consensus_transactions"} 0
+rocksdb_num_running_flushes{cf_name="pending_execution"} 0
+rocksdb_num_running_flushes{cf_name="pruned_checkpoint"} 0
+rocksdb_num_running_flushes{cf_name="reconfig_state"} 0
+rocksdb_num_running_flushes{cf_name="retry_count"} 0
+rocksdb_num_running_flushes{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_num_running_flushes{cf_name="signed_transactions"} 0
+rocksdb_num_running_flushes{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_num_running_flushes{cf_name="transaction_cert_signatures"} 0
+rocksdb_num_running_flushes{cf_name="transactions"} 0
+rocksdb_num_running_flushes{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_num_running_flushes{cf_name="watermarks"} 0
+# HELP rocksdb_num_snapshots Number of snapshots held for the column family
+# TYPE rocksdb_num_snapshots gauge
+rocksdb_num_snapshots{cf_name="assigned_shared_object_versions"} 0
+rocksdb_num_snapshots{cf_name="authority_capabilities"} 0
+rocksdb_num_snapshots{cf_name="builder_checkpoint_summary"} 0
+rocksdb_num_snapshots{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_num_snapshots{cf_name="certified_checkpoints"} 0
+rocksdb_num_snapshots{cf_name="checkpoint_boundary"} 0
+rocksdb_num_snapshots{cf_name="checkpoint_by_digest"} 0
+rocksdb_num_snapshots{cf_name="checkpoint_content"} 0
+rocksdb_num_snapshots{cf_name="committee_map"} 0
+rocksdb_num_snapshots{cf_name="consensus_message_order"} 0
+rocksdb_num_snapshots{cf_name="consensus_message_processed"} 0
+rocksdb_num_snapshots{cf_name="effects"} 0
+rocksdb_num_snapshots{cf_name="effects_signatures"} 0
+rocksdb_num_snapshots{cf_name="end_of_publish"} 0
+rocksdb_num_snapshots{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_num_snapshots{cf_name="epoch_start_configuration"} 0
+rocksdb_num_snapshots{cf_name="events"} 0
+rocksdb_num_snapshots{cf_name="executed_effects"} 0
+rocksdb_num_snapshots{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_num_snapshots{cf_name="final_epoch_checkpoint"} 0
+rocksdb_num_snapshots{cf_name="indirect_move_objects"} 0
+rocksdb_num_snapshots{cf_name="last_consensus_index"} 0
+rocksdb_num_snapshots{cf_name="log"} 0
+rocksdb_num_snapshots{cf_name="next_shared_object_versions"} 0
+rocksdb_num_snapshots{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_num_snapshots{cf_name="objects"} 0
+rocksdb_num_snapshots{cf_name="owned_object_transaction_locks"} 0
+rocksdb_num_snapshots{cf_name="parent_sync"} 0
+rocksdb_num_snapshots{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_num_snapshots{cf_name="pending_checkpoints"} 0
+rocksdb_num_snapshots{cf_name="pending_consensus_transactions"} 0
+rocksdb_num_snapshots{cf_name="pending_execution"} 0
+rocksdb_num_snapshots{cf_name="pruned_checkpoint"} 0
+rocksdb_num_snapshots{cf_name="reconfig_state"} 0
+rocksdb_num_snapshots{cf_name="retry_count"} 0
+rocksdb_num_snapshots{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_num_snapshots{cf_name="signed_transactions"} 0
+rocksdb_num_snapshots{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_num_snapshots{cf_name="transaction_cert_signatures"} 0
+rocksdb_num_snapshots{cf_name="transactions"} 0
+rocksdb_num_snapshots{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_num_snapshots{cf_name="watermarks"} 0
+# HELP rocksdb_oldest_snapshot_time Unit timestamp of the oldest unreleased snapshot
+# TYPE rocksdb_oldest_snapshot_time gauge
+rocksdb_oldest_snapshot_time{cf_name="assigned_shared_object_versions"} 0
+rocksdb_oldest_snapshot_time{cf_name="authority_capabilities"} 0
+rocksdb_oldest_snapshot_time{cf_name="builder_checkpoint_summary"} 0
+rocksdb_oldest_snapshot_time{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_oldest_snapshot_time{cf_name="certified_checkpoints"} 0
+rocksdb_oldest_snapshot_time{cf_name="checkpoint_boundary"} 0
+rocksdb_oldest_snapshot_time{cf_name="checkpoint_by_digest"} 0
+rocksdb_oldest_snapshot_time{cf_name="checkpoint_content"} 0
+rocksdb_oldest_snapshot_time{cf_name="committee_map"} 0
+rocksdb_oldest_snapshot_time{cf_name="consensus_message_order"} 0
+rocksdb_oldest_snapshot_time{cf_name="consensus_message_processed"} 0
+rocksdb_oldest_snapshot_time{cf_name="effects"} 0
+rocksdb_oldest_snapshot_time{cf_name="effects_signatures"} 0
+rocksdb_oldest_snapshot_time{cf_name="end_of_publish"} 0
+rocksdb_oldest_snapshot_time{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_oldest_snapshot_time{cf_name="epoch_start_configuration"} 0
+rocksdb_oldest_snapshot_time{cf_name="events"} 0
+rocksdb_oldest_snapshot_time{cf_name="executed_effects"} 0
+rocksdb_oldest_snapshot_time{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_oldest_snapshot_time{cf_name="final_epoch_checkpoint"} 0
+rocksdb_oldest_snapshot_time{cf_name="indirect_move_objects"} 0
+rocksdb_oldest_snapshot_time{cf_name="last_consensus_index"} 0
+rocksdb_oldest_snapshot_time{cf_name="log"} 0
+rocksdb_oldest_snapshot_time{cf_name="next_shared_object_versions"} 0
+rocksdb_oldest_snapshot_time{cf_name="num_certified_checkpoint_signatures"} 0
+rocksdb_oldest_snapshot_time{cf_name="objects"} 0
+rocksdb_oldest_snapshot_time{cf_name="owned_object_transaction_locks"} 0
+rocksdb_oldest_snapshot_time{cf_name="parent_sync"} 0
+rocksdb_oldest_snapshot_time{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_oldest_snapshot_time{cf_name="pending_checkpoints"} 0
+rocksdb_oldest_snapshot_time{cf_name="pending_consensus_transactions"} 0
+rocksdb_oldest_snapshot_time{cf_name="pending_execution"} 0
+rocksdb_oldest_snapshot_time{cf_name="pruned_checkpoint"} 0
+rocksdb_oldest_snapshot_time{cf_name="reconfig_state"} 0
+rocksdb_oldest_snapshot_time{cf_name="retry_count"} 0
+rocksdb_oldest_snapshot_time{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_oldest_snapshot_time{cf_name="signed_transactions"} 0
+rocksdb_oldest_snapshot_time{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_oldest_snapshot_time{cf_name="transaction_cert_signatures"} 0
+rocksdb_oldest_snapshot_time{cf_name="transactions"} 0
+rocksdb_oldest_snapshot_time{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_oldest_snapshot_time{cf_name="watermarks"} 0
+# HELP rocksdb_size_all_mem_tables The memory size occupied by the column family's in-memory buffer
+# TYPE rocksdb_size_all_mem_tables gauge
+rocksdb_size_all_mem_tables{cf_name="assigned_shared_object_versions"} 6293504
+rocksdb_size_all_mem_tables{cf_name="authority_capabilities"} 2048
+rocksdb_size_all_mem_tables{cf_name="builder_checkpoint_summary"} 2048
+rocksdb_size_all_mem_tables{cf_name="builder_digest_to_checkpoint"} 2048
+rocksdb_size_all_mem_tables{cf_name="certified_checkpoints"} 47187968
+rocksdb_size_all_mem_tables{cf_name="checkpoint_boundary"} 2048
+rocksdb_size_all_mem_tables{cf_name="checkpoint_by_digest"} 53479424
+rocksdb_size_all_mem_tables{cf_name="checkpoint_content"} 36702208
+rocksdb_size_all_mem_tables{cf_name="committee_map"} 2392864
+rocksdb_size_all_mem_tables{cf_name="consensus_message_order"} 2048
+rocksdb_size_all_mem_tables{cf_name="consensus_message_processed"} 2048
+rocksdb_size_all_mem_tables{cf_name="effects"} 17072928
+rocksdb_size_all_mem_tables{cf_name="effects_signatures"} 2048
+rocksdb_size_all_mem_tables{cf_name="end_of_publish"} 2048
+rocksdb_size_all_mem_tables{cf_name="epoch_last_checkpoint_map"} 2048
+rocksdb_size_all_mem_tables{cf_name="epoch_start_configuration"} 1050624
+rocksdb_size_all_mem_tables{cf_name="events"} 1050624
+rocksdb_size_all_mem_tables{cf_name="executed_effects"} 15730688
+rocksdb_size_all_mem_tables{cf_name="executed_transactions_to_checkpoint"} 13633536
+rocksdb_size_all_mem_tables{cf_name="final_epoch_checkpoint"} 2048
+rocksdb_size_all_mem_tables{cf_name="indirect_move_objects"} 2048
+rocksdb_size_all_mem_tables{cf_name="last_consensus_index"} 2048
+rocksdb_size_all_mem_tables{cf_name="log"} 39847936
+rocksdb_size_all_mem_tables{cf_name="next_shared_object_versions"} 2048
+rocksdb_size_all_mem_tables{cf_name="num_certified_checkpoint_signatures"} 162444760
+rocksdb_size_all_mem_tables{cf_name="objects"} 35947296
+rocksdb_size_all_mem_tables{cf_name="owned_object_transaction_locks"} 3441440
+rocksdb_size_all_mem_tables{cf_name="parent_sync"} 22022144
+rocksdb_size_all_mem_tables{cf_name="pending_checkpoint_signatures"} 2048
+rocksdb_size_all_mem_tables{cf_name="pending_checkpoints"} 2048
+rocksdb_size_all_mem_tables{cf_name="pending_consensus_transactions"} 2048
+rocksdb_size_all_mem_tables{cf_name="pending_execution"} 4196352
+rocksdb_size_all_mem_tables{cf_name="pruned_checkpoint"} 1050624
+rocksdb_size_all_mem_tables{cf_name="reconfig_state"} 2048
+rocksdb_size_all_mem_tables{cf_name="retry_count"} 4196352
+rocksdb_size_all_mem_tables{cf_name="root_state_hash_by_epoch"} 2048
+rocksdb_size_all_mem_tables{cf_name="signed_transactions"} 2048
+rocksdb_size_all_mem_tables{cf_name="state_hash_by_checkpoint"} 4196352
+rocksdb_size_all_mem_tables{cf_name="transaction_cert_signatures"} 2048
+rocksdb_size_all_mem_tables{cf_name="transactions"} 42238752
+rocksdb_size_all_mem_tables{cf_name="user_signatures_for_checkpoints"} 2048
+rocksdb_size_all_mem_tables{cf_name="watermarks"} 30410752
+# HELP rocksdb_table_readers_usage The estimated memory usage of all table readers
+# TYPE rocksdb_table_readers_usage gauge
+rocksdb_table_readers_usage{db_name="checkpoints"} 0
+rocksdb_table_readers_usage{db_name="epochs"} 0
+rocksdb_table_readers_usage{db_name="perpetual"} 743633
+rocksdb_table_readers_usage{db_name="recovery_log"} 8071
+# HELP rocksdb_total_sst_files_size The storage size occupied by the column family
+# TYPE rocksdb_total_sst_files_size gauge
+rocksdb_total_sst_files_size{cf_name="assigned_shared_object_versions"} 0
+rocksdb_total_sst_files_size{cf_name="authority_capabilities"} 0
+rocksdb_total_sst_files_size{cf_name="builder_checkpoint_summary"} 0
+rocksdb_total_sst_files_size{cf_name="builder_digest_to_checkpoint"} 0
+rocksdb_total_sst_files_size{cf_name="certified_checkpoints"} 0
+rocksdb_total_sst_files_size{cf_name="checkpoint_boundary"} 0
+rocksdb_total_sst_files_size{cf_name="checkpoint_by_digest"} 0
+rocksdb_total_sst_files_size{cf_name="checkpoint_content"} 0
+rocksdb_total_sst_files_size{cf_name="committee_map"} 0
+rocksdb_total_sst_files_size{cf_name="consensus_message_order"} 0
+rocksdb_total_sst_files_size{cf_name="consensus_message_processed"} 0
+rocksdb_total_sst_files_size{cf_name="effects"} 57829033
+rocksdb_total_sst_files_size{cf_name="effects_signatures"} 0
+rocksdb_total_sst_files_size{cf_name="end_of_publish"} 0
+rocksdb_total_sst_files_size{cf_name="epoch_last_checkpoint_map"} 0
+rocksdb_total_sst_files_size{cf_name="epoch_start_configuration"} 0
+rocksdb_total_sst_files_size{cf_name="events"} 0
+rocksdb_total_sst_files_size{cf_name="executed_effects"} 0
+rocksdb_total_sst_files_size{cf_name="executed_transactions_to_checkpoint"} 0
+rocksdb_total_sst_files_size{cf_name="final_epoch_checkpoint"} 0
+rocksdb_total_sst_files_size{cf_name="indirect_move_objects"} 0
+rocksdb_total_sst_files_size{cf_name="last_consensus_index"} 0
+rocksdb_total_sst_files_size{cf_name="log"} 1195602
+rocksdb_total_sst_files_size{cf_name="next_shared_object_versions"} 0
+rocksdb_total_sst_files_size{cf_name="num_certified_checkpoint_signatures"} 7626
+rocksdb_total_sst_files_size{cf_name="objects"} 0
+rocksdb_total_sst_files_size{cf_name="owned_object_transaction_locks"} 0
+rocksdb_total_sst_files_size{cf_name="parent_sync"} 0
+rocksdb_total_sst_files_size{cf_name="pending_checkpoint_signatures"} 0
+rocksdb_total_sst_files_size{cf_name="pending_checkpoints"} 0
+rocksdb_total_sst_files_size{cf_name="pending_consensus_transactions"} 0
+rocksdb_total_sst_files_size{cf_name="pending_execution"} 0
+rocksdb_total_sst_files_size{cf_name="pruned_checkpoint"} 0
+rocksdb_total_sst_files_size{cf_name="reconfig_state"} 0
+rocksdb_total_sst_files_size{cf_name="retry_count"} 0
+rocksdb_total_sst_files_size{cf_name="root_state_hash_by_epoch"} 0
+rocksdb_total_sst_files_size{cf_name="signed_transactions"} 0
+rocksdb_total_sst_files_size{cf_name="state_hash_by_checkpoint"} 0
+rocksdb_total_sst_files_size{cf_name="transaction_cert_signatures"} 0
+rocksdb_total_sst_files_size{cf_name="transactions"} 29172264
+rocksdb_total_sst_files_size{cf_name="user_signatures_for_checkpoints"} 0
+rocksdb_total_sst_files_size{cf_name="watermarks"} 0
+# HELP rocksdb_unflushed_mem_table_usage The estimated memory usage of unflushed memtables in the db
+# TYPE rocksdb_unflushed_mem_table_usage gauge
+rocksdb_unflushed_mem_table_usage{db_name="checkpoints"} 167784448
+rocksdb_unflushed_mem_table_usage{db_name="epochs"} 2394912
+rocksdb_unflushed_mem_table_usage{db_name="perpetual"} 153244800
+rocksdb_unflushed_mem_table_usage{db_name="recovery_log"} 44046336
+# HELP rocskdb_background_errors The accumulated number of RocksDB background errors.
+# TYPE rocskdb_background_errors gauge
+rocskdb_background_errors{cf_name="assigned_shared_object_versions"} 0
+rocskdb_background_errors{cf_name="authority_capabilities"} 0
+rocskdb_background_errors{cf_name="builder_checkpoint_summary"} 0
+rocskdb_background_errors{cf_name="builder_digest_to_checkpoint"} 0
+rocskdb_background_errors{cf_name="certified_checkpoints"} 0
+rocskdb_background_errors{cf_name="checkpoint_boundary"} 0
+rocskdb_background_errors{cf_name="checkpoint_by_digest"} 0
+rocskdb_background_errors{cf_name="checkpoint_content"} 0
+rocskdb_background_errors{cf_name="committee_map"} 0
+rocskdb_background_errors{cf_name="consensus_message_order"} 0
+rocskdb_background_errors{cf_name="consensus_message_processed"} 0
+rocskdb_background_errors{cf_name="effects"} 0
+rocskdb_background_errors{cf_name="effects_signatures"} 0
+rocskdb_background_errors{cf_name="end_of_publish"} 0
+rocskdb_background_errors{cf_name="epoch_last_checkpoint_map"} 0
+rocskdb_background_errors{cf_name="epoch_start_configuration"} 0
+rocskdb_background_errors{cf_name="events"} 0
+rocskdb_background_errors{cf_name="executed_effects"} 0
+rocskdb_background_errors{cf_name="executed_transactions_to_checkpoint"} 0
+rocskdb_background_errors{cf_name="final_epoch_checkpoint"} 0
+rocskdb_background_errors{cf_name="indirect_move_objects"} 0
+rocskdb_background_errors{cf_name="last_consensus_index"} 0
+rocskdb_background_errors{cf_name="log"} 0
+rocskdb_background_errors{cf_name="next_shared_object_versions"} 0
+rocskdb_background_errors{cf_name="num_certified_checkpoint_signatures"} 0
+rocskdb_background_errors{cf_name="objects"} 0
+rocskdb_background_errors{cf_name="owned_object_transaction_locks"} 0
+rocskdb_background_errors{cf_name="parent_sync"} 0
+rocskdb_background_errors{cf_name="pending_checkpoint_signatures"} 0
+rocskdb_background_errors{cf_name="pending_checkpoints"} 0
+rocskdb_background_errors{cf_name="pending_consensus_transactions"} 0
+rocskdb_background_errors{cf_name="pending_execution"} 0
+rocskdb_background_errors{cf_name="pruned_checkpoint"} 0
+rocskdb_background_errors{cf_name="reconfig_state"} 0
+rocskdb_background_errors{cf_name="retry_count"} 0
+rocskdb_background_errors{cf_name="root_state_hash_by_epoch"} 0
+rocskdb_background_errors{cf_name="signed_transactions"} 0
+rocskdb_background_errors{cf_name="state_hash_by_checkpoint"} 0
+rocskdb_background_errors{cf_name="transaction_cert_signatures"} 0
+rocskdb_background_errors{cf_name="transactions"} 0
+rocskdb_background_errors{cf_name="user_signatures_for_checkpoints"} 0
+rocskdb_background_errors{cf_name="watermarks"} 0
+# HELP rocskdb_compaction_pending A 1 or 0 flag indicating whether a compaction job is pending.\n                If this number is 1, it means some part of the column family requires\n                compaction in order to maintain shape of LSM tree, but the compaction\n                is pending because the desired compaction job is either waiting for\n                other dependent compactions to be finished or waiting for an available\n                compaction thread.
+# TYPE rocskdb_compaction_pending gauge
+rocskdb_compaction_pending{cf_name="assigned_shared_object_versions"} 0
+rocskdb_compaction_pending{cf_name="authority_capabilities"} 0
+rocskdb_compaction_pending{cf_name="builder_checkpoint_summary"} 0
+rocskdb_compaction_pending{cf_name="builder_digest_to_checkpoint"} 0
+rocskdb_compaction_pending{cf_name="certified_checkpoints"} 0
+rocskdb_compaction_pending{cf_name="checkpoint_boundary"} 0
+rocskdb_compaction_pending{cf_name="checkpoint_by_digest"} 0
+rocskdb_compaction_pending{cf_name="checkpoint_content"} 0
+rocskdb_compaction_pending{cf_name="committee_map"} 0
+rocskdb_compaction_pending{cf_name="consensus_message_order"} 0
+rocskdb_compaction_pending{cf_name="consensus_message_processed"} 0
+rocskdb_compaction_pending{cf_name="effects"} 0
+rocskdb_compaction_pending{cf_name="effects_signatures"} 0
+rocskdb_compaction_pending{cf_name="end_of_publish"} 0
+rocskdb_compaction_pending{cf_name="epoch_last_checkpoint_map"} 0
+rocskdb_compaction_pending{cf_name="epoch_start_configuration"} 0
+rocskdb_compaction_pending{cf_name="events"} 0
+rocskdb_compaction_pending{cf_name="executed_effects"} 0
+rocskdb_compaction_pending{cf_name="executed_transactions_to_checkpoint"} 0
+rocskdb_compaction_pending{cf_name="final_epoch_checkpoint"} 0
+rocskdb_compaction_pending{cf_name="indirect_move_objects"} 0
+rocskdb_compaction_pending{cf_name="last_consensus_index"} 0
+rocskdb_compaction_pending{cf_name="log"} 0
+rocskdb_compaction_pending{cf_name="next_shared_object_versions"} 0
+rocskdb_compaction_pending{cf_name="num_certified_checkpoint_signatures"} 0
+rocskdb_compaction_pending{cf_name="objects"} 0
+rocskdb_compaction_pending{cf_name="owned_object_transaction_locks"} 0
+rocskdb_compaction_pending{cf_name="parent_sync"} 0
+rocskdb_compaction_pending{cf_name="pending_checkpoint_signatures"} 0
+rocskdb_compaction_pending{cf_name="pending_checkpoints"} 0
+rocskdb_compaction_pending{cf_name="pending_consensus_transactions"} 0
+rocskdb_compaction_pending{cf_name="pending_execution"} 0
+rocskdb_compaction_pending{cf_name="pruned_checkpoint"} 0
+rocskdb_compaction_pending{cf_name="reconfig_state"} 0
+rocskdb_compaction_pending{cf_name="retry_count"} 0
+rocskdb_compaction_pending{cf_name="root_state_hash_by_epoch"} 0
+rocskdb_compaction_pending{cf_name="signed_transactions"} 0
+rocskdb_compaction_pending{cf_name="state_hash_by_checkpoint"} 0
+rocskdb_compaction_pending{cf_name="transaction_cert_signatures"} 0
+rocskdb_compaction_pending{cf_name="transactions"} 0
+rocskdb_compaction_pending{cf_name="user_signatures_for_checkpoints"} 0
+rocskdb_compaction_pending{cf_name="watermarks"} 0
+# HELP rocskdb_estimate_table_readers_mem The estimated memory size used for reading SST tables in this column\n                family such as filters and index blocks. Note that this number does not\n                include the memory used in block cache.
+# TYPE rocskdb_estimate_table_readers_mem gauge
+rocskdb_estimate_table_readers_mem{cf_name="assigned_shared_object_versions"} 0
+rocskdb_estimate_table_readers_mem{cf_name="authority_capabilities"} 0
+rocskdb_estimate_table_readers_mem{cf_name="builder_checkpoint_summary"} 0
+rocskdb_estimate_table_readers_mem{cf_name="builder_digest_to_checkpoint"} 0
+rocskdb_estimate_table_readers_mem{cf_name="certified_checkpoints"} 0
+rocskdb_estimate_table_readers_mem{cf_name="checkpoint_boundary"} 0
+rocskdb_estimate_table_readers_mem{cf_name="checkpoint_by_digest"} 0
+rocskdb_estimate_table_readers_mem{cf_name="checkpoint_content"} 0
+rocskdb_estimate_table_readers_mem{cf_name="committee_map"} 0
+rocskdb_estimate_table_readers_mem{cf_name="consensus_message_order"} 0
+rocskdb_estimate_table_readers_mem{cf_name="consensus_message_processed"} 0
+rocskdb_estimate_table_readers_mem{cf_name="effects"} 470608
+rocskdb_estimate_table_readers_mem{cf_name="effects_signatures"} 0
+rocskdb_estimate_table_readers_mem{cf_name="end_of_publish"} 0
+rocskdb_estimate_table_readers_mem{cf_name="epoch_last_checkpoint_map"} 0
+rocskdb_estimate_table_readers_mem{cf_name="epoch_start_configuration"} 0
+rocskdb_estimate_table_readers_mem{cf_name="events"} 0
+rocskdb_estimate_table_readers_mem{cf_name="executed_effects"} 0
+rocskdb_estimate_table_readers_mem{cf_name="executed_transactions_to_checkpoint"} 0
+rocskdb_estimate_table_readers_mem{cf_name="final_epoch_checkpoint"} 0
+rocskdb_estimate_table_readers_mem{cf_name="indirect_move_objects"} 0
+rocskdb_estimate_table_readers_mem{cf_name="last_consensus_index"} 0
+rocskdb_estimate_table_readers_mem{cf_name="log"} 8071
+rocskdb_estimate_table_readers_mem{cf_name="next_shared_object_versions"} 0
+rocskdb_estimate_table_readers_mem{cf_name="num_certified_checkpoint_signatures"} 1995
+rocskdb_estimate_table_readers_mem{cf_name="objects"} 0
+rocskdb_estimate_table_readers_mem{cf_name="owned_object_transaction_locks"} 0
+rocskdb_estimate_table_readers_mem{cf_name="parent_sync"} 0
+rocskdb_estimate_table_readers_mem{cf_name="pending_checkpoint_signatures"} 0
+rocskdb_estimate_table_readers_mem{cf_name="pending_checkpoints"} 0
+rocskdb_estimate_table_readers_mem{cf_name="pending_consensus_transactions"} 0
+rocskdb_estimate_table_readers_mem{cf_name="pending_execution"} 0
+rocskdb_estimate_table_readers_mem{cf_name="pruned_checkpoint"} 0
+rocskdb_estimate_table_readers_mem{cf_name="reconfig_state"} 0
+rocskdb_estimate_table_readers_mem{cf_name="retry_count"} 0
+rocskdb_estimate_table_readers_mem{cf_name="root_state_hash_by_epoch"} 0
+rocskdb_estimate_table_readers_mem{cf_name="signed_transactions"} 0
+rocskdb_estimate_table_readers_mem{cf_name="state_hash_by_checkpoint"} 0
+rocskdb_estimate_table_readers_mem{cf_name="transaction_cert_signatures"} 0
+rocskdb_estimate_table_readers_mem{cf_name="transactions"} 273025
+rocskdb_estimate_table_readers_mem{cf_name="user_signatures_for_checkpoints"} 0
+rocskdb_estimate_table_readers_mem{cf_name="watermarks"} 0
+# HELP rocskdb_num_running_compactions The number of compactions that are currently running for the column family.
+# TYPE rocskdb_num_running_compactions gauge
+rocskdb_num_running_compactions{cf_name="assigned_shared_object_versions"} 0
+rocskdb_num_running_compactions{cf_name="authority_capabilities"} 0
+rocskdb_num_running_compactions{cf_name="builder_checkpoint_summary"} 0
+rocskdb_num_running_compactions{cf_name="builder_digest_to_checkpoint"} 0
+rocskdb_num_running_compactions{cf_name="certified_checkpoints"} 0
+rocskdb_num_running_compactions{cf_name="checkpoint_boundary"} 0
+rocskdb_num_running_compactions{cf_name="checkpoint_by_digest"} 0
+rocskdb_num_running_compactions{cf_name="checkpoint_content"} 0
+rocskdb_num_running_compactions{cf_name="committee_map"} 0
+rocskdb_num_running_compactions{cf_name="consensus_message_order"} 0
+rocskdb_num_running_compactions{cf_name="consensus_message_processed"} 0
+rocskdb_num_running_compactions{cf_name="effects"} 0
+rocskdb_num_running_compactions{cf_name="effects_signatures"} 0
+rocskdb_num_running_compactions{cf_name="end_of_publish"} 0
+rocskdb_num_running_compactions{cf_name="epoch_last_checkpoint_map"} 0
+rocskdb_num_running_compactions{cf_name="epoch_start_configuration"} 0
+rocskdb_num_running_compactions{cf_name="events"} 0
+rocskdb_num_running_compactions{cf_name="executed_effects"} 0
+rocskdb_num_running_compactions{cf_name="executed_transactions_to_checkpoint"} 0
+rocskdb_num_running_compactions{cf_name="final_epoch_checkpoint"} 0
+rocskdb_num_running_compactions{cf_name="indirect_move_objects"} 0
+rocskdb_num_running_compactions{cf_name="last_consensus_index"} 0
+rocskdb_num_running_compactions{cf_name="log"} 0
+rocskdb_num_running_compactions{cf_name="next_shared_object_versions"} 0
+rocskdb_num_running_compactions{cf_name="num_certified_checkpoint_signatures"} 0
+rocskdb_num_running_compactions{cf_name="objects"} 0
+rocskdb_num_running_compactions{cf_name="owned_object_transaction_locks"} 0
+rocskdb_num_running_compactions{cf_name="parent_sync"} 0
+rocskdb_num_running_compactions{cf_name="pending_checkpoint_signatures"} 0
+rocskdb_num_running_compactions{cf_name="pending_checkpoints"} 0
+rocskdb_num_running_compactions{cf_name="pending_consensus_transactions"} 0
+rocskdb_num_running_compactions{cf_name="pending_execution"} 0
+rocskdb_num_running_compactions{cf_name="pruned_checkpoint"} 0
+rocskdb_num_running_compactions{cf_name="reconfig_state"} 0
+rocskdb_num_running_compactions{cf_name="retry_count"} 0
+rocskdb_num_running_compactions{cf_name="root_state_hash_by_epoch"} 0
+rocskdb_num_running_compactions{cf_name="signed_transactions"} 0
+rocskdb_num_running_compactions{cf_name="state_hash_by_checkpoint"} 0
+rocskdb_num_running_compactions{cf_name="transaction_cert_signatures"} 0
+rocskdb_num_running_compactions{cf_name="transactions"} 0
+rocskdb_num_running_compactions{cf_name="user_signatures_for_checkpoints"} 0
+rocskdb_num_running_compactions{cf_name="watermarks"} 0
+# HELP skipped_consensus_txns Total number of consensus transactions skipped
+# TYPE skipped_consensus_txns counter
+skipped_consensus_txns 0
+# HELP sui_inbound_inflight_requests The number of inflight network requests
+# TYPE sui_inbound_inflight_requests gauge
+sui_inbound_inflight_requests{route="/sui.Discovery/GetKnownPeers"} 0
+sui_inbound_inflight_requests{route="/sui.StateSync/GetCheckpointContents"} 0
+sui_inbound_inflight_requests{route="/sui.StateSync/GetCheckpointSummary"} 0
+sui_inbound_inflight_requests{route="/sui.StateSync/PushCheckpointSummary"} 0
+# HELP sui_inbound_request_latency Latency of a request by route
+# TYPE sui_inbound_request_latency histogram
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.001"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.005"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.01"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.05"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.1"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.25"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.5"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="1"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="2.5"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="5"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="10"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="20"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="30"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="60"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="90"} 1834
+sui_inbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 1834
+sui_inbound_request_latency_sum{route="/sui.Discovery/GetKnownPeers"} 0.3403532890000008
+sui_inbound_request_latency_count{route="/sui.Discovery/GetKnownPeers"} 1834
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.001"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.005"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.01"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.05"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.1"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.25"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.5"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="1"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="2.5"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="5"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="10"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="20"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="30"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="60"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="90"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 128
+sui_inbound_request_latency_sum{route="/sui.StateSync/GetCheckpointContents"} 0.015132681000000004
+sui_inbound_request_latency_count{route="/sui.StateSync/GetCheckpointContents"} 128
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.001"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.005"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.01"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.05"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.1"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.25"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.5"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2.5"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="5"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="10"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="20"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="30"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="60"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="90"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 49769
+sui_inbound_request_latency_sum{route="/sui.StateSync/GetCheckpointSummary"} 6.171977515999971
+sui_inbound_request_latency_count{route="/sui.StateSync/GetCheckpointSummary"} 49769
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.001"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.005"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.01"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.05"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.1"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.25"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.5"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2.5"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="5"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="10"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="20"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="30"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="60"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="90"} 131003
+sui_inbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 131003
+sui_inbound_request_latency_sum{route="/sui.StateSync/PushCheckpointSummary"} 21.258490223999864
+sui_inbound_request_latency_count{route="/sui.StateSync/PushCheckpointSummary"} 131003
+# HELP sui_inbound_request_size Size of a request by route
+# TYPE sui_inbound_request_size histogram
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1024"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2048"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4096"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8192"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16384"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="32768"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="65536"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="131072"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="262144"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="524288"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1048576"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2097152"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4194304"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8388608"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16777216"} 1834
+sui_inbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 1834
+sui_inbound_request_size_sum{route="/sui.Discovery/GetKnownPeers"} 0
+sui_inbound_request_size_count{route="/sui.Discovery/GetKnownPeers"} 1834
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1024"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2048"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4096"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8192"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16384"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="32768"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="65536"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="131072"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="262144"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="524288"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1048576"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2097152"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4194304"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8388608"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16777216"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 128
+sui_inbound_request_size_sum{route="/sui.StateSync/GetCheckpointContents"} 6528
+sui_inbound_request_size_count{route="/sui.StateSync/GetCheckpointContents"} 128
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1024"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2048"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4096"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8192"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16384"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="32768"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="65536"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="131072"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="262144"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="524288"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1048576"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2097152"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4194304"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8388608"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16777216"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 49769
+sui_inbound_request_size_sum{route="/sui.StateSync/GetCheckpointSummary"} 945699
+sui_inbound_request_size_count{route="/sui.StateSync/GetCheckpointSummary"} 49769
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1024"} 131001
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2048"} 131001
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4096"} 131001
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8192"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16384"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="32768"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="65536"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="131072"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="262144"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="524288"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1048576"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2097152"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4194304"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8388608"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16777216"} 131003
+sui_inbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 131003
+sui_inbound_request_size_sum{route="/sui.StateSync/PushCheckpointSummary"} 39706739
+sui_inbound_request_size_count{route="/sui.StateSync/PushCheckpointSummary"} 131003
+# HELP sui_inbound_requests The number of requests made on the network
+# TYPE sui_inbound_requests counter
+sui_inbound_requests{route="/sui.Discovery/GetKnownPeers"} 1834
+sui_inbound_requests{route="/sui.StateSync/GetCheckpointContents"} 128
+sui_inbound_requests{route="/sui.StateSync/GetCheckpointSummary"} 49769
+sui_inbound_requests{route="/sui.StateSync/PushCheckpointSummary"} 131003
+# HELP sui_inbound_response_size Size of a response by route
+# TYPE sui_inbound_response_size histogram
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1024"} 2
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2048"} 2
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4096"} 2
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8192"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16384"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="32768"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="65536"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="131072"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="262144"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="524288"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1048576"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2097152"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4194304"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8388608"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16777216"} 1834
+sui_inbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 1834
+sui_inbound_response_size_sum{route="/sui.Discovery/GetKnownPeers"} 9669623
+sui_inbound_response_size_count{route="/sui.Discovery/GetKnownPeers"} 1834
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1024"} 127
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2048"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4096"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8192"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16384"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="32768"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="65536"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="131072"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="262144"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="524288"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1048576"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2097152"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4194304"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8388608"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16777216"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 128
+sui_inbound_response_size_sum{route="/sui.StateSync/GetCheckpointContents"} 35519
+sui_inbound_response_size_count{route="/sui.StateSync/GetCheckpointContents"} 128
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1024"} 49747
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2048"} 49747
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4096"} 49747
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8192"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16384"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="32768"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="65536"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="131072"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="262144"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="524288"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1048576"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2097152"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4194304"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8388608"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16777216"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 49769
+sui_inbound_response_size_sum{route="/sui.StateSync/GetCheckpointSummary"} 15269036
+sui_inbound_response_size_count{route="/sui.StateSync/GetCheckpointSummary"} 49769
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1024"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2048"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4096"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8192"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16384"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="32768"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="65536"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="131072"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="262144"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="524288"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1048576"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2097152"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4194304"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8388608"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16777216"} 131003
+sui_inbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 131003
+sui_inbound_response_size_sum{route="/sui.StateSync/PushCheckpointSummary"} 0
+sui_inbound_response_size_count{route="/sui.StateSync/PushCheckpointSummary"} 131003
+# HELP sui_network_peers The number of connected peers.
+# TYPE sui_network_peers gauge
+sui_network_peers 18
+# HELP sui_outbound_inflight_requests The number of inflight network requests
+# TYPE sui_outbound_inflight_requests gauge
+sui_outbound_inflight_requests{route="/sui.Discovery/GetKnownPeers"} 0
+sui_outbound_inflight_requests{route="/sui.StateSync/GetCheckpointContents"} 0
+sui_outbound_inflight_requests{route="/sui.StateSync/GetCheckpointSummary"} 0
+sui_outbound_inflight_requests{route="/sui.StateSync/PushCheckpointSummary"} 0
+# HELP sui_outbound_request_errors Number of errors by route
+# TYPE sui_outbound_request_errors counter
+sui_outbound_request_errors{route="/sui.StateSync/GetCheckpointSummary",status="unknown"} 11
+sui_outbound_request_errors{route="/sui.StateSync/PushCheckpointSummary",status="unknown"} 24
+# HELP sui_outbound_request_latency Latency of a request by route
+# TYPE sui_outbound_request_latency histogram
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.001"} 0
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.005"} 0
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.01"} 0
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.05"} 3042
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.1"} 6159
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.25"} 9128
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="0.5"} 12110
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="1"} 12113
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="2.5"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="5"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="10"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="20"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="30"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="60"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="90"} 12114
+sui_outbound_request_latency_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 12114
+sui_outbound_request_latency_sum{route="/sui.Discovery/GetKnownPeers"} 1421.346465913007
+sui_outbound_request_latency_count{route="/sui.Discovery/GetKnownPeers"} 12114
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.001"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.005"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.01"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.05"} 23496
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.1"} 50963
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.25"} 113766
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="0.5"} 136200
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="1"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="2.5"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="5"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="10"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="20"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="30"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="60"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="90"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 136227
+sui_outbound_request_latency_sum{route="/sui.StateSync/GetCheckpointContents"} 15606.40061431779
+sui_outbound_request_latency_count{route="/sui.StateSync/GetCheckpointContents"} 136227
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.001"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.005"} 1
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.01"} 1
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.05"} 33225
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.1"} 80242
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.25"} 129298
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="0.5"} 141397
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1"} 141415
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2.5"} 141417
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="5"} 141418
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="10"} 141421
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="20"} 141422
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="30"} 141422
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="60"} 141422
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="90"} 141422
+sui_outbound_request_latency_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 141422
+sui_outbound_request_latency_sum{route="/sui.StateSync/GetCheckpointSummary"} 13806.811904336075
+sui_outbound_request_latency_count{route="/sui.StateSync/GetCheckpointSummary"} 141422
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.001"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.005"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.01"} 0
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.05"} 183
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.1"} 43692
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.25"} 43740
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="0.5"} 88081
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1"} 88114
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2.5"} 88124
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="5"} 88128
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="10"} 88138
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="20"} 88138
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="30"} 88138
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="60"} 88138
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="90"} 88138
+sui_outbound_request_latency_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 88138
+sui_outbound_request_latency_sum{route="/sui.StateSync/PushCheckpointSummary"} 15065.061251041863
+sui_outbound_request_latency_count{route="/sui.StateSync/PushCheckpointSummary"} 88138
+# HELP sui_outbound_request_size Size of a request by route
+# TYPE sui_outbound_request_size histogram
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1024"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2048"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4096"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8192"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16384"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="32768"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="65536"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="131072"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="262144"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="524288"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1048576"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2097152"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4194304"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8388608"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16777216"} 12114
+sui_outbound_request_size_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 12114
+sui_outbound_request_size_sum{route="/sui.Discovery/GetKnownPeers"} 0
+sui_outbound_request_size_count{route="/sui.Discovery/GetKnownPeers"} 12114
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1024"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2048"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4096"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8192"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16384"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="32768"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="65536"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="131072"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="262144"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="524288"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1048576"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2097152"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4194304"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8388608"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16777216"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 136227
+sui_outbound_request_size_sum{route="/sui.StateSync/GetCheckpointContents"} 6947577
+sui_outbound_request_size_count{route="/sui.StateSync/GetCheckpointContents"} 136227
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1024"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2048"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4096"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8192"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16384"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="32768"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="65536"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="131072"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="262144"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="524288"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1048576"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2097152"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4194304"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8388608"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16777216"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 141422
+sui_outbound_request_size_sum{route="/sui.StateSync/GetCheckpointSummary"} 3420282
+sui_outbound_request_size_count{route="/sui.StateSync/GetCheckpointSummary"} 141422
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1024"} 88136
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2048"} 88136
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4096"} 88136
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8192"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16384"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="32768"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="65536"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="131072"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="262144"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="524288"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1048576"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2097152"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4194304"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8388608"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16777216"} 88138
+sui_outbound_request_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 88138
+sui_outbound_request_size_sum{route="/sui.StateSync/PushCheckpointSummary"} 26718179
+sui_outbound_request_size_count{route="/sui.StateSync/PushCheckpointSummary"} 88138
+# HELP sui_outbound_requests The number of requests made on the network
+# TYPE sui_outbound_requests counter
+sui_outbound_requests{route="/sui.Discovery/GetKnownPeers"} 12114
+sui_outbound_requests{route="/sui.StateSync/GetCheckpointContents"} 136227
+sui_outbound_requests{route="/sui.StateSync/GetCheckpointSummary"} 141422
+sui_outbound_requests{route="/sui.StateSync/PushCheckpointSummary"} 88138
+# HELP sui_outbound_response_size Size of a response by route
+# TYPE sui_outbound_response_size histogram
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1024"} 0
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2048"} 0
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4096"} 0
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8192"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16384"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="32768"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="65536"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="131072"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="262144"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="524288"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="1048576"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="2097152"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="4194304"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="8388608"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="16777216"} 12113
+sui_outbound_response_size_bucket{route="/sui.Discovery/GetKnownPeers",le="+Inf"} 12113
+sui_outbound_response_size_sum{route="/sui.Discovery/GetKnownPeers"} 64997279
+sui_outbound_response_size_count{route="/sui.Discovery/GetKnownPeers"} 12113
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1024"} 135865
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2048"} 136223
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4096"} 136225
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8192"} 136225
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16384"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="32768"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="65536"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="131072"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="262144"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="524288"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="1048576"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="2097152"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="4194304"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="8388608"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="16777216"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointContents",le="+Inf"} 136227
+sui_outbound_response_size_sum{route="/sui.StateSync/GetCheckpointContents"} 36965952
+sui_outbound_response_size_count{route="/sui.StateSync/GetCheckpointContents"} 136227
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1024"} 141390
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2048"} 141390
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4096"} 141390
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8192"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16384"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="32768"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="65536"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="131072"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="262144"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="524288"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="1048576"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="2097152"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="4194304"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="8388608"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="16777216"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/GetCheckpointSummary",le="+Inf"} 141411
+sui_outbound_response_size_sum{route="/sui.StateSync/GetCheckpointSummary"} 42707833
+sui_outbound_response_size_count{route="/sui.StateSync/GetCheckpointSummary"} 141411
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1024"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2048"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4096"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8192"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16384"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="32768"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="65536"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="131072"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="262144"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="524288"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="1048576"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="2097152"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="4194304"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="8388608"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="16777216"} 88114
+sui_outbound_response_size_bucket{route="/sui.StateSync/PushCheckpointSummary",le="+Inf"} 88114
+sui_outbound_response_size_sum{route="/sui.StateSync/PushCheckpointSummary"} 0
+sui_outbound_response_size_count{route="/sui.StateSync/PushCheckpointSummary"} 88114
+# HELP tallying_rule_scores Tallying rule scores for validators each epoch
+# TYPE tallying_rule_scores gauge
+tallying_rule_scores{epoch="0",validator="k#803eb5c8.."} 24412
+tallying_rule_scores{epoch="0",validator="k#81435038.."} 25607
+tallying_rule_scores{epoch="0",validator="k#822b4333.."} 17881
+tallying_rule_scores{epoch="0",validator="k#8323cf84.."} 20666
+tallying_rule_scores{epoch="0",validator="k#835441af.."} 4371
+tallying_rule_scores{epoch="0",validator="k#84604c7f.."} 20420
+tallying_rule_scores{epoch="0",validator="k#8635df25.."} 25296
+tallying_rule_scores{epoch="0",validator="k#87d7abd3.."} 24930
+tallying_rule_scores{epoch="0",validator="k#87ea5dad.."} 20900
+tallying_rule_scores{epoch="0",validator="k#8828c55d.."} 6325
+tallying_rule_scores{epoch="0",validator="k#89789f03.."} 24927
+tallying_rule_scores{epoch="0",validator="k#8b04f6cb.."} 25397
+tallying_rule_scores{epoch="0",validator="k#8cc092b2.."} 7425
+tallying_rule_scores{epoch="0",validator="k#8cc24d7c.."} 9495
+tallying_rule_scores{epoch="0",validator="k#8dbb828d.."} 23605
+tallying_rule_scores{epoch="0",validator="k#8dc344b2.."} 25544
+tallying_rule_scores{epoch="0",validator="k#8fc9cf7a.."} 1
+tallying_rule_scores{epoch="0",validator="k#926ed74d.."} 25160
+tallying_rule_scores{epoch="0",validator="k#92ac2ea1.."} 1
+tallying_rule_scores{epoch="0",validator="k#92edea5a.."} 25634
+tallying_rule_scores{epoch="0",validator="k#939bd91c.."} 4898
+tallying_rule_scores{epoch="0",validator="k#94bfe0c4.."} 21658
+tallying_rule_scores{epoch="0",validator="k#94e76b75.."} 23888
+tallying_rule_scores{epoch="0",validator="k#94f59726.."} 17466
+tallying_rule_scores{epoch="0",validator="k#95ceaaa0.."} 19477
+tallying_rule_scores{epoch="0",validator="k#965aac06.."} 25907
+tallying_rule_scores{epoch="0",validator="k#98fda25e.."} 25829
+tallying_rule_scores{epoch="0",validator="k#9997db4a.."} 25864
+tallying_rule_scores{epoch="0",validator="k#99d3afe3.."} 25759
+tallying_rule_scores{epoch="0",validator="k#a2f581bf.."} 25518
+tallying_rule_scores{epoch="0",validator="k#a3cb0da8.."} 23079
+tallying_rule_scores{epoch="0",validator="k#a4ffb650.."} 25291
+tallying_rule_scores{epoch="0",validator="k#a585fb44.."} 25653
+tallying_rule_scores{epoch="0",validator="k#a60953df.."} 22691
+tallying_rule_scores{epoch="0",validator="k#a698ee33.."} 25901
+tallying_rule_scores{epoch="0",validator="k#a6c619f4.."} 23654
+tallying_rule_scores{epoch="0",validator="k#abb75016.."} 1
+tallying_rule_scores{epoch="0",validator="k#ae4d5cac.."} 25751
+tallying_rule_scores{epoch="0",validator="k#aeb93ace.."} 8940
+tallying_rule_scores{epoch="0",validator="k#af5c27c5.."} 25174
+tallying_rule_scores{epoch="0",validator="k#af9907e6.."} 24242
+tallying_rule_scores{epoch="0",validator="k#afbcd04e.."} 24039
+tallying_rule_scores{epoch="0",validator="k#b0074ce2.."} 1
+tallying_rule_scores{epoch="0",validator="k#b03fffd0.."} 8831
+tallying_rule_scores{epoch="0",validator="k#b04d8423.."} 21225
+tallying_rule_scores{epoch="0",validator="k#b12a5cea.."} 1
+tallying_rule_scores{epoch="0",validator="k#b1c02de1.."} 25338
+tallying_rule_scores{epoch="0",validator="k#b23271b5.."} 23421
+tallying_rule_scores{epoch="0",validator="k#b332f2b9.."} 1
+tallying_rule_scores{epoch="0",validator="k#b339cc0c.."} 25788
+tallying_rule_scores{epoch="0",validator="k#b33ad881.."} 23753
+tallying_rule_scores{epoch="0",validator="k#b38ed8ce.."} 16455
+tallying_rule_scores{epoch="0",validator="k#b52a5e74.."} 24777
+tallying_rule_scores{epoch="0",validator="k#b5d6b1c7.."} 25236
+tallying_rule_scores{epoch="0",validator="k#b6fa41a4.."} 6218
+tallying_rule_scores{epoch="0",validator="k#b70b8eff.."} 188
+tallying_rule_scores{epoch="0",validator="k#b7e808c0.."} 25347
+tallying_rule_scores{epoch="0",validator="k#b8478f54.."} 23239
+tallying_rule_scores{epoch="0",validator="k#b9025e71.."} 1
+tallying_rule_scores{epoch="1",validator="k#803eb5c8.."} 61890
+tallying_rule_scores{epoch="1",validator="k#81435038.."} 63926
+tallying_rule_scores{epoch="1",validator="k#822b4333.."} 49484
+tallying_rule_scores{epoch="1",validator="k#8323cf84.."} 55225
+tallying_rule_scores{epoch="1",validator="k#835441af.."} 16981
+tallying_rule_scores{epoch="1",validator="k#84604c7f.."} 55860
+tallying_rule_scores{epoch="1",validator="k#8635df25.."} 62905
+tallying_rule_scores{epoch="1",validator="k#87d7abd3.."} 62617
+tallying_rule_scores{epoch="1",validator="k#87ea5dad.."} 56432
+tallying_rule_scores{epoch="1",validator="k#8828c55d.."} 24051
+tallying_rule_scores{epoch="1",validator="k#89789f03.."} 62684
+tallying_rule_scores{epoch="1",validator="k#8b04f6cb.."} 63259
+tallying_rule_scores{epoch="1",validator="k#8cc092b2.."} 26836
+tallying_rule_scores{epoch="1",validator="k#8cc24d7c.."} 30406
+tallying_rule_scores{epoch="1",validator="k#8dbb828d.."} 58440
+tallying_rule_scores{epoch="1",validator="k#8dc344b2.."} 63287
+tallying_rule_scores{epoch="1",validator="k#926ed74d.."} 62603
+tallying_rule_scores{epoch="1",validator="k#92edea5a.."} 63484
+tallying_rule_scores{epoch="1",validator="k#939bd91c.."} 20297
+tallying_rule_scores{epoch="1",validator="k#94bfe0c4.."} 56538
+tallying_rule_scores{epoch="1",validator="k#94e76b75.."} 58508
+tallying_rule_scores{epoch="1",validator="k#94f59726.."} 49066
+tallying_rule_scores{epoch="1",validator="k#95ceaaa0.."} 45765
+tallying_rule_scores{epoch="1",validator="k#965aac06.."} 63718
+tallying_rule_scores{epoch="1",validator="k#98fda25e.."} 63498
+tallying_rule_scores{epoch="1",validator="k#9997db4a.."} 63702
+tallying_rule_scores{epoch="1",validator="k#99d3afe3.."} 63738
+tallying_rule_scores{epoch="1",validator="k#a2f581bf.."} 63429
+tallying_rule_scores{epoch="1",validator="k#a3cb0da8.."} 58006
+tallying_rule_scores{epoch="1",validator="k#a4ffb650.."} 62900
+tallying_rule_scores{epoch="1",validator="k#a585fb44.."} 63303
+tallying_rule_scores{epoch="1",validator="k#a60953df.."} 59639
+tallying_rule_scores{epoch="1",validator="k#a698ee33.."} 63805
+tallying_rule_scores{epoch="1",validator="k#a6c619f4.."} 59651
+tallying_rule_scores{epoch="1",validator="k#ae4d5cac.."} 63470
+tallying_rule_scores{epoch="1",validator="k#aeb93ace.."} 30859
+tallying_rule_scores{epoch="1",validator="k#af5c27c5.."} 62435
+tallying_rule_scores{epoch="1",validator="k#af9907e6.."} 63455
+tallying_rule_scores{epoch="1",validator="k#afbcd04e.."} 60663
+tallying_rule_scores{epoch="1",validator="k#b03fffd0.."} 30528
+tallying_rule_scores{epoch="1",validator="k#b04d8423.."} 56998
+tallying_rule_scores{epoch="1",validator="k#b1c02de1.."} 62967
+tallying_rule_scores{epoch="1",validator="k#b23271b5.."} 60247
+tallying_rule_scores{epoch="1",validator="k#b339cc0c.."} 63535
+tallying_rule_scores{epoch="1",validator="k#b33ad881.."} 60486
+tallying_rule_scores{epoch="1",validator="k#b38ed8ce.."} 42585
+tallying_rule_scores{epoch="1",validator="k#b52a5e74.."} 62308
+tallying_rule_scores{epoch="1",validator="k#b5d6b1c7.."} 62717
+tallying_rule_scores{epoch="1",validator="k#b6fa41a4.."} 19000
+tallying_rule_scores{epoch="1",validator="k#b7e808c0.."} 62667
+tallying_rule_scores{epoch="1",validator="k#b8478f54.."} 56474
+tallying_rule_scores{epoch="2",validator="k#803eb5c8.."} 42748
+tallying_rule_scores{epoch="2",validator="k#81435038.."} 44454
+tallying_rule_scores{epoch="2",validator="k#822b4333.."} 34316
+tallying_rule_scores{epoch="2",validator="k#8323cf84.."} 36988
+tallying_rule_scores{epoch="2",validator="k#835441af.."} 10703
+tallying_rule_scores{epoch="2",validator="k#84604c7f.."} 37867
+tallying_rule_scores{epoch="2",validator="k#8635df25.."} 43751
+tallying_rule_scores{epoch="2",validator="k#87d7abd3.."} 43267
+tallying_rule_scores{epoch="2",validator="k#87ea5dad.."} 37317
+tallying_rule_scores{epoch="2",validator="k#8828c55d.."} 14502
+tallying_rule_scores{epoch="2",validator="k#89789f03.."} 43738
+tallying_rule_scores{epoch="2",validator="k#8b04f6cb.."} 43944
+tallying_rule_scores{epoch="2",validator="k#8cc092b2.."} 16921
+tallying_rule_scores{epoch="2",validator="k#8cc24d7c.."} 19783
+tallying_rule_scores{epoch="2",validator="k#8dbb828d.."} 41736
+tallying_rule_scores{epoch="2",validator="k#8dc344b2.."} 43895
+tallying_rule_scores{epoch="2",validator="k#926ed74d.."} 40869
+tallying_rule_scores{epoch="2",validator="k#92edea5a.."} 43887
+tallying_rule_scores{epoch="2",validator="k#939bd91c.."} 15136
+tallying_rule_scores{epoch="2",validator="k#94bfe0c4.."} 38423
+tallying_rule_scores{epoch="2",validator="k#94e76b75.."} 41492
+tallying_rule_scores{epoch="2",validator="k#94f59726.."} 33221
+tallying_rule_scores{epoch="2",validator="k#95ceaaa0.."} 34670
+tallying_rule_scores{epoch="2",validator="k#965aac06.."} 44203
+tallying_rule_scores{epoch="2",validator="k#98fda25e.."} 44059
+tallying_rule_scores{epoch="2",validator="k#9997db4a.."} 44163
+tallying_rule_scores{epoch="2",validator="k#99d3afe3.."} 44261
+tallying_rule_scores{epoch="2",validator="k#a2f581bf.."} 43895
+tallying_rule_scores{epoch="2",validator="k#a3cb0da8.."} 40466
+tallying_rule_scores{epoch="2",validator="k#a4ffb650.."} 43680
+tallying_rule_scores{epoch="2",validator="k#a585fb44.."} 44005
+tallying_rule_scores{epoch="2",validator="k#a60953df.."} 40869
+tallying_rule_scores{epoch="2",validator="k#a698ee33.."} 44410
+tallying_rule_scores{epoch="2",validator="k#a6c619f4.."} 41213
+tallying_rule_scores{epoch="2",validator="k#ae4d5cac.."} 44121
+tallying_rule_scores{epoch="2",validator="k#aeb93ace.."} 20364
+tallying_rule_scores{epoch="2",validator="k#af5c27c5.."} 43333
+tallying_rule_scores{epoch="2",validator="k#af9907e6.."} 43864
+tallying_rule_scores{epoch="2",validator="k#afbcd04e.."} 41945
+tallying_rule_scores{epoch="2",validator="k#b03fffd0.."} 10157
+tallying_rule_scores{epoch="2",validator="k#b04d8423.."} 38059
+tallying_rule_scores{epoch="2",validator="k#b0a017c2.."} 28679
+tallying_rule_scores{epoch="2",validator="k#b12a5cea.."} 1226
+tallying_rule_scores{epoch="2",validator="k#b1c02de1.."} 43613
+tallying_rule_scores{epoch="2",validator="k#b23271b5.."} 41464
+tallying_rule_scores{epoch="2",validator="k#b339cc0c.."} 43896
+tallying_rule_scores{epoch="2",validator="k#b33ad881.."} 41406
+tallying_rule_scores{epoch="2",validator="k#b38ed8ce.."} 28524
+tallying_rule_scores{epoch="2",validator="k#b52a5e74.."} 43194
+tallying_rule_scores{epoch="2",validator="k#b5d6b1c7.."} 43132
+tallying_rule_scores{epoch="2",validator="k#b6fa41a4.."} 13292
+tallying_rule_scores{epoch="2",validator="k#b7e808c0.."} 42566
+tallying_rule_scores{epoch="2",validator="k#b8478f54.."} 41507
+# HELP total_handle_certificate_attempts Number of calls to handle_certificate
+# TYPE total_handle_certificate_attempts counter
+total_handle_certificate_attempts 0
+# HELP total_transaction_certificates Total number of transaction certificates handled
+# TYPE total_transaction_certificates counter
+total_transaction_certificates 137049
+# HELP total_transaction_effects Total number of transaction effects produced
+# TYPE total_transaction_effects counter
+total_transaction_effects 137049
+# HELP total_transaction_orders Total number of transaction orders
+# TYPE total_transaction_orders counter
+total_transaction_orders 0
+# HELP tracing_span_latencies Latencies from tokio-tracing spans
+# TYPE tracing_span_latencies histogram
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="500"} 0
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="1923.8893374126933"} 0
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="7402.700365220504"} 0
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="28483.952601417557"} 0
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="109599.94539447156"} 0
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="421716.3326508745"} 240
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="1622671.111599604"} 60082
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="6243679.299468161"} 103578
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="24024296.060942296"} 135993
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="92440174.0609853"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="355689330.4490061"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="1368613820.5646057"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="5266123072.839788"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="20262876058.678875"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="77967062389.21445"} 136228
+tracing_span_latencies_bucket{span_name="execute_checkpoint",le="+Inf"} 136228
+tracing_span_latencies_sum{span_name="execute_checkpoint"} 550677111453
+tracing_span_latencies_count{span_name="execute_checkpoint"} 136228
+tracing_span_latencies_bucket{span_name="execution_driver",le="500"} 0
+tracing_span_latencies_bucket{span_name="execution_driver",le="1923.8893374126933"} 0
+tracing_span_latencies_bucket{span_name="execution_driver",le="7402.700365220504"} 0
+tracing_span_latencies_bucket{span_name="execution_driver",le="28483.952601417557"} 0
+tracing_span_latencies_bucket{span_name="execution_driver",le="109599.94539447156"} 0
+tracing_span_latencies_bucket{span_name="execution_driver",le="421716.3326508745"} 15237
+tracing_span_latencies_bucket{span_name="execution_driver",le="1622671.111599604"} 136929
+tracing_span_latencies_bucket{span_name="execution_driver",le="6243679.299468161"} 137020
+tracing_span_latencies_bucket{span_name="execution_driver",le="24024296.060942296"} 137045
+tracing_span_latencies_bucket{span_name="execution_driver",le="92440174.0609853"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="355689330.4490061"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="1368613820.5646057"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="5266123072.839788"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="20262876058.678875"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="77967062389.21445"} 137048
+tracing_span_latencies_bucket{span_name="execution_driver",le="+Inf"} 137048
+tracing_span_latencies_sum{span_name="execution_driver"} 68150387989
+tracing_span_latencies_count{span_name="execution_driver"} 137048
+tracing_span_latencies_bucket{span_name="genesis_txn",le="500"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="1923.8893374126933"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="7402.700365220504"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="28483.952601417557"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="109599.94539447156"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="421716.3326508745"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="1622671.111599604"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="6243679.299468161"} 0
+tracing_span_latencies_bucket{span_name="genesis_txn",le="24024296.060942296"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="92440174.0609853"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="355689330.4490061"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="1368613820.5646057"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="5266123072.839788"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="20262876058.678875"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="77967062389.21445"} 1
+tracing_span_latencies_bucket{span_name="genesis_txn",le="+Inf"} 1
+tracing_span_latencies_sum{span_name="genesis_txn"} 6406116
+tracing_span_latencies_count{span_name="genesis_txn"} 1
+tracing_span_latencies_bucket{span_name="request",le="500"} 0
+tracing_span_latencies_bucket{span_name="request",le="1923.8893374126933"} 0
+tracing_span_latencies_bucket{span_name="request",le="7402.700365220504"} 0
+tracing_span_latencies_bucket{span_name="request",le="28483.952601417557"} 0
+tracing_span_latencies_bucket{span_name="request",le="109599.94539447156"} 1129
+tracing_span_latencies_bucket{span_name="request",le="421716.3326508745"} 182733
+tracing_span_latencies_bucket{span_name="request",le="1622671.111599604"} 182734
+tracing_span_latencies_bucket{span_name="request",le="6243679.299468161"} 182735
+tracing_span_latencies_bucket{span_name="request",le="24024296.060942296"} 222563
+tracing_span_latencies_bucket{span_name="request",le="92440174.0609853"} 352182
+tracing_span_latencies_bucket{span_name="request",le="355689330.4490061"} 560384
+tracing_span_latencies_bucket{span_name="request",le="1368613820.5646057"} 560609
+tracing_span_latencies_bucket{span_name="request",le="5266123072.839788"} 560624
+tracing_span_latencies_bucket{span_name="request",le="20262876058.678875"} 560635
+tracing_span_latencies_bucket{span_name="request",le="77967062389.21445"} 560635
+tracing_span_latencies_bucket{span_name="request",le="+Inf"} 560635
+tracing_span_latencies_sum{span_name="request"} 45934844618308
+tracing_span_latencies_count{span_name="request"} 560635
+# HELP transaction_manager_num_enqueued_certificates Current number of certificates enqueued to TransactionManager
+# TYPE transaction_manager_num_enqueued_certificates counter
+transaction_manager_num_enqueued_certificates{result="already_executed"} 1
+transaction_manager_num_enqueued_certificates{result="pending"} 87986
+transaction_manager_num_enqueued_certificates{result="ready"} 49062
+# HELP transaction_manager_num_executing_certificates Number of executing certificates, including queued and actually running certificates
+# TYPE transaction_manager_num_executing_certificates gauge
+transaction_manager_num_executing_certificates 0
+# HELP transaction_manager_num_missing_objects Current number of missing objects in TransactionManager
+# TYPE transaction_manager_num_missing_objects gauge
+transaction_manager_num_missing_objects 0
+# HELP transaction_manager_num_pending_certificates Number of certificates pending in TransactionManager, with at least 1 missing input object
+# TYPE transaction_manager_num_pending_certificates gauge
+transaction_manager_num_pending_certificates 0
+# HELP transaction_manager_num_ready Number of ready transactions in TransactionManager
+# TYPE transaction_manager_num_ready gauge
+transaction_manager_num_ready 137048
+# HELP uptime uptime of the node service in seconds
+# TYPE uptime counter
+uptime{version="0.28.0-1815e099f"} 60521
+# HELP user_key_comparison_count Helps us figure out whether too many comparisons in binary search can be a problem,\n                especially when a more expensive comparator is used. Moreover, since number of comparisons\n                is usually uniform based on the memtable size, the SST file size for Level 0 and size of other\n                levels, an significant increase of the counter can indicate unexpected LSM-tree shape.\n                You may want to check whether flush/compaction can keep up with the write speed
+# TYPE user_key_comparison_count counter
+user_key_comparison_count{cf_name="effects"} 5
+user_key_comparison_count{cf_name="epoch_start_configuration"} 1
+user_key_comparison_count{cf_name="transactions"} 30284
