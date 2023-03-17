@@ -160,6 +160,7 @@ if __name__ == '__main__':
             record['MeasureValues'].append(
                 prepare_measure('rewards_pool', rewards_pool))
             sui_clock = time.time()
+            print(record)
         else:
             print("not time yet")
         if len(records) == 10:
