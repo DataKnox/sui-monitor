@@ -128,7 +128,7 @@ if __name__ == '__main__':
             curr_epoch = data['result']['epoch']
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
-            gas_price = data['result']['gasPrice']
+            gas_price = data['result']['referenceGasPrice']
             record['MeasureValues'].append(
                 prepare_measure('gas_price', gas_price))
             storage_fund = data['result']['storageFund']
