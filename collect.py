@@ -92,6 +92,7 @@ if __name__ == '__main__':
             len(records), cpu_utilization, memory_utilization,
             swap_utilization, disk_utilization))
         if time.time()-sui_clock > 43200:
+            print("sui time elapsed")
             stream = os.popen(
                 "/home/sui/sui/target/debug/sui client active-address")
             active_address = stream.read()
@@ -146,6 +147,8 @@ if __name__ == '__main__':
             rewards_pool = validator['rewardsPool']/1000000
             record.append(prepare_measure('rewards_pool', rewards_pool))
             sui_clock = time.time()
+        else:
+            print("not time yet")
         if len(records) == 10:
             write_records(records, common_attributes)
             records = []
