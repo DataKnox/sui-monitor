@@ -1,0 +1,13 @@
+[Unit]
+Description=Sui Monitor Loader
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sui
+ExecStart=/home/sui/sui-monitor/run.sh
+
+[Install]
+WantedBy=multi-user.target
