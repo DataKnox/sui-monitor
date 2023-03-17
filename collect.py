@@ -120,9 +120,11 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
-                match = re.search('last_synced_checkpoint', line)
+                match = re.search('^last_synced_checkpoint', line)
                 if match:
                     last_synced_checkpoint = line.strip()
+                    last_synced_checkpoint = last_synced_checkpoint.rsplit(
+                        ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
             data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
@@ -166,6 +168,32 @@ if __name__ == '__main__':
             print(record)
         else:
             print("not time yet")
+            record['MeasureValues'].append(
+                prepare_measure('rewards_pool', rewards_pool))
+            record['MeasureValues'].append(
+                prepare_measure('voting_power', voting_power))
+            record['MeasureValues'].append(prepare_measure(
+                'next_epoch_stake', next_epoch_stake))
+            record['MeasureValues'].append(
+                prepare_measure('curr_stake', curr_stake))
+            record['MeasureValues'].append(
+                prepare_measure('next_epoch_voted_gas', next_epoch_voted_gas))
+            record['MeasureValues'].append(
+                prepare_measure('curr_voted_gas', curr_voted_gas))
+            record['MeasureValues'].append(
+                prepare_measure('commission', commission))
+            record['MeasureValues'].append(
+                prepare_measure('storage_fund', storage_fund))
+            record['MeasureValues'].append(
+                prepare_measure('gas_price', gas_price))
+            record['MeasureValues'].append(
+                prepare_measure('curr_epoch', curr_epoch))
+            record['MeasureValues'].append(
+                prepare_measure('uptime', uptime))
+            record['MeasureValues'].append(
+                prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
+            record['MeasureValues'].append(
+                prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
             write_records(records, common_attributes)
             records = []
