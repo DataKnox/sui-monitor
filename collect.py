@@ -134,7 +134,7 @@ if __name__ == '__main__':
             storage_fund = data['result']['storageFund']
             record['MeasureValues'].append(
                 prepare_measure('storage_fund', storage_fund))
-            validator = [v for v in data['result']['validators']
+            validator = [v for v in data['result']['activeValidators']
                          if v['suiAddress'] == active_address]
             commission = validator['commissionRate']/100
             record['MeasureValues'].append(
