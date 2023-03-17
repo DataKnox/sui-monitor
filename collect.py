@@ -110,6 +110,7 @@ if __name__ == '__main__':
                 match = re.search('^uptime', line)
                 if match:
                     uptime = line.strip()
+                    uptime = uptime.rsplit(' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('uptime', uptime))
                 match = re.search('^highest_synced_checkpoint', line)
