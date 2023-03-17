@@ -120,13 +120,13 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
-                match = re.search('^last_synced_checkpoint', line)
-                if match:
-                    last_synced_checkpoint = line.strip()
-                    last_synced_checkpoint = last_synced_checkpoint.rsplit(
-                        ' ', 1)[-1]
-                    record['MeasureValues'].append(
-                        prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
+                # match = re.search('^last_synced_checkpoint', line)
+                # if match:
+                #     last_synced_checkpoint = line.strip()
+                #     last_synced_checkpoint = last_synced_checkpoint.rsplit(
+                #         ' ', 1)[-1]
+                #     record['MeasureValues'].append(
+                #         prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
             data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
             time.sleep(1)
@@ -192,8 +192,8 @@ if __name__ == '__main__':
                 prepare_measure('uptime', uptime))
             record['MeasureValues'].append(
                 prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
-            record['MeasureValues'].append(
-                prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
+            # record['MeasureValues'].append(
+            #     prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
             write_records(records, common_attributes)
             records = []
