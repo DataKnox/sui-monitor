@@ -124,6 +124,7 @@ if __name__ == '__main__':
             data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
             time.sleep(1)
+            data = data.json()
             curr_epoch = data['result']['epoch']
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
