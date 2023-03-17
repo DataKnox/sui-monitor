@@ -116,6 +116,8 @@ if __name__ == '__main__':
                 match = re.search('^highest_synced_checkpoint', line)
                 if match:
                     highest_synced_checkpoint = line.strip()
+                    highest_synced_checkpoint = highest_synced_checkpoint.rsplit(
+                        ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
                 match = re.search('last_synced_checkpoint', line)
