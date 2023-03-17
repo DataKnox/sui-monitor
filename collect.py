@@ -109,44 +109,53 @@ if __name__ == '__main__':
                 match = re.search('^uptime', line)
                 if match:
                     uptime = line.strip()
-                    record.append(prepare_measure('uptime', uptime))
+                    record['MeasureValues'].append(
+                        prepare_measure('uptime', uptime))
                 match = re.search('^highest_synced_checkpoint', line)
                 if match:
                     highest_synced_checkpoint = line.strip()
-                    record.append(
+                    record['MeasureValues'].append(
                         prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
                 match = re.search('last_synced_checkpoint', line)
                 if match:
                     last_synced_checkpoint = line.strip()
-                    record.append(
+                    record['MeasureValues'].append(
                         prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
             data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             curr_epoch = data['result']['epoch']
-            record.append(prepare_measure('curr_epoch', curr_epoch))
+            record['MeasureValues'].append(
+                prepare_measure('curr_epoch', curr_epoch))
             gas_price = data['result']['gasPrice']
-            record.append(prepare_measure('gas_price', gas_price))
+            record['MeasureValues'].append(
+                prepare_measure('gas_price', gas_price))
             storage_fund = data['result']['storageFund']
-            record.append(prepare_measure('storage_fund', storage_fund))
+            record['MeasureValues'].append(
+                prepare_measure('storage_fund', storage_fund))
             validator = [v for v in data['result']['validators']
                          if v['suiAddress'] == active_address]
             commission = validator['commissionRate']/100
-            record.append(prepare_measure('commission', commission))
+            record['MeasureValues'].append(
+                prepare_measure('commission', commission))
             curr_voted_gas = validator['gasPrice']
-            record.append(prepare_measure('curr_voted_gas', curr_voted_gas))
+            record['MeasureValues'].append(
+                prepare_measure('curr_voted_gas', curr_voted_gas))
             next_epoch_voted_gas = validator['nextEpochGasPrice']
-            record.append(
+            record['MeasureValues'].append(
                 prepare_measure('next_epoch_voted_gas', next_epoch_voted_gas))
             curr_stake = validator['stakingPoolSuiBalance']/1000000
-            record.append(prepare_measure('curr_stake', curr_stake))
+            record['MeasureValues'].append(
+                prepare_measure('curr_stake', curr_stake))
             next_epoch_stake = validator['nextEpochStake']/1000000
-            record.append(prepare_measure(
+            record['MeasureValues'].append(prepare_measure(
                 'next_epoch_stake', next_epoch_stake))
             voting_power = validator['votingPower']
-            record.append(prepare_measure('voting_power', voting_power))
+            record['MeasureValues'].append(
+                prepare_measure('voting_power', voting_power))
             rewards_pool = validator['rewardsPool']/1000000
-            record.append(prepare_measure('rewards_pool', rewards_pool))
+            record['MeasureValues'].append(
+                prepare_measure('rewards_pool', rewards_pool))
             sui_clock = time.time()
         else:
             print("not time yet")
