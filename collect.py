@@ -131,10 +131,10 @@ if __name__ == '__main__':
                 match = re.search('^current_round', line)
                 if match:
                     current_round = line.strip()
-                    current_round = last_executed_checkpoint.rsplit(
+                    current_round = current_round.rsplit(
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
-                        prepare_measure('current_round', last_executed_checkpoint))
+                        prepare_measure('current_round', current_round))
         if (time.time()-sui_clock > 43200) or first_run:
             first_run = False
             print("sui time elapsed")
