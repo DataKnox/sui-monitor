@@ -93,20 +93,12 @@ if __name__ == '__main__':
         print("records {} - cpu {} - memory {} - swap {} - disk {}".format(
             len(records), cpu_utilization, memory_utilization,
             swap_utilization, disk_utilization))
-        if (time.time()-sui_clock > 43200) or first_run:
-            first_run = False
-            print("sui time elapsed")
-            # stream = os.popen(
-            #     "/home/sui/sui/target/debug/sui client active-address")
-            # active_address = stream.read()
-            # active_address = active_address.strip()
-            # print(active_address.strip())
-            active_address = '0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5'
-            stream = os.popen('curl -s localhost:9184/metrics -o output.txt')
-            time.sleep(1)
-            with open('output.txt', 'r') as f:
-                # Read the file contents and generate a list with each line
-                lines = f.readlines()
+        stream = os.popen(
+            'curl -s localhost:9184/metrics -o output.txt')
+        time.sleep(1)
+        with open('output.txt', 'r') as f:
+            # Read the file contents and generate a list with each line
+            lines = f.readlines()
 
             for line in lines:
                 match = re.search('^uptime', line)
@@ -129,13 +121,30 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('certificates_created', certificates_created))
-                # match = re.search('^last_synced_checkpoint', line)
-                # if match:
-                #     last_synced_checkpoint = line.strip()
-                #     last_synced_checkpoint = last_synced_checkpoint.rsplit(
-                #         ' ', 1)[-1]
-                #     record['MeasureValues'].append(
-                #         prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
+                match = re.search('^last_executed_checkpoint', line)
+                if match:
+                    last_executed_checkpoint = line.strip()
+                    last_executed_checkpoint = last_executed_checkpoint.rsplit(
+                        ' ', 1)[-1]
+                    record['MeasureValues'].append(
+                        prepare_measure('last_executed_checkpoint', last_executed_checkpoint))
+                match = re.search('^current_round', line)
+                if match:
+                    current_round = line.strip()
+                    current_round = last_executed_checkpoint.rsplit(
+                        ' ', 1)[-1]
+                    record['MeasureValues'].append(
+                        prepare_measure('current_round', last_executed_checkpoint))
+        if (time.time()-sui_clock > 43200) or first_run:
+            first_run = False
+            print("sui time elapsed")
+            # stream = os.popen(
+            #     "/home/sui/sui/target/debug/sui client active-address")
+            # active_address = stream.read()
+            # active_address = active_address.strip()
+            # print(active_address.strip())
+            active_address = '0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5'
+
             data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
             time.sleep(1)
