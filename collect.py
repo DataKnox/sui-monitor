@@ -6,10 +6,11 @@ import socket
 from botocore.config import Config
 import requests
 import re
-DATABASE_NAME = os.environ['DATABASE_NAME']
-TABLE_NAME = os.environ['TABLE_NAME']
+#DATABASE_NAME = os.environ['DATABASE_NAME']
+#TABLE_NAME = os.environ['TABLE_NAME']
 HOSTNAME = socket.gethostname()
-
+TABLE_NAME="suimon"
+DATABASE_NAME="testDB"
 INTERVAL = 5  # Seconds
 sui_clock = time.time()
 first_run = True
@@ -98,8 +99,9 @@ if __name__ == '__main__':
             stream = os.popen(
                 "/home/sui/sui/target/debug/sui client active-address")
             active_address = stream.read()
+            active_address = active_address.strip()
             # print(active_address.strip())
-            active_address = '0x8925c11a13cf4b30a64a30ee9f3ca401e58b541b34517d99122e779aa81e3bc9'
+ #           active_address = '0x8925c11a13cf4b30a64a30ee9f3ca401e58b541b34517d99122e779aa81e3bc9'
             stream = os.popen('curl -s localhost:9184/metrics -o output.txt')
             time.sleep(1)
             with open('output.txt', 'r') as f:
