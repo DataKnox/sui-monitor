@@ -206,10 +206,6 @@ if __name__ == '__main__':
                 prepare_measure('gas_price', gas_price))
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
-            record['MeasureValues'].append(
-                prepare_measure('uptime', uptime))
-            record['MeasureValues'].append(
-                prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
             # record['MeasureValues'].append(
             #     prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
