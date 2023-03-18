@@ -122,6 +122,13 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('highest_synced_checkpoint', highest_synced_checkpoint))
+                match = re.search('^certificates_created', line)
+                if match:
+                    certificates_created = line.strip()
+                    certificates_created = certificates_created.rsplit(
+                        ' ', 1)[-1]
+                    record['MeasureValues'].append(
+                        prepare_measure('certificates_created', certificates_created))
                 # match = re.search('^last_synced_checkpoint', line)
                 # if match:
                 #     last_synced_checkpoint = line.strip()
