@@ -78,7 +78,7 @@ if __name__ == '__main__':
         memory_utilization = psutil.virtual_memory().percent
         swap_utilization = psutil.swap_memory().percent
         disk_utilization = psutil.disk_usage('/').percent
-
+        db_utilization = psutil.disk_usage('/opt/sui/db').percent
         record = prepare_record(current_time)
         record['MeasureValues'].append(prepare_measure('cpu', cpu_utilization))
         record['MeasureValues'].append(
@@ -87,7 +87,8 @@ if __name__ == '__main__':
             prepare_measure('swap', swap_utilization))
         record['MeasureValues'].append(
             prepare_measure('disk', disk_utilization))
-
+        record['MeasureValues'].append(
+            prepare_measure('db_disk', db_utilization))
         records.append(record)
 
         print("records {} - cpu {} - memory {} - swap {} - disk {}".format(
