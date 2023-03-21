@@ -136,6 +136,7 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('current_round', current_round))
+        os.remove('output.txt')
         if (time.time()-sui_clock > 43200) or first_run:
             first_run = False
             print("sui time elapsed")

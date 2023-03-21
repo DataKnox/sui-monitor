@@ -1,4 +1,3 @@
-
 curl --location --request POST 'https://rpc-ws-testnet-w3.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
@@ -11,4 +10,4 @@ sui client call --package 0x2 --module sui_system --function request_set_commiss
 
 sui client gas
 sui client merge-coin --primary-coin <target> coin-to-merge <source> --gas-budget 20_000_000 --gas <gas object paying for gas>
-sui client merge-coin --primary-coin 0xf3b91028c4cb0a42ae1576b865b183e9d40e4b96314a3d14988182df5e73a3bc --coin-to-merge 0xe6e217c923ece3d108fd574d16d6e5a0
+sui client merge-coin --primary-coin 0xf3b91028c4cb0a42ae1576b865b183e9d40e4b96314a3d14988182df5e73a3bc --coin-to-merge  0xe6e217c923ece3d108fd574d16d6e5a0863e322e90099f40be2f16da9087e0ae --gas-budget 20000000 --gas 0x1830f5cef753277180773be0f29e60a0605b3cc4b87f7f1e4829d355eba24148
