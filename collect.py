@@ -95,9 +95,9 @@ if __name__ == '__main__':
             len(records), cpu_utilization, memory_utilization,
             swap_utilization, disk_utilization))
         stream = os.popen(
-            'curl -s localhost:9184/metrics -o output.txt')
+            'curl -s localhost:9184/metrics -o /home/sui/sui-monitor/output.txt')
         time.sleep(1)
-        with open('output.txt', 'r') as f:
+        with open('/home/sui/sui-monitor/output.txt', 'r') as f:
             # Read the file contents and generate a list with each line
             lines = f.readlines()
 
