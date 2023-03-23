@@ -1,0 +1,35 @@
+{
+    "jsonrpc": "2.0",
+    "result": [
+        {
+            "validatorAddress": "0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5",
+            "stakingPool": "0x3ce8551079461c109d793f9de0c825d139324cf9b9da8371ab94980d52407c6c",
+            "stakes": [
+                {
+                    "stakedSuiId": "0x437dd78a8970cec303a329f1ae1876b03b494a90f0a6474c7c052ae923eafc9d",
+                    "stakeRequestEpoch": 7,
+                    "stakeActiveEpoch": 8,
+                    "principal": 1599923004645,
+                    "status": "Active",
+                    "estimatedReward": 482766975
+                },
+                {
+                    "stakedSuiId": "0x601448bd7067478cdbe851e8a8452344e35ffb440f3fe427c88b872a38b20cf5",
+                    "stakeRequestEpoch": 9,
+                    "stakeActiveEpoch": 10,
+                    "principal": 19996709238,
+                    "status": "Pending"
+                },
+                {
+                    "stakedSuiId": "0xbcca11f06f07d6cca8927d111de2820dcb73ab943b91795c0753f0d521266ca7",
+                    "stakeRequestEpoch": 8,
+                    "stakeActiveEpoch": 9,
+                    "principal": 1599922495435,
+                    "status": "Active",
+                    "estimatedReward": 0
+                }
+            ]
+        }
+    ],
+    "id": 1
+}

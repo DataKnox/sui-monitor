@@ -151,6 +151,9 @@ if __name__ == '__main__':
                                  json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             data = data.json()
+            pool_token_balance = data['result']['poolTokenBalance']
+            record['MeasureValues'].append(
+                prepare_measure('pool_token_balance', pool_token_balance))
             curr_epoch = data['result']['epoch']
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
@@ -184,6 +187,20 @@ if __name__ == '__main__':
             rewards_pool = validator['rewardsPool']/1000000
             record['MeasureValues'].append(
                 prepare_measure('rewards_pool', rewards_pool))
+            data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
+                                 json={
+                                     "jsonrpc": "2.0",
+                                     "id": 1,
+                                     "method": "sui_getStakes",
+                                     "params": ["0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5"]
+                                 })
+            time.sleep(1)
+            data = data.json()['result'][0]['stakes']
+            stake_total = 0
+            for s in data:
+                stake_total += s['principal']
+            record['MeasureValues'].append(
+                prepare_measure('stake_total', stake_total/1000000))
             sui_clock = time.time()
             print(record)
         else:
@@ -208,6 +225,10 @@ if __name__ == '__main__':
                 prepare_measure('gas_price', gas_price))
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
+            record['MeasureValues'].append(
+                prepare_measure('pool_token_balance', pool_token_balance))
+            record['MeasureValues'].append(
+                prepare_measure('stake_total', stake_total/1000000))
             # record['MeasureValues'].append(
             #     prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
