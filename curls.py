@@ -20,7 +20,7 @@ for line in lines:
     match = re.search('^highest_synced_checkpoint', line)
     if match:
         highest_synced_checkpoint = line.strip()
-    match = re.search('last_synced_checkpoint', line)
+    match = re.search('^last_synced_checkpoint', line)
     if match:
         last_synced_checkpoint = line.strip()
 

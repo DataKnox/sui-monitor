@@ -11,14 +11,23 @@
                     "stakeActiveEpoch": 8,
                     "principal": 1599923004645,
                     "status": "Active",
-                    "estimatedReward": 482766975
+                    "estimatedReward": 977233210
                 },
                 {
                     "stakedSuiId": "0x601448bd7067478cdbe851e8a8452344e35ffb440f3fe427c88b872a38b20cf5",
                     "stakeRequestEpoch": 9,
                     "stakeActiveEpoch": 10,
                     "principal": 19996709238,
-                    "status": "Pending"
+                    "status": "Active",
+                    "estimatedReward": 0
+                },
+                {
+                    "stakedSuiId": "0x9c7e7d015bc5186299c5bba39b0c99c4a7aa4b07d1daaa68cd43fced53f8eb70",
+                    "stakeRequestEpoch": 9,
+                    "stakeActiveEpoch": 10,
+                    "principal": 1638781864839,
+                    "status": "Active",
+                    "estimatedReward": 0
                 },
                 {
                     "stakedSuiId": "0xbcca11f06f07d6cca8927d111de2820dcb73ab943b91795c0753f0d521266ca7",
@@ -26,7 +35,7 @@
                     "stakeActiveEpoch": 9,
                     "principal": 1599922495435,
                     "status": "Active",
-                    "estimatedReward": 0
+                    "estimatedReward": 494316920
                 }
             ]
         }

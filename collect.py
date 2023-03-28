@@ -147,8 +147,8 @@ if __name__ == '__main__':
             # print(active_address.strip())
             active_address = '0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5'
 
-            data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
-                                 json={"jsonrpc": "2.0", "id": "1", "method": "sui_getLatestSuiSystemState", "params": []})
+            data = requests.post('https://rpc-testnet.suiscan.xyz/',
+                                 json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             data = data.json()
             pool_token_balance = data['result']['poolTokenBalance']
