@@ -192,7 +192,7 @@ if __name__ == '__main__':
                                      "jsonrpc": "2.0",
                                      "id": 1,
                                      "method": "suix_getStakes",
-                                     "params": ["0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
+                                     "params": [active_address]
                                  })
             time.sleep(1)
             data = data.json()['result'][0]['stakes']
