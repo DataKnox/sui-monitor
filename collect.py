@@ -151,18 +151,18 @@ if __name__ == '__main__':
                                  json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             data = data.json()
-            pool_token_balance = data['result']['poolTokenBalance']
-            record['MeasureValues'].append(
-                prepare_measure('pool_token_balance', pool_token_balance))
+            # pool_token_balance = data['result']['poolTokenBalance']
+            # record['MeasureValues'].append(
+            #     prepare_measure('pool_token_balance', pool_token_balance))
             curr_epoch = data['result']['epoch']
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
             gas_price = data['result']['referenceGasPrice']
             record['MeasureValues'].append(
                 prepare_measure('gas_price', gas_price))
-            storage_fund = data['result']['storageFund']
-            record['MeasureValues'].append(
-                prepare_measure('storage_fund', storage_fund))
+            # storage_fund = data['result']['storageFund']
+            # record['MeasureValues'].append(
+            #     prepare_measure('storage_fund', storage_fund))
             validator = [v for v in data['result']['activeValidators']
                          if v['suiAddress'] == active_address]
             validator = validator[0]
@@ -219,14 +219,14 @@ if __name__ == '__main__':
                 prepare_measure('curr_voted_gas', curr_voted_gas))
             record['MeasureValues'].append(
                 prepare_measure('commission', commission))
-            record['MeasureValues'].append(
-                prepare_measure('storage_fund', storage_fund))
+            # record['MeasureValues'].append(
+            #     prepare_measure('storage_fund', storage_fund))
             record['MeasureValues'].append(
                 prepare_measure('gas_price', gas_price))
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
-            record['MeasureValues'].append(
-                prepare_measure('pool_token_balance', pool_token_balance))
+            # record['MeasureValues'].append(
+            #     prepare_measure('pool_token_balance', pool_token_balance))
             record['MeasureValues'].append(
                 prepare_measure('stake_total', stake_total/1000000))
             # record['MeasureValues'].append(
