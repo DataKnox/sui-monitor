@@ -145,7 +145,7 @@ if __name__ == '__main__':
             # active_address = stream.read()
             # active_address = active_address.strip()
             # print(active_address.strip())
-            active_address = '0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5'
+            active_address = '0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48'
 
             data = requests.post('https://rpc-testnet.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
