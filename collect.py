@@ -206,6 +206,8 @@ if __name__ == '__main__':
                     stake_total += s['principal']
                 record['MeasureValues'].append(
                     prepare_measure('stake_total', stake_total/1000000000))
+            else:
+                stake_total = None
             sui_clock = time.time()
             print(record)
         else:
