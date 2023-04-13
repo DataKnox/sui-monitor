@@ -145,9 +145,9 @@ if __name__ == '__main__':
             # active_address = stream.read()
             # active_address = active_address.strip()
             # print(active_address.strip())
-            active_address = '0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48'
+            active_address = '0xb7847468db546ba85acb9dcdc0c5190b3ca6427d713ff52a4f8183c81f8a39e1'
 
-            data = requests.post('https://rpc-testnet.suiscan.xyz/',
+            data = requests.post('https://rpc-mainnet.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             data = data.json()
@@ -166,7 +166,8 @@ if __name__ == '__main__':
             validator = [v for v in data['result']['activeValidators']
                          if v['suiAddress'] == active_address]
             validator = validator[0]
-            commission = validator['commissionRate']/100
+            commission = validator['commissionRate']
+            commission = int(commission)/100
             record['MeasureValues'].append(
                 prepare_measure('commission', commission))
             curr_voted_gas = validator['gasPrice']
@@ -175,19 +176,22 @@ if __name__ == '__main__':
             next_epoch_voted_gas = validator['nextEpochGasPrice']
             record['MeasureValues'].append(
                 prepare_measure('next_epoch_voted_gas', next_epoch_voted_gas))
-            curr_stake = validator['stakingPoolSuiBalance']/1000000
+            curr_stake = validator['stakingPoolSuiBalance']
+            curr_stake = int(curr_stake)/1000000000
             record['MeasureValues'].append(
                 prepare_measure('curr_stake', curr_stake))
-            next_epoch_stake = validator['nextEpochStake']/1000000
+            next_epoch_stake = validator['nextEpochStake']
+            next_epoch_stake = int(next_epoch_stake)/1000000000
             record['MeasureValues'].append(prepare_measure(
                 'next_epoch_stake', next_epoch_stake))
             voting_power = validator['votingPower']
             record['MeasureValues'].append(
                 prepare_measure('voting_power', voting_power))
-            rewards_pool = validator['rewardsPool']/1000000
+            rewards_pool = validator['rewardsPool']
+            rewards_pool = int(rewards_pool)/1000000000
             record['MeasureValues'].append(
                 prepare_measure('rewards_pool', rewards_pool))
-            data = requests.post('https://rpc-ws-testnet-w3.suiscan.xyz/',
+            data = requests.post('https://rpc-mainnet.suiscan.xyz/',
                                  json={
                                      "jsonrpc": "2.0",
                                      "id": 1,
@@ -197,10 +201,11 @@ if __name__ == '__main__':
             time.sleep(1)
             data = data.json()['result'][0]['stakes']
             stake_total = 0
-            for s in data:
-                stake_total += s['principal']
-            record['MeasureValues'].append(
-                prepare_measure('stake_total', stake_total/1000000))
+            if data:
+                for s in data:
+                    stake_total += s['principal']
+                record['MeasureValues'].append(
+                    prepare_measure('stake_total', stake_total/1000000000))
             sui_clock = time.time()
             print(record)
         else:

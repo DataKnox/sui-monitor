@@ -1,5 +1,5 @@
 # get sui validator states
-curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
   "method": "suix_getLatestSuiSystemState",
@@ -18,9 +18,11 @@ curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'C
 }'
 
 # self stake
-sui client call --package 0x2 --module sui_system --function request_add_stake --args 0x5 0x23209625ec80d9adc296edfee386511a0fc7b370b9b8b944df29e976583d5320 0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5 --gas 0x1830f5cef753277180773be0f29e60a0605b3cc4b87f7f1e4829d355eba24148 --gas-budget 20000000
+sui client call --package 0x3 --module sui_system --function request_add_stake --args 0x5 0x23209625ec80d9adc296edfee386511a0fc7b370b9b8b944df29e976583d5320 0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5 --gas 0x1830f5cef753277180773be0f29e60a0605b3cc4b87f7f1e4829d355eba24148 --gas-budget 20000000
 # set commission rate
-sui client call --package 0x2 --module sui_system --function request_set_commission_rate --args 0x5 1500 --gas-budget 20000000
+sui client call --package 0x3 --module sui_system --function request_set_commission_rate --args 0x5 900 --gas-budget 20000000
+# unstake
+sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 0x204bb801744a27fc60f3b94b98ca5d842c908e7446d7891498b5cd96853aeb90 --gas 0x38c9ce9fb4a1a934d3a0935299f3fa0fd88656b4a15d9170e116793e5af62f71 --gas-budget 20000000
 
 # get gas objects
 sui client gas
