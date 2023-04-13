@@ -232,8 +232,9 @@ if __name__ == '__main__':
                 prepare_measure('curr_epoch', curr_epoch))
             # record['MeasureValues'].append(
             #     prepare_measure('pool_token_balance', pool_token_balance))
-            record['MeasureValues'].append(
-                prepare_measure('stake_total', stake_total/1000000))
+            if stake_total:
+                record['MeasureValues'].append(
+                    prepare_measure('stake_total', stake_total/1000000))
             # record['MeasureValues'].append(
             #     prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
