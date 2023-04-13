@@ -199,9 +199,9 @@ if __name__ == '__main__':
                                      "params": [active_address]
                                  })
             time.sleep(1)
-            data = data.json()['result'][0]['stakes']
-            stake_total = 0
-            if data:
+            if data.json()['result']:
+                data = data.json()['result'][0]['stakes']
+                stake_total = 0
                 for s in data:
                     stake_total += s['principal']
                 record['MeasureValues'].append(
