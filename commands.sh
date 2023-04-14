@@ -10,7 +10,7 @@ curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'C
 curl -s localhost:9184/metrics | grep -e ^current_round -e ^uptime -e ^highest_synced_checkpoint -e ^last_executed_checkpoint 
 
 # get self stake
-curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
   "method": "suix_getStakes",
@@ -33,4 +33,4 @@ sui client merge-coin --primary-coin 0xf3b9...3a3bc --coin-to-merge  0xe6e...0ae
 
 
 # set gas price
-sui client call --package 0x2 --module sui_system --function request_set_gas_price --args 0x5 0xcffcbbf637ac80bfab74fa43b2538ce97109959d49b738929bf9a087b262ca12 900 --gas-budget 20000000 --gas 0x1830f5cef753277180773be0f29e60a0605b3cc4b87f7f1e4829d355eba24148
+sui validator update-gas-price 901

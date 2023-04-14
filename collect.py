@@ -136,6 +136,21 @@ if __name__ == '__main__':
                         ' ', 1)[-1]
                     record['MeasureValues'].append(
                         prepare_measure('current_round', current_round))
+                match = re.search('^total_transaction_certificates', line)
+                if match:
+                    total_transaction_certificates = line.strip()
+                    total_transaction_certificates = total_transaction_certificates.rsplit(
+                        ' ', 1)[-1]
+                    record['MeasureValues'].append(
+                        prepare_measure('total_transaction_certificates', total_transaction_certificates))
+                match = re.search('^num_shared_obj_tx', line)
+                if match:
+                    num_shared_obj_tx = line.strip()
+                    num_shared_obj_tx = num_shared_obj_tx.rsplit(
+                        ' ', 1)[-1]
+                    record['MeasureValues'].append(
+                        prepare_measure('num_shared_obj_tx', num_shared_obj_tx))
+
         # os.remove('output.txt')
         if (time.time()-sui_clock > 43200) or first_run:
             first_run = False
@@ -199,7 +214,7 @@ if __name__ == '__main__':
                                      "params": [active_address]
                                  })
             time.sleep(1)
-            if data.json()['result']:
+            if data.json()['result'][0]:
                 data = data.json()['result'][0]['stakes']
                 stake_total = 0
                 for s in data:
