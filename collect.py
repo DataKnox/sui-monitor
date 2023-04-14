@@ -218,7 +218,7 @@ if __name__ == '__main__':
                 data = data.json()['result'][0]['stakes']
                 stake_total = 0
                 for s in data:
-                    stake_total += s['principal']
+                    stake_total += int(s['principal'])
                 record['MeasureValues'].append(
                     prepare_measure('stake_total', stake_total/1000000000))
             else:

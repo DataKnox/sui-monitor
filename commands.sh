@@ -14,7 +14,7 @@ curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'C
   "jsonrpc": "2.0",
   "id": 1,
   "method": "suix_getStakes",
-  "params": [ "0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
+  "params": [ "0xb7847468db546ba85acb9dcdc0c5190b3ca6427d713ff52a4f8183c81f8a39e1"]
 }'
 
 # self stake
