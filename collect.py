@@ -171,6 +171,8 @@ if __name__ == '__main__':
             milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
             epoch_time_left = epoch_end - milliseconds_since_epoch
             record['MeasureValues'].append(
+                prepare_measure('epoch_time_left', epoch_time_left))
+            record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
             gas_price = data['result']['referenceGasPrice']
             record['MeasureValues'].append(
@@ -235,7 +237,8 @@ if __name__ == '__main__':
             epoch_end = epoch_start + epoch_length
             milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
             epoch_time_left = epoch_end - milliseconds_since_epoch
-
+            record['MeasureValues'].append(
+                prepare_measure('epoch_time_left', epoch_time_left))
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
             gas_price = data['result']['referenceGasPrice']
@@ -291,6 +294,8 @@ if __name__ == '__main__':
         else:
             milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
             epoch_time_left = epoch_end - milliseconds_since_epoch
+            record['MeasureValues'].append(
+                prepare_measure('epoch_time_left', epoch_time_left))
             print(f"remaining time: {epoch_time_left}")
             record['MeasureValues'].append(
                 prepare_measure('rewards_pool', rewards_pool))
