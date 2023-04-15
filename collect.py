@@ -1,4 +1,5 @@
 import time
+import datetime
 import boto3
 import psutil
 import os
@@ -14,6 +15,7 @@ DATABASE_NAME = "testDB"
 INTERVAL = 5  # Seconds
 sui_clock = time.time()
 first_run = True
+epoch_time_left = 0
 
 
 def prepare_common_attributes():
@@ -152,32 +154,28 @@ if __name__ == '__main__':
                         prepare_measure('num_shared_obj_tx', num_shared_obj_tx))
 
         # os.remove('output.txt')
-        if (time.time()-sui_clock > 43200) or first_run:
+        if first_run:
             first_run = False
             print("sui time elapsed")
-            # stream = os.popen(
-            #     "/home/sui/sui/target/debug/sui client active-address")
-            # active_address = stream.read()
-            # active_address = active_address.strip()
-            # print(active_address.strip())
             active_address = '0xb7847468db546ba85acb9dcdc0c5190b3ca6427d713ff52a4f8183c81f8a39e1'
 
             data = requests.post('https://rpc-mainnet.suiscan.xyz/',
                                  json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
             time.sleep(1)
             data = data.json()
-            # pool_token_balance = data['result']['poolTokenBalance']
-            # record['MeasureValues'].append(
-            #     prepare_measure('pool_token_balance', pool_token_balance))
+
             curr_epoch = data['result']['epoch']
+            epoch_start = data['result']['epochStartTimestampMs']
+            epoch_length = data['result']['epochDurationMs']
+            epoch_end = epoch_start + epoch_length
+            milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
+            epoch_time_left = epoch_end - milliseconds_since_epoch
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
             gas_price = data['result']['referenceGasPrice']
             record['MeasureValues'].append(
                 prepare_measure('gas_price', gas_price))
-            # storage_fund = data['result']['storageFund']
-            # record['MeasureValues'].append(
-            #     prepare_measure('storage_fund', storage_fund))
+
             validator = [v for v in data['result']['activeValidators']
                          if v['suiAddress'] == active_address]
             validator = validator[0]
@@ -223,10 +221,77 @@ if __name__ == '__main__':
                     prepare_measure('stake_total', stake_total/1000000000))
             else:
                 stake_total = None
-            sui_clock = time.time()
+        elif epoch_time_left <= 0:
+            active_address = '0xb7847468db546ba85acb9dcdc0c5190b3ca6427d713ff52a4f8183c81f8a39e1'
+
+            data = requests.post('https://rpc-mainnet.suiscan.xyz/',
+                                 json={"jsonrpc": "2.0", "id": "1", "method": "suix_getLatestSuiSystemState", "params": []})
+            time.sleep(1)
+            data = data.json()
+
+            curr_epoch = data['result']['epoch']
+            epoch_start = data['result']['epochStartTimestampMs']
+            epoch_length = data['result']['epochDurationMs']
+            epoch_end = epoch_start + epoch_length
+            milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
+            epoch_time_left = epoch_end - milliseconds_since_epoch
+
+            record['MeasureValues'].append(
+                prepare_measure('curr_epoch', curr_epoch))
+            gas_price = data['result']['referenceGasPrice']
+            record['MeasureValues'].append(
+                prepare_measure('gas_price', gas_price))
+
+            validator = [v for v in data['result']['activeValidators']
+                         if v['suiAddress'] == active_address]
+            validator = validator[0]
+            commission = validator['commissionRate']
+            commission = int(commission)/100
+            record['MeasureValues'].append(
+                prepare_measure('commission', commission))
+            curr_voted_gas = validator['gasPrice']
+            record['MeasureValues'].append(
+                prepare_measure('curr_voted_gas', curr_voted_gas))
+            next_epoch_voted_gas = validator['nextEpochGasPrice']
+            record['MeasureValues'].append(
+                prepare_measure('next_epoch_voted_gas', next_epoch_voted_gas))
+            curr_stake = validator['stakingPoolSuiBalance']
+            curr_stake = int(curr_stake)/1000000000
+            record['MeasureValues'].append(
+                prepare_measure('curr_stake', curr_stake))
+            next_epoch_stake = validator['nextEpochStake']
+            next_epoch_stake = int(next_epoch_stake)/1000000000
+            record['MeasureValues'].append(prepare_measure(
+                'next_epoch_stake', next_epoch_stake))
+            voting_power = validator['votingPower']
+            record['MeasureValues'].append(
+                prepare_measure('voting_power', voting_power))
+            rewards_pool = validator['rewardsPool']
+            rewards_pool = int(rewards_pool)/1000000000
+            record['MeasureValues'].append(
+                prepare_measure('rewards_pool', rewards_pool))
+            data = requests.post('https://rpc-mainnet.suiscan.xyz/',
+                                 json={
+                                     "jsonrpc": "2.0",
+                                     "id": 1,
+                                     "method": "suix_getStakes",
+                                     "params": [active_address]
+                                 })
+            time.sleep(1)
+            if data.json()['result'][0]:
+                data = data.json()['result'][0]['stakes']
+                stake_total = 0
+                for s in data:
+                    stake_total += int(s['principal'])
+                record['MeasureValues'].append(
+                    prepare_measure('stake_total', stake_total/1000000000))
+            else:
+                stake_total = None
             print(record)
         else:
-            print("not time yet")
+            milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
+            epoch_time_left = epoch_end - milliseconds_since_epoch
+            print(f"remaining time: {epoch_time_left}")
             record['MeasureValues'].append(
                 prepare_measure('rewards_pool', rewards_pool))
             record['MeasureValues'].append(
@@ -241,21 +306,17 @@ if __name__ == '__main__':
                 prepare_measure('curr_voted_gas', curr_voted_gas))
             record['MeasureValues'].append(
                 prepare_measure('commission', commission))
-            # record['MeasureValues'].append(
-            #     prepare_measure('storage_fund', storage_fund))
             record['MeasureValues'].append(
                 prepare_measure('gas_price', gas_price))
             record['MeasureValues'].append(
                 prepare_measure('curr_epoch', curr_epoch))
-            # record['MeasureValues'].append(
-            #     prepare_measure('pool_token_balance', pool_token_balance))
             if stake_total:
                 record['MeasureValues'].append(
                     prepare_measure('stake_total', stake_total/1000000))
-            # record['MeasureValues'].append(
-            #     prepare_measure('last_synced_checkpoint', last_synced_checkpoint))
         if len(records) == 10:
             write_records(records, common_attributes)
             records = []
 
         time.sleep(INTERVAL)
+# TO DO
+# poolTokenBalance storgaeFund
