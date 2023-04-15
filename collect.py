@@ -165,8 +165,8 @@ if __name__ == '__main__':
             data = data.json()
 
             curr_epoch = data['result']['epoch']
-            epoch_start = data['result']['epochStartTimestampMs']
-            epoch_length = data['result']['epochDurationMs']
+            epoch_start = int(data['result']['epochStartTimestampMs'])
+            epoch_length = int(data['result']['epochDurationMs'])
             epoch_end = epoch_start + epoch_length
             milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
             epoch_time_left = epoch_end - milliseconds_since_epoch
@@ -230,8 +230,8 @@ if __name__ == '__main__':
             data = data.json()
 
             curr_epoch = data['result']['epoch']
-            epoch_start = data['result']['epochStartTimestampMs']
-            epoch_length = data['result']['epochDurationMs']
+            epoch_start = int(data['result']['epochStartTimestampMs'])
+            epoch_length = int(data['result']['epochDurationMs'])
             epoch_end = epoch_start + epoch_length
             milliseconds_since_epoch = datetime.datetime.now().timestamp() * 1000
             epoch_time_left = epoch_end - milliseconds_since_epoch
