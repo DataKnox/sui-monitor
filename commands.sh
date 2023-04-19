@@ -9,8 +9,16 @@ curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'C
 # basic metrics
 curl -s localhost:9184/metrics | grep -e ^current_round -e ^uptime -e ^highest_synced_checkpoint -e ^last_executed_checkpoint 
 
-# get self stake
-curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+# get self stake MAINNET 
+curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "suix_getStakes",
+  "params": [ "0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
+}'
+
+# TESTNET
+curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
   "method": "suix_getStakes",
@@ -28,9 +36,13 @@ sui client call --package 0x3 --module sui_system --function request_withdraw_st
 sui client gas
 # merge coins
 sui client merge-coin --primary-coin <target> coin-to-merge <source> --gas-budget 20_000_000 --gas <gas object paying for gas>
-sui client merge-coin --primary-coin 0x7983914e8020aea14d4f615c8405752d0d3900575806fec877f0f2a10525074a --coin-to-merge  0xeb5c74c0fb1a40feea0ddc5ec1a5bc19eb8c13c06ccac3baf59ed33656aa8310 --gas-budget 20000000 --gas 0x38c9ce9fb4a1a934d3a0935299f3fa0fd88656b4a15d9170e116793e5af62f71
+sui client merge-coin --primary-coin 0x00b20cf8d489c2c1237cddb47b039b28e7b855aec78529763e71285e406f8978 --coin-to-merge  0x116edf3ea308e245c29b1b6724e0fba8b17781d3488c375876025481802d3247 --gas-budget 20000000 --gas 0x38c9ce9fb4a1a934d3a0935299f3fa0fd88656b4a15d9170e116793e5af62f71
 sui client merge-coin --primary-coin 0xf3b9...3a3bc --coin-to-merge  0xe6e...0ae --gas-budget 20000000 --gas 0x1830...148
 
 
 # set gas price
 sui validator update-gas-price 901
+
+#tally 
+sui client call --package 0x3 --module sui_system --function report_validator --args 0x5 Cap_Id Validator_Address_toReport --gas-budget 20000000 --gas 0x059c1c08e9d7065d7f4be078d3e54e5755a842273317b2ccc27b1f3e821b06d5
+sui client call --package 0x3 --module sui_system --function report_validator --args 0x5 0xbe8439523a061fededfabb9925c527ea4110ccd44fad120e16e968a60b6dd9a3 0x6d6e9f9d3d81562a0f9b767594286c69c21fea741b1c2303c5b7696d6c63618a --gas-budget 20000000 --gas 0x059c1c08e9d7065d7f4be078d3e54e5755a842273317b2ccc27b1f3e821b06d5

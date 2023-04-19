@@ -7,8 +7,7 @@ import socket
 from botocore.config import Config
 import requests
 import re
-# DATABASE_NAME = os.environ['DATABASE_NAME']
-# TABLE_NAME = os.environ['TABLE_NAME']
+
 HOSTNAME = socket.gethostname()
 TABLE_NAME = "suimon"
 DATABASE_NAME = "testDB"
