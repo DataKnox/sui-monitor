@@ -10,6 +10,15 @@ curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'C
 curl -s localhost:9184/metrics | grep -e ^current_round -e ^uptime -e ^highest_synced_checkpoint -e ^last_executed_checkpoint 
 
 # get self stake MAINNET 
+curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "suix_getStakes",
+  "params": [ "Your address here"]
+}'
+
+
+# TESTNET
 curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
@@ -17,13 +26,23 @@ curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'C
   "params": [ "0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
 }'
 
-# TESTNET
+# get all coins 
 curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
   "jsonrpc": "2.0",
   "id": 1,
-  "method": "suix_getStakes",
-  "params": [ "0xb7847468db546ba85acb9dcdc0c5190b3ca6427d713ff52a4f8183c81f8a39e1"]
+  "method": "suix_getAllCoins",
+  "params": [ "0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
 }'
+
+# get all balances 
+curl --location --request POST 'https://rpc-testnet.suiscan.xyz:443' --header 'Content-Type: application/json' --data-raw '{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "suix_getAllBalances",
+  "params": [ "0x407f2bd2d36f40e57e4b725e7b80d4afc588fd2deb746ad62ccc6ed086798e48"]
+}'
+# merge stake?
+sui client call --package 0x3 --module staking_pool --function join_staked_sui --args 0x63952d1ac7f1ce2d864f51315d0bf1317ec8851f5389a54961b3ecf2b732e540 0x665b699c1aefff1244a07133d00f72ed6994cdc74982b2bac6ee84bd7cc622a1 --gas-budget 20000000
 
 # self stake
 sui client call --package 0x3 --module sui_system --function request_add_stake --args 0x5 0x23209625ec80d9adc296edfee386511a0fc7b370b9b8b944df29e976583d5320 0xbb5f4cee78b552ae10f6f7891ec168dfbef870fad139b815ce3b6fba17823ab5 --gas 0x1830f5cef753277180773be0f29e60a0605b3cc4b87f7f1e4829d355eba24148 --gas-budget 20000000
