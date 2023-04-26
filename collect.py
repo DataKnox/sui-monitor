@@ -318,6 +318,7 @@ if __name__ == '__main__':
                 record['MeasureValues'].append(
                     prepare_measure('stake_total', stake_total/1000000))
         if len(records) == 10:
+            print(records)
             write_records(records, common_attributes)
             records = []
 
