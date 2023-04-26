@@ -90,6 +90,18 @@ if __name__ == "__main__":
         swap_utilization = psutil.swap_memory().percent
         disk_utilization = psutil.disk_usage("/").percent
         db_utilization = psutil.disk_usage("/opt/sui/db").percent
+        net_stat = psutil.net_io_counters(pernic=True, nowrap=True)["eno1"]
+        net_in_1 = net_stat.bytes_recv
+        net_out_1 = net_stat.bytes_sent
+        time.sleep(1)
+        net_stat = psutil.net_io_counters(pernic=True, nowrap=True)["eno1"]
+        net_in_2 = net_stat.bytes_recv
+        net_out_2 = net_stat.bytes_sent
+
+        net_in = round((net_in_2 - net_in_1) / 1024 / 1024, 3)
+        net_out = round((net_out_2 - net_out_1) / 1024 / 1024, 3)
+        record['MeasureValues'].append(prepare_measure('net_in', net_in))
+        record['MeasureValues'].append(prepare_measure('net_out', net_out))
         record = prepare_record(current_time)
         record["MeasureValues"].append(prepare_measure("cpu", cpu_utilization))
         record["MeasureValues"].append(
