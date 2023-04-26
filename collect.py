@@ -100,9 +100,10 @@ if __name__ == "__main__":
 
         net_in = round((net_in_2 - net_in_1) / 1024 / 1024, 3)
         net_out = round((net_out_2 - net_out_1) / 1024 / 1024, 3)
+
+        record = prepare_record(current_time)
         record['MeasureValues'].append(prepare_measure('net_in', net_in))
         record['MeasureValues'].append(prepare_measure('net_out', net_out))
-        record = prepare_record(current_time)
         record["MeasureValues"].append(prepare_measure("cpu", cpu_utilization))
         record["MeasureValues"].append(
             prepare_measure("memory", memory_utilization))
