@@ -6,17 +6,13 @@ import socket
 HOSTNAME = socket.gethostname()
 match HOSTNAME:
     case "juicy-sui":
-        active_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
-        rpc_endpoint = "https://rpc-testnet.suiscan.xyz/"
+        target_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
     case "juicy-sui-main":
-        active_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
-        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
+        target_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
     case "cypher-testnet":
         active_address = ""
-        rpc_endpoint = "https://rpc-testnet.suiscan.xyz/"
     case "cypher-mainnet":
         active_address = ""
-        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
 to_file = os.popen(
     '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
