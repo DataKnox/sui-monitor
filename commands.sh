@@ -61,6 +61,9 @@ sui client merge-coin --primary-coin 0xf3b9...3a3bc --coin-to-merge  0xe6e...0ae
 # withdraw stake
 sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 0xde589384b3d7e0b2ee40be9806173f5e3f4bbde57fdea80785740d752f5498f1 --gas-budget 20000000
 
+# transfer
+sui client transfer-sui --amount 200000000000 --gas-budget 20000000 --sui-coin-object-id 0x920c399811637320b19b152dcc0d864e76c6c62e47108a1f10085d99e2d8aa4c --to 0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663b
+
 # set gas price
 sui validator update-gas-price 901
 
