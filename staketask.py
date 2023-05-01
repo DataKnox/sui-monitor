@@ -2,7 +2,7 @@ import os
 import re
 import time
 to_file = os.popen(
-    '/home/sui/sui/target/debug/sui client objects | grep StakedSui > stake.txt')
+    '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
 time.sleep(5)
 with open('/home/sui/gas.txt', 'r') as f:
