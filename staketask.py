@@ -71,10 +71,10 @@ with open('/home/sui/gas.txt', 'r') as f:
         os.popen(
             f'/home/sui/sui/target/debug/sui client object {obj_id} --json > /home/sui/obj.json')
         time.sleep(1)
-        with open('/home/sui/obj.json', 'r') as g:
-            data = json.load(g)
-            balance = int(data['content']['fields']['balance'])
-            to_send_amt = balance * 0.99
-            os.popen(
-                f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address}")
-            time.sleep(5)
+        g = open('/home/sui/obj.json')
+        data = json.load(g)
+        balance = int(data['content']['fields']['balance'])
+        to_send_amt = balance * 0.99
+        os.popen(
+            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address}")
+        time.sleep(5)
