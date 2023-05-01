@@ -54,7 +54,7 @@ with open('/home/sui/gas.txt', 'r') as f:
 
 
 to_file = os.popen(
-    '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas.txt')
+    '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas_new.txt')
 time.sleep(5)
 with open('/home/sui/gas_new.txt', 'r') as f:
     third_read = f.readlines()
