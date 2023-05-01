@@ -61,7 +61,7 @@ with open('/home/sui/gas_new.txt', 'r') as f:
     for line in third_read:
         loop = 1
         obj = line.strip()
-        obj_id = merging_obj.split(' ')[0]
+        obj_id = obj.split(' ')[0]
         print(line)
         print(obj_id)
         os.popen(
