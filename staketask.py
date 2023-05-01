@@ -24,11 +24,8 @@ time.sleep(5)
 with open('/home/sui/stake.txt', 'r') as f:
     second_read = f.readlines()
     for line in second_read:
-        print(f"Line: {line}")
         stake_obj = line.strip()
         stake_obj_id = stake_obj.split(' ')[0]
-        print("stake obj id:")
-        print(stake_obj_id)
         os.popen(
             f'/home/sui/sui/target/debug/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
         time.sleep(5)
@@ -49,12 +46,8 @@ with open('/home/sui/gas.txt', 'r') as f:
         second_read = f.readlines()
         for line in second_read:
             if base_obj not in line:
-                print(f"Line: {line}")
                 merging_obj = line.strip()
                 merging_obj = merging_obj.split(' ')[0]
-                print("Running:")
-                print(
-                    f"/home/sui/sui/target/debug/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
                 os.popen(
                     f"/home/sui/sui/target/debug/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
                 time.sleep(10)
@@ -63,7 +56,7 @@ with open('/home/sui/gas.txt', 'r') as f:
 to_file = os.popen(
     '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas.txt')
 time.sleep(5)
-with open('/home/sui/gas.txt', 'r') as f:
+with open('/home/sui/gas_new.txt', 'r') as f:
     third_read = f.readlines()
     for line in third_read:
         loop = 1
