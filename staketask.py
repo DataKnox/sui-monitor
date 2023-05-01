@@ -1,6 +1,22 @@
 import os
 import re
 import time
+import json
+import socket
+HOSTNAME = socket.gethostname()
+match HOSTNAME:
+    case "juicy-sui":
+        active_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
+        rpc_endpoint = "https://rpc-testnet.suiscan.xyz/"
+    case "juicy-sui-main":
+        active_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
+        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
+    case "cypher-testnet":
+        active_address = ""
+        rpc_endpoint = "https://rpc-testnet.suiscan.xyz/"
+    case "cypher-mainnet":
+        active_address = ""
+        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
 to_file = os.popen(
     '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
@@ -42,3 +58,23 @@ with open('/home/sui/gas.txt', 'r') as f:
                 os.popen(
                     f"/home/sui/sui/target/debug/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
                 time.sleep(10)
+
+
+to_file = os.popen(
+    '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas.txt')
+time.sleep(5)
+with open('/home/sui/gas.txt', 'r') as f:
+    third_read = f.readlines()
+    for line in third_read:
+        obj = line.strip()
+        obj_id = merging_obj.split(' ')[0]
+        os.popen(
+            f'/home/sui/sui/target/debug/sui client object {obj_id} --json > /home/sui/obj.json')
+        time.sleep(1)
+        with open('/home/sui/obj.json', 'r') as g:
+            data = json.load(g)
+            balance = int(data['content']['fields']['balance'])
+            to_send_amt = balance * 0.99
+            os.popen(
+                f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address}")
+            time.sleep(5)
