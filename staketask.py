@@ -68,9 +68,11 @@ with open('/home/sui/gas.txt', 'r') as f:
     for line in third_read:
         obj = line.strip()
         obj_id = merging_obj.split(' ')[0]
+        print(line)
+        print(obj_id)
         os.popen(
             f'/home/sui/sui/target/debug/sui client object {obj_id} --json > /home/sui/obj.json')
-        time.sleep(1)
+        time.sleep(3)
         g = open('/home/sui/obj.json')
         data = json.load(g)
         balance = round(int(data['content']['fields']['balance']))
