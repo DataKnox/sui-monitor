@@ -66,6 +66,7 @@ time.sleep(5)
 with open('/home/sui/gas.txt', 'r') as f:
     third_read = f.readlines()
     for line in third_read:
+        loop = 1
         obj = line.strip()
         obj_id = merging_obj.split(' ')[0]
         print(line)
@@ -76,7 +77,8 @@ with open('/home/sui/gas.txt', 'r') as f:
         g = open('/home/sui/obj.json')
         data = json.load(g)
         balance = round(int(data['content']['fields']['balance']))
-        to_send_amt = round((balance * 0.99)-20000000)
+        to_send_amt = round(((balance * 0.99)-20000000))
         os.popen(
-            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address}")
+            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address} > loop{loop}.txt")
         time.sleep(5)
+        loop += 1
