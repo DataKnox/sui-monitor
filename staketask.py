@@ -12,7 +12,7 @@ match HOSTNAME:
     case "cypher-testnet":
         active_address = ""
     case "cypher-mainnet":
-        active_address = ""
+        active_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
 to_file = os.popen(
     '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
