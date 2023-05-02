@@ -73,3 +73,6 @@ sui validator update-gas-price 901
 #tally 
 sui client call --package 0x3 --module sui_system --function report_validator --args 0x5 Cap_Id Validator_Address_toReport --gas-budget 20000000 --gas 0x059c1c08e9d7065d7f4be078d3e54e5755a842273317b2ccc27b1f3e821b06d5
 sui client call --package 0x3 --module sui_system --function report_validator --args 0x5 0xbe8439523a061fededfabb9925c527ea4110ccd44fad120e16e968a60b6dd9a3 0x6d6e9f9d3d81562a0f9b767594286c69c21fea741b1c2303c5b7696d6c63618a --gas-budget 20000000 --gas 0x059c1c08e9d7065d7f4be078d3e54e5755a842273317b2ccc27b1f3e821b06d5
+
+#set commission rate: comission value is in basis points
+sui client call --package 0x3 --module sui_system --function request_set_commission_rate --args 0x5 400 --gas-budget 20000000
