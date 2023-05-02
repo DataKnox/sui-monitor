@@ -275,7 +275,7 @@ if __name__ == "__main__":
                 },
             )
             time.sleep(1)
-            if data.json()["result"][0]:
+            if len(data.json()["result"]) > 0:
                 data = data.json()["result"][0]["stakes"]
                 stake_total = 0
                 for s in data:

@@ -6,6 +6,9 @@ curl --location --request POST 'https://rpc-mainnet.suiscan.xyz:443' --header 'C
   "params": [ "0x5"]
 }'
 
+# jq 
+curl -X POST -H "Content-Type: application/json" --data '{ "jsonrpc":"2.0", "method":"suix_getLatestSuiSystemState","id":1, "params": [ "0x5"]}' https://sui-rpc-mainnet.testnet-pride.com:443 | jq '[.result.activeValidators[] | select( .name=="Juicy Stake" or .name=="Cypher Capital") | {name,nextEpochStake,votingPower,nextEpochCommissionRate,nextEpochGasPrice}]'
+
 # basic metrics
 curl -s localhost:9184/metrics | grep -e ^current_round -e ^uptime -e ^highest_synced_checkpoint -e ^last_executed_checkpoint 
 
@@ -62,7 +65,7 @@ sui client merge-coin --primary-coin 0xf3b9...3a3bc --coin-to-merge  0xe6e...0ae
 sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 0xde589384b3d7e0b2ee40be9806173f5e3f4bbde57fdea80785740d752f5498f1 --gas-budget 20000000
 
 # transfer
-sui client transfer-sui --amount 200000000000 --gas-budget 20000000 --sui-coin-object-id 0x920c399811637320b19b152dcc0d864e76c6c62e47108a1f10085d99e2d8aa4c --to 0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663b
+sui client transfer-sui --amount 100000000 --gas-budget 20000000 --sui-coin-object-id 0x972ef681d82928f433514163505f924f45689c0fd016b1029c4e46dd4302f182 --to 0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5
 
 # set gas price
 sui validator update-gas-price 901
