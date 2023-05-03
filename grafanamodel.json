@@ -1,0 +1,2027 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "grafana",
+                    "uid": "-- Grafana --"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 48,
+            "title": "Validator Trends",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 0,
+                "y": 1
+            },
+            "id": 46,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT highest_synced_checkpoint, hostname, bin(time, 1m) AS binned_time\nFROM $__database.$__table\nWHERE time > ago(1h) and hostname='$hostnames'\nORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Highest Syncd Checkpoint",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 6,
+                "y": 1
+            },
+            "id": 50,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT certificates_created, hostname, bin(time, 1m) AS binned_time\nFROM $__database.$__table\nWHERE time > ago(1h) and hostname='$hostnames'\nORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Certs Created",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 12,
+                "y": 1
+            },
+            "id": 52,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT current_round, hostname, bin(time, 1m) AS binned_time\nFROM $__database.$__table\nWHERE time > ago(1h) and hostname='$hostnames'\nORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Current Round",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 1,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "dtdurationms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 18,
+                "y": 1
+            },
+            "id": 54,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT epoch_time_left, hostname, bin(time, 1m) AS binned_time\nFROM $__database.$__table\nWHERE time > ago(1h) and hostname='$hostnames'\nORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Epoch Time Left",
+            "type": "timeseries"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 7
+            },
+            "id": 42,
+            "panels": [],
+            "title": "System Metrics",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 40
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 8
+            },
+            "id": 10,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {
+                    "titleSize": 50
+                }
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT memory\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table WHERE hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "RAM",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 40
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 4,
+                "y": 8
+            },
+            "id": 58,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT db_disk\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table WHERE hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "DB Disk",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 40
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 8,
+                "y": 8
+            },
+            "id": 8,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^disk$/",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT disk\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Disk",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 40
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 12,
+                "y": 8
+            },
+            "id": 6,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT cpu\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "CPU",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 40
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 16,
+                "y": 8
+            },
+            "id": 12,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT swap\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Swap",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 20,
+                "y": 8
+            },
+            "id": 36,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT uptime\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Uptime",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 24,
+                "x": 0,
+                "y": 12
+            },
+            "id": 62,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT hostname, avg(net_in) as netIn, avg(net_out) as netOut, bin(time, 1m) AS binned_time\n  FROM $__database.$__table\nWHERE time > ago(3h) and hostname='$hostnames'\n GROUP BY hostname, bin(time, 1m)\n ORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Network In/Out MB/s",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 20
+            },
+            "id": 4,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT hostname, avg(cpu) AS avg_cpu,\n       avg(memory) AS avg_memory, avg(disk) AS avg_disk, avg(db_disk) as avg_dbdisk,\n       avg(swap) AS avg_swap, bin(time, 1m) AS binned_time\n  FROM $__database.$__table\nWHERE time > ago(3h) and hostname='$hostnames'\n GROUP BY hostname, bin(time, 1m)\n ORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "SystemStats",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 20
+            },
+            "id": 38,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT avg(db_disk) AS avg_dbdisk,\n       avg(disk) AS avg_disk, bin(time, 1m) AS binned_time\n  FROM $__database.$__table\n  WHERE time > ago(3h) and hostname='$hostnames'\n GROUP BY hostname, bin(time, 1m)\n ORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Disk Utils",
+            "type": "timeseries"
+        },
+        {
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 27
+            },
+            "id": 40,
+            "title": "Stake Stats",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 0,
+                "y": 28
+            },
+            "id": 32,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT curr_epoch\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Epoch",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "locale"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 5,
+                "x": 3,
+                "y": 28
+            },
+            "id": 34,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT curr_stake\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Current Staked",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 8,
+                "y": 28
+            },
+            "hideTimeOverride": false,
+            "id": 56,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT MAX(curr_stake) as stake, bin(time, 24h) AS binned_time\nFROM testDB.suimon\nWHERE time > ago(14d) and hostname='$hostnames'\nGROUP BY bin(time, 24h)\nORDER BY binned_time",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "timeFrom": "14d",
+            "title": "Staked Amount",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "fillOpacity": 80,
+                        "gradientMode": "hue",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineWidth": 1,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 16,
+                "y": 28
+            },
+            "id": 60,
+            "options": {
+                "barRadius": 0,
+                "barWidth": 0.89,
+                "fullHighlight": false,
+                "groupWidth": 0.72,
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "none",
+                "tooltip": {
+                    "mode": "single",
+                    "sort": "none"
+                },
+                "xField": "curr_epoch",
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 0
+            },
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT MAX(stake_total/1000) as selfstake, curr_epoch\nFROM testDB.suimon\nWHERE time > ago(7d) and hostname='$hostnames'\nGROUP BY curr_epoch\nORDER BY curr_epoch",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "timeFrom": "14d",
+            "title": "Self-Stake Total Trend",
+            "type": "barchart"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 0,
+                "y": 32
+            },
+            "id": 16,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT commission\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Commission",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 5,
+                "x": 3,
+                "y": 32
+            },
+            "id": 44,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT stake_total/1000\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "SelfStaked",
+            "type": "stat"
+        },
+        {
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 35
+            },
+            "id": 28,
+            "title": "Row title",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 0,
+                "y": 36
+            },
+            "id": 18,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT current_round\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Current Round",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 3,
+                "y": 36
+            },
+            "id": 22,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT highest_synced_checkpoint\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Highest Syncd Checkpt",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 6,
+                "y": 36
+            },
+            "id": 20,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT last_executed_checkpoint\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Last Exec Checkpt",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 9,
+                "y": 36
+            },
+            "id": 24,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT certificates_created\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Certs Created",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 12,
+                "y": 36
+            },
+            "id": 26,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT gas_price\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Ref Gas Price",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "grafana-timestream-datasource",
+                "uid": "j_USQl-Vk"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 15,
+                "y": 36
+            },
+            "id": 30,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "9.5.1",
+            "targets": [
+                {
+                    "database": "\"testDB\"",
+                    "datasource": {
+                        "type": "grafana-timestream-datasource",
+                        "uid": "j_USQl-Vk"
+                    },
+                    "measure": "utilization",
+                    "rawQuery": "SELECT curr_voted_gas\nFROM $__database.$__table\nWHERE time=(SELECT max(time) FROM $__database.$__table where hostname='$hostnames') and hostname='$hostnames'",
+                    "refId": "A",
+                    "table": "\"suimon\""
+                }
+            ],
+            "title": "Curr Epoch Vtd Gas",
+            "type": "stat"
+        }
+    ],
+    "refresh": "",
+    "revision": 1,
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "selected": true,
+                    "text": "juicy-sui-main",
+                    "value": "juicy-sui-main"
+                },
+                "datasource": {
+                    "type": "grafana-timestream-datasource",
+                    "uid": "j_USQl-Vk"
+                },
+                "definition": "SELECT DISTINCT hostname FROM \"testDB\".\"suimon\" WHERE time > ago(15m) ",
+                "hide": 0,
+                "includeAll": false,
+                "multi": false,
+                "name": "hostnames",
+                "options": [],
+                "query": "SELECT DISTINCT hostname FROM \"testDB\".\"suimon\" WHERE time > ago(15m) ",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Sui-Dashboard",
+    "uid": "4BQkXl-4z",
+    "version": 58,
+    "weekStart": ""
+}

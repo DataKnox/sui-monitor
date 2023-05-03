@@ -10,9 +10,9 @@ match HOSTNAME:
     case "juicy-sui-main":
         target_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
     case "cypher-testnet":
-        active_address = ""
+        target_address = ""
     case "cypher-mainnet":
-        active_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
+        target_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
 to_file = os.popen(
     '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
@@ -68,6 +68,6 @@ with open('/home/sui/gas_new.txt', 'r') as f:
         balance = round(int(data['content']['fields']['balance']))
         to_send_amt = round(((balance * 0.99)-20000000))
         os.popen(
-            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {active_address} > loop{loop}.txt")
+            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {target_address} > loop{loop}.txt")
         time.sleep(5)
         loop += 1
