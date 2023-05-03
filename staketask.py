@@ -6,9 +6,9 @@ import socket
 HOSTNAME = socket.gethostname()
 match HOSTNAME:
     case "juicy-sui":
-        target_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
+        target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "juicy-sui-main":
-        target_address = "0xcec4dd3fc6f119a10c7524c76fbf06b15d0b527586f9c39d557e7fb4084663ba"
+        target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "cypher-testnet":
         target_address = ""
     case "cypher-mainnet":
