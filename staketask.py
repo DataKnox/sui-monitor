@@ -14,7 +14,7 @@ match HOSTNAME:
     case "cypher-mainnet":
         target_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
 to_file = os.popen(
-    '/home/sui/sui/target/debug/sui client objects | grep StakedSui > /home/sui/stake.txt')
+    '/home/sui/sui/target/release/sui client objects | grep StakedSui > /home/sui/stake.txt')
 
 time.sleep(5)
 with open('/home/sui/stake.txt', 'r') as f:
@@ -23,11 +23,11 @@ with open('/home/sui/stake.txt', 'r') as f:
         stake_obj = line.strip()
         stake_obj_id = stake_obj.split(' ')[0]
         os.popen(
-            f'/home/sui/sui/target/debug/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
+            f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
         time.sleep(5)
 
 to_file = os.popen(
-    '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas.txt')
+    '/home/sui/sui/target/release/sui client objects | grep GasCoin > /home/sui/gas.txt')
 
 time.sleep(5)
 with open('/home/sui/gas.txt', 'r') as f:
@@ -45,12 +45,12 @@ with open('/home/sui/gas.txt', 'r') as f:
                 merging_obj = line.strip()
                 merging_obj = merging_obj.split(' ')[0]
                 os.popen(
-                    f"/home/sui/sui/target/debug/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
+                    f"/home/sui/sui/target/release/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
                 time.sleep(10)
 
 
 to_file = os.popen(
-    '/home/sui/sui/target/debug/sui client objects | grep GasCoin > /home/sui/gas_new.txt')
+    '/home/sui/sui/target/release/sui client objects | grep GasCoin > /home/sui/gas_new.txt')
 time.sleep(5)
 with open('/home/sui/gas_new.txt', 'r') as f:
     third_read = f.readlines()
@@ -61,13 +61,13 @@ with open('/home/sui/gas_new.txt', 'r') as f:
         print(line)
         print(obj_id)
         os.popen(
-            f'/home/sui/sui/target/debug/sui client object {obj_id} --json > /home/sui/obj.json')
+            f'/home/sui/sui/target/release/sui client object {obj_id} --json > /home/sui/obj.json')
         time.sleep(3)
         g = open('/home/sui/obj.json')
         data = json.load(g)
         balance = round(int(data['content']['fields']['balance']))
         to_send_amt = round(((balance * 0.99)-20000000))
         os.popen(
-            f"/home/sui/sui/target/debug/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {target_address} > loop{loop}.txt")
+            f"/home/sui/sui/target/release/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {obj_id} --to {target_address} > loop{loop}.txt")
         time.sleep(5)
         loop += 1
