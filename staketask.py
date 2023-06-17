@@ -8,7 +8,7 @@ match HOSTNAME:
     case "juicy-sui":
         target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "juicy-sui-main":
-        target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
+        target_address = "0xe5cfd140039e60e7c0c8eba53b8fbc5290d0fb980c1d1f16da8345fad51452ac"
     case "cypher-testnet":
         target_address = ""
     case "cypher-mainnet":
