@@ -29,7 +29,7 @@ with open('/home/sui/stake.txt', 'r') as f:
             time.sleep(5)
 
 to_file = os.popen(
-    '/home/sui/sui/target/release/sui client sui client gas | grep 0x > /home/sui/gas.txt')
+    '/home/sui/sui/target/release/sui client gas | grep 0x > /home/sui/gas.txt')
 
 time.sleep(5)
 with open('/home/sui/gas.txt', 'r') as f:
@@ -52,14 +52,14 @@ with open('/home/sui/gas.txt', 'r') as f:
 
 
 to_file = os.popen(
-    '/home/sui/sui/target/release/sui client objects | grep GasCoin > /home/sui/gas_new.txt')
+    '/home/sui/sui/target/release/sui client gas | grep 0x > /home/sui/gas_new.txt')
 time.sleep(5)
 with open('/home/sui/gas_new.txt', 'r') as f:
     third_read = f.readlines()
     for line in third_read:
         loop = 1
         obj = line.strip()
-        obj_id = obj.split(' ')[0]
+        obj_id = obj.split(' ')[1]
         print(line)
         print(obj_id)
         os.popen(
