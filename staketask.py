@@ -21,12 +21,9 @@ with open('/home/sui/stake.txt', 'r') as f:
     second_read = f.readlines()
     for line in second_read:
         stake_obj = line.strip()
-        stake_obj_eval = stake_obj.split(' ')
-        print("0 "+stake_obj_eval[0])
-        print("1 "+stake_obj_eval[1])
-        print("2 "+stake_obj_eval[2])
+        stake_obj_eval = stake_obj.split(' ')[2]
         if stake_obj_eval == 'objectId':
-            stake_obj_id = stake_obj.split(' ')[5]
+            stake_obj_id = stake_obj.split(' ')[4]
             os.popen(
                 f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
             time.sleep(5)
