@@ -8,45 +8,47 @@ match HOSTNAME:
     case "juicy-sui":
         target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "juicy-sui-main":
-        target_address = "0xe5cfd140039e60e7c0c8eba53b8fbc5290d0fb980c1d1f16da8345fad51452ac"
+        target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "cypher-testnet":
         target_address = ""
     case "cypher-mainnet":
         target_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
 to_file = os.popen(
-    '/home/sui/sui/target/release/sui client objects | grep StakedSui > /home/sui/stake.txt')
+    '/home/sui/sui/target/release/sui client objects | grep -B 4 StakedSui > /home/sui/stake.txt')
 
 time.sleep(5)
 with open('/home/sui/stake.txt', 'r') as f:
     second_read = f.readlines()
     for line in second_read:
         stake_obj = line.strip()
-        stake_obj_id = stake_obj.split(' ')[0]
-        os.popen(
-            f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
-        time.sleep(5)
+        stake_obj_eval = stake_obj.split(' ')[3]
+        if stake_obj_eval == 'objectId':
+            stake_obj_id = stake_obj.split(' ')[5]
+            os.popen(
+                f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
+            time.sleep(5)
 
 to_file = os.popen(
-    '/home/sui/sui/target/release/sui client objects | grep GasCoin > /home/sui/gas.txt')
+    '/home/sui/sui/target/release/sui client sui client gas | grep 0x > /home/sui/gas.txt')
 
 time.sleep(5)
 with open('/home/sui/gas.txt', 'r') as f:
     # Read the file contents and generate a list with each line
     first_line = f.readline()
-    match = re.search(r'^\s*([a-zA-Z0-9]+)', first_line)
-    if match:
-        base_obj = first_line.strip()
-        base_obj = base_obj.split(' ')[0]
-        print(f"base gas object is {base_obj}")
+    #match = re.search(r'^\s*([a-zA-Z0-9]+)', first_line)
+    # if match:
+    base_obj = first_line.strip()
+    base_obj = base_obj.split(' ')[1]
+    print(f"base gas object is {base_obj}")
 
-        second_read = f.readlines()
-        for line in second_read:
-            if base_obj not in line:
-                merging_obj = line.strip()
-                merging_obj = merging_obj.split(' ')[0]
-                os.popen(
-                    f"/home/sui/sui/target/release/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
-                time.sleep(10)
+    second_read = f.readlines()
+    for line in second_read:
+        if base_obj not in line:
+            merging_obj = line.strip()
+            merging_obj = merging_obj.split(' ')[1]
+            os.popen(
+                f"/home/sui/sui/target/release/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
+            time.sleep(10)
 
 
 to_file = os.popen(
