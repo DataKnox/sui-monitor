@@ -28,8 +28,8 @@ with open('/home/sui/stake.txt', 'r') as f:
         if stake_obj_eval == 'objectId':
             print(stake_obj.replace('   ', ' ').replace('  ', ' '))
             print('0 ' + stake_obj.split(' ')[0])
-            print('4 ' + stake_obj.split(' ')[4])
-            stake_obj_id = stake_obj.split(' ')[4]
+            print('4 ' + stake_obj.replace('   ', ' ').replace('  ', ' ').split(' ')[4])
+            stake_obj_id = stake_obj.replace('   ', ' ').replace('  ', ' ').split(' ')[4]
             print('stake obj id ' + stake_obj_id)
             os.popen(
                 f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
