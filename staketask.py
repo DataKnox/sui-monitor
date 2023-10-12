@@ -26,9 +26,7 @@ with open('/home/sui/stake.txt', 'r') as f:
         stake_obj_eval = stake_obj.split(' ')[2]
         print(stake_obj_eval)
         if stake_obj_eval == 'objectId':
-            stake_obj.replace('   ', ' ')
-            stake_obj.replace('  ', ' ')
-            print('stake obj ' + stake_obj  )
+            print(stake_obj.replace('   ', ' ').replace('  ', ' '))
             print('0 ' + stake_obj.split(' ')[0])
             print('4 ' + stake_obj.split(' ')[4])
             stake_obj_id = stake_obj.split(' ')[4]
