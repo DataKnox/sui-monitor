@@ -87,6 +87,7 @@ with open('/home/sui/gas_new.json', 'r') as fs:
         data = json.load(g)
         balance = round(int(data['content']['fields']['balance']))
         to_send_amt = round(((balance * 0.99)-20000000))
+        print(f"to send amount is {str(to_send_amt)} to {target_address} from {line['gasCoinId']}")
         os.popen(
             f'/home/sui/sui/target/release/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {line["gasCoinId"]} --to {target_address} > loop{loop}.txt')
         time.sleep(5)
