@@ -51,7 +51,7 @@ fa = open('/home/sui/gas.json')
 data = json.load(fa)
 print("base coin for merge " + data[0]['gasCoinId'])
 os.popen(
-    f'/home/sui/sui/target/release/sui client merge-coin --primary-coin {data[0]["gasCoinId"]} --coin-to-merge  {data[2]["gasCoinId"]} --gas-budget 20000000')
+    f'/home/sui/sui/target/release/sui client merge-coin --primary-coin {data[0]["gasCoinId"]} --coin-to-merge  {data[1]["gasCoinId"]} --gas-budget 20000000')
 time.sleep(5)
 # time.sleep(5)
 # with open('/home/sui/gas.txt', 'r') as f:
