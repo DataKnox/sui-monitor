@@ -21,7 +21,10 @@ with open('/home/sui/stake.txt', 'r') as f:
     second_read = f.readlines()
     for line in second_read:
         stake_obj = line.strip()
-        stake_obj_eval = stake_obj.split(' ')[3]
+        stake_obj_eval = stake_obj.split(' ')
+        print("0 "+stake_obj_eval[0])
+        print("1 "+stake_obj_eval[1])
+        print("2 "+stake_obj_eval[2])
         if stake_obj_eval == 'objectId':
             stake_obj_id = stake_obj.split(' ')[5]
             os.popen(
