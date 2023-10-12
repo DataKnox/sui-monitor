@@ -21,6 +21,8 @@ with open('/home/sui/stake.txt', 'r') as f:
     second_read = f.readlines()
     for line in second_read:
         stake_obj = line.strip()
+        if stake_obj.split(' ').__len__() < 3:
+            continue
         stake_obj_eval = stake_obj.split(' ')[2]
         if stake_obj_eval == 'objectId':
             stake_obj_id = stake_obj.split(' ')[4]
