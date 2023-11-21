@@ -108,6 +108,6 @@ if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
     }
     json_payload = json.dumps(payload)
     sent = requests.post(os.getenv("LOGIC"),
-                            data=json_payload)
+                            data=json_payload,headers={'Content-Type': 'application/json'})
 
 
