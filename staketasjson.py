@@ -3,16 +3,37 @@ import re
 import time
 import json
 import socket
+import requests
+from datetime import datetime
+import time
+import json
+import os
+from dotenv import load_dotenv
+load_dotenv()
 HOSTNAME = socket.gethostname()
 match HOSTNAME:
     case "juicy-sui":
         target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
     case "juicy-sui-main":
         target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
+        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
     case "cypher-testnet":
         target_address = ""
     case "cypher-mainnet":
         target_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
+        rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
+        active_address = "0xdfc9709adae2917a9be213c8d651b150517fbc8b99106bbd3020e618335ccf18"
+
+def is_first_day_of_month():
+    today = datetime.now()
+    return today.day == 1
+
+# Example usage
+if is_first_day_of_month():
+    print("Today is the first day of the month.")
+else:
+    print("Today is not the first day of the month.")
+
 to_file = os.popen(
     '/home/sui/sui/target/release/sui client objects --json > /home/sui/stake.json')
 
@@ -25,23 +46,7 @@ for i in data:
         os.popen(
             f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {i["data"]["objectId"]} --gas-budget 20000000')
         time.sleep(5)
-# with open('/home/sui/stake.txt', 'r') as f:
-#     second_read = f.readlines()
-#     for line in second_read:
-#         stake_obj = line.strip()
-#         if stake_obj.split(' ').__len__() < 3:
-#             continue
-#         stake_obj_eval = stake_obj.split(' ')[2]
-#         print(stake_obj_eval)
-#         if stake_obj_eval == 'objectId':
-#             print(stake_obj.replace('   ', ' ').replace('  ', ' '))
-#             print('0 ' + stake_obj.split(' ')[0])
-#             print('4 ' + stake_obj.replace('   ', ' ').replace('  ', ' ').split(' ')[4])
-#             stake_obj_id = stake_obj.replace('   ', ' ').replace('  ', ' ').split(' ')[4]
-#             print('stake obj id ' + stake_obj_id)
-#             os.popen(
-#                 f'/home/sui/sui/target/release/sui client call --package 0x3 --module sui_system --function request_withdraw_stake --args 0x5 {stake_obj_id} --gas-budget 20000000')
-#             time.sleep(5)
+
 
 to_file = os.popen(
     '/home/sui/sui/target/release/sui client gas --json  > /home/sui/gas.json')
@@ -53,24 +58,7 @@ print("base coin for merge " + data[0]['gasCoinId'])
 os.popen(
     f'/home/sui/sui/target/release/sui client merge-coin --primary-coin {data[0]["gasCoinId"]} --coin-to-merge  {data[1]["gasCoinId"]} --gas-budget 20000000')
 time.sleep(5)
-# time.sleep(5)
-# with open('/home/sui/gas.txt', 'r') as f:
-#     # Read the file contents and generate a list with each line
-#     first_line = f.readline()
-#     #match = re.search(r'^\s*([a-zA-Z0-9]+)', first_line)
-#     # if match:
-#     base_obj = first_line.strip()
-#     base_obj = base_obj.split(' ')[1]
-#     print(f"base gas object is {base_obj}")
 
-#     second_read = f.readlines()
-#     for line in second_read:
-#         if base_obj not in line:
-#             merging_obj = line.strip()
-#             merging_obj = merging_obj.split(' ')[1]
-#             os.popen(
-#                 f"/home/sui/sui/target/release/sui client merge-coin --primary-coin {base_obj} --coin-to-merge  {merging_obj} --gas-budget 20000000")
-#             time.sleep(10)
 
 
 to_file = os.popen(
@@ -92,3 +80,35 @@ with open('/home/sui/gas_new.json', 'r') as fs:
             f'/home/sui/sui/target/release/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {line["gasCoinId"]} --to {target_address} > loop{loop}.txt')
         time.sleep(5)
         loop += 1
+
+if HOSTNAME == "cypher-mainnet":
+    data = requests.post(
+        rpc_endpoint,
+        json={
+            "jsonrpc": "2.0",
+            "id": "1",
+            "method": "suix_getLatestSuiSystemState",
+            "params": [],
+        },
+    )
+    validator = [
+        v
+        for v in data["result"]["activeValidators"]
+        if v["suiAddress"] == active_address
+         ]
+    validator = validator[0]
+    curr_stake = validator["stakingPoolSuiBalance"]
+    curr_stake = int(curr_stake) / 1000000000
+    bitgo_weight = 16460760/curr_stake
+    bitgo_share = bitgo_weight*to_send_amt
+    payload = {
+        "bitgo_share": bitgo_share,
+        "total_amount": to_send_amt,
+        "date": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "isFirst": True if is_first_day_of_month() else False,
+    }
+    json_payload = json.dumps(payload)
+    sent = requests.post(os.getenv("LOGIC"),
+                            data=json_payload)
+
+
