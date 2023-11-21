@@ -15,7 +15,9 @@ match HOSTNAME:
         target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
         rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
     case "cypher-testnet":
-        target_address = ""
+        target_address = "0xdca53190eeed13263268118ebd1701dc96eba96d3675f3dfb5e7b9b3fae696d5"
+        active_address = "0x2081a93bcf642f5964e1f5c4b84e2a22801a62d0137e03d0311ee317163cd27a"
+        rpc_endpoint = "https://rpc-testnet.suiscan.xyz/"
     case "cypher-mainnet":
         target_address = "0x5855d61702d7aaf66224a1b70ea6f917445605079bad12a4371e35a575ac0d84"
         rpc_endpoint = "https://rpc-mainnet.suiscan.xyz/"
@@ -78,7 +80,7 @@ with open('/home/sui/gas_new.json', 'r') as fs:
         time.sleep(5)
         loop += 1
 
-if HOSTNAME == "cypher-mainnet":
+if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
     data = requests.post(
         rpc_endpoint,
         json={
