@@ -5,9 +5,6 @@ import json
 import socket
 import requests
 from datetime import datetime
-import time
-import json
-import os
 from dotenv import load_dotenv
 load_dotenv()
 HOSTNAME = socket.gethostname()
