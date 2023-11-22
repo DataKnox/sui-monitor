@@ -90,6 +90,7 @@ if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
             "params": [],
         },
     )
+    data = data.json()
     validator = [
         v
         for v in data["result"]["activeValidators"]
