@@ -101,7 +101,7 @@ if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
     curr_stake = validator["stakingPoolSuiBalance"]
     curr_stake = int(curr_stake) / 1000000000
     bitgo_weight = 16460760/curr_stake
-    bitgo_share = bitgo_weight*to_send_amt
+    bitgo_share = (to_send_amt-300)/2
     payload = {
         "bitgo_share": bitgo_share,
         "total_amount": to_send_amt,
