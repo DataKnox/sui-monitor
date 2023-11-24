@@ -6,6 +6,8 @@ import socket
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
+import logging
+logging.basicConfig(filename='std.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 load_dotenv()
 HOSTNAME = socket.gethostname()
 match HOSTNAME:
@@ -79,37 +81,38 @@ with open('/home/sui/gas_new.json', 'r') as fs:
             os.popen(
                 f'/home/sui/sui/target/release/sui client transfer-sui --amount {to_send_amt} --gas-budget 20000000 --sui-coin-object-id {line["gasCoinId"]} --to {target_address} > loop{loop}.txt')
             time.sleep(5)
+            if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
+                data = requests.post(
+                    rpc_endpoint,
+                    json={
+                        "jsonrpc": "2.0",
+                        "id": "1",
+                        "method": "suix_getLatestSuiSystemState",
+                        "params": [],
+                    },
+                )
+                data = data.json()
+                validator = [
+                    v
+                    for v in data["result"]["activeValidators"]
+                    if v["suiAddress"] == active_address
+                    ]
+                validator = validator[0]
+                curr_stake = validator["stakingPoolSuiBalance"]
+                curr_stake = int(curr_stake) / 1000000000
+                bitgo_weight = 16460760/curr_stake
+                bitgo_share = (to_send_amt-300)/2
+                payload = {
+                    "bitgo_share": bitgo_share,
+                    "total_amount": to_send_amt,
+                    "date": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "isFirst": True if is_first_day_of_month() else False,
+                }
+                json_payload = json.dumps(payload)
+                sent = requests.post(os.getenv("LOGIC"),
+                                        data=json_payload,headers={'Content-Type': 'application/json'})
         loop += 1
 
-if HOSTNAME in ["cypher-mainnet", "cypher-testnet"]:
-    data = requests.post(
-        rpc_endpoint,
-        json={
-            "jsonrpc": "2.0",
-            "id": "1",
-            "method": "suix_getLatestSuiSystemState",
-            "params": [],
-        },
-    )
-    data = data.json()
-    validator = [
-        v
-        for v in data["result"]["activeValidators"]
-        if v["suiAddress"] == active_address
-         ]
-    validator = validator[0]
-    curr_stake = validator["stakingPoolSuiBalance"]
-    curr_stake = int(curr_stake) / 1000000000
-    bitgo_weight = 16460760/curr_stake
-    bitgo_share = (to_send_amt-300)/2
-    payload = {
-        "bitgo_share": bitgo_share,
-        "total_amount": to_send_amt,
-        "date": time.strftime("%Y-%m-%d %H:%M:%S"),
-        "isFirst": True if is_first_day_of_month() else False,
-    }
-    json_payload = json.dumps(payload)
-    sent = requests.post(os.getenv("LOGIC"),
-                            data=json_payload,headers={'Content-Type': 'application/json'})
+
 
 
