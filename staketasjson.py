@@ -76,6 +76,7 @@ with open('/home/sui/gas_new.json', 'r') as fs:
         data = json.load(g)
         balance = round(int(data['content']['fields']['balance']))
         to_send_amt = round(((balance * 0.99)-20000000))
+        logging.info(f"to send amount is {str(to_send_amt)} to {target_address} from {line['gasCoinId']}")
         if to_send_amt > 0:            
             print(f"to send amount is {str(to_send_amt)} to {target_address} from {line['gasCoinId']}")
             os.popen(
@@ -100,8 +101,11 @@ with open('/home/sui/gas_new.json', 'r') as fs:
                 validator = validator[0]
                 curr_stake = validator["stakingPoolSuiBalance"]
                 curr_stake = int(curr_stake) / 1000000000
+                logging.info(f"current stake is {str(curr_stake)}")
                 bitgo_weight = 16460760/curr_stake
+                logging.info(f"bitgo weight is {str(bitgo_weight)}")
                 bitgo_share = (to_send_amt-300)/2
+                logging.info(f"bitgo share is {str(bitgo_share)}")
                 payload = {
                     "bitgo_share": bitgo_share,
                     "total_amount": to_send_amt,
