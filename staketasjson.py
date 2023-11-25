@@ -104,11 +104,11 @@ with open('/home/sui/gas_new.json', 'r') as fs:
                 logging.info(f"current stake is {str(curr_stake)}")
                 bitgo_weight = 16460760/curr_stake
                 logging.info(f"bitgo weight is {str(bitgo_weight)}")
-                bitgo_share = (to_send_amt-300)/2
+                bitgo_share = ((to_send_amt/10000000)-300)/2
                 logging.info(f"bitgo share is {str(bitgo_share)}")
                 payload = {
                     "bitgo_share": bitgo_share,
-                    "total_amount": to_send_amt,
+                    "total_amount": to_send_amt/10000000,
                     "date": time.strftime("%Y-%m-%d %H:%M:%S"),
                     "isFirst": True if is_first_day_of_month() else False,
                 }
